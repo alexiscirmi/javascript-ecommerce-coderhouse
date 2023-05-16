@@ -9,11 +9,6 @@ body {
 body {
   display: flex;
   flex-flow: column;
-  background-color: burlywood;
-  background-image: url(../img/background1.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 footer {
@@ -21,7 +16,17 @@ footer {
 }
 
 .navbar-custom {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 239, 214, 0.7);
+}
+
+.parallax {
+  background-color: burlywood;
+  background-image: url(../img/background2.webp);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
