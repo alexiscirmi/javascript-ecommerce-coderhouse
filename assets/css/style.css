@@ -16,11 +16,27 @@ footer {
 }
 
 .navbar-custom {
-  background-color: rgba(255, 239, 214, 0.7);
+  background-color: rgba(237, 224, 212, 0.95);
+  padding: 0;
+  font-family: "Sansita", sans-serif;
+  font-size: 1.1rem;
+}
+
+.navbar-logo {
+  width: 40px;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.navbar-brand-custom {
+  display: flex;
+  flex-direction: row;
+  font-family: "Parisienne", cursive;
+  font-size: 2rem;
 }
 
 .parallax {
-  background-color: burlywood;
+  background-color: #DDB892;
   background-image: url(../img/background2.webp);
   background-attachment: fixed;
   background-position: center;
