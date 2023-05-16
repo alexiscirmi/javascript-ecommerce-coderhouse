@@ -7,3 +7,15 @@
   background-size: cover;
   margin-bottom: 50px;
 }
+
+.index-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+
+  & h1 {
+    background-color: $navbar-color;
+  }
+}

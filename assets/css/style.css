@@ -11,10 +11,6 @@ body {
   flex-flow: column;
 }
 
-footer {
-  margin-top: auto;
-}
-
 .navbar-custom {
   background-color: rgba(237, 224, 212, 0.95);
   padding: 0;
@@ -33,6 +29,11 @@ footer {
   flex-direction: row;
   font-family: "Parisienne", cursive;
   font-size: 2rem;
+  padding-bottom: 0;
+}
+
+footer {
+  margin-top: auto;
 }
 
 .parallax {
@@ -43,6 +44,17 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 50px;
+}
+
+.index-main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+.index-main h1 {
+  background-color: rgba(237, 224, 212, 0.95);
 }
 
 /*# sourceMappingURL=style.css.map */
