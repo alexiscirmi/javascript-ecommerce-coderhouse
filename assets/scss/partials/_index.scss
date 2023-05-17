@@ -1,21 +1,43 @@
-.parallax {
+.index__body {
   background-color: $color2;
   background-image: url(../img/background2.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 50px;
 }
 
-.index-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  justify-content: center;
+.index__body__main {
+  min-height: 100vh;
+  padding-bottom: 25px;
+}
 
-  & h1 {
+.index__body__main__title {
+  position: sticky;
+  top: 50vh;
+
+  & * {
     background-color: $navbar-color;
+    max-width: max-content;
   }
+
+  @media (max-width: 767px) {
+    & h1 {
+      font-size: 2.25rem;
+    }
+
+    & h2 {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.index__body__section {
+  min-height: 100vh;
+  background-color: $color2;
+  background-image: url(../img/background1.webp);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

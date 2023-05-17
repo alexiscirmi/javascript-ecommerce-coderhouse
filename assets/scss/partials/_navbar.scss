@@ -18,3 +18,20 @@
   font-size: 2rem;
   padding-bottom: 0;
 }
+
+.navbar-nav-custom {
+  @media (min-width: 768px) {
+    & {
+      display: flex;
+      gap: 3rem;
+    }
+  }
+}
+
+.nav-link-cart {
+  @media (max-width: 767px) {
+    & {
+      display: none;
+    }
+  }
+}

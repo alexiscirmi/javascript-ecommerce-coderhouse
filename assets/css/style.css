@@ -32,29 +32,72 @@ body {
   padding-bottom: 0;
 }
 
+@media (min-width: 768px) {
+  .navbar-nav-custom {
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-link-cart {
+    display: none;
+  }
+}
+
+/* Up button Properties */
+.up-floating-icon {
+  display: flex;
+  position: sticky;
+  top: 87vh;
+  font-size: 3.5rem;
+  justify-content: left;
+  margin-left: 15px;
+}
+
 footer {
   margin-top: auto;
 }
 
-.parallax {
+.index__body {
   background-color: #DDB892;
   background-image: url(../img/background2.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 50px;
 }
 
-.index-main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  justify-content: center;
+.index__body__main {
+  min-height: 100vh;
+  padding-bottom: 25px;
 }
-.index-main h1 {
+
+.index__body__main__title {
+  position: sticky;
+  top: 50vh;
+}
+.index__body__main__title * {
   background-color: rgba(237, 224, 212, 0.95);
+  max-width: max-content;
+}
+@media (max-width: 767px) {
+  .index__body__main__title h1 {
+    font-size: 2.25rem;
+  }
+  .index__body__main__title h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.index__body__section {
+  min-height: 100vh;
+  background-color: #DDB892;
+  background-image: url(../img/background1.webp);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
