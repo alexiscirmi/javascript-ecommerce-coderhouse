@@ -19,6 +19,8 @@
   & * {
     background-color: $navbar-color;
     max-width: max-content;
+    padding: 5px;
+    border-radius: 5px;
   }
 
   @media (max-width: 767px) {

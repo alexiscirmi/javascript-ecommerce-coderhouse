@@ -87,6 +87,8 @@ footer {
 .index__body__main__title * {
   background-color: rgba(237, 224, 212, 0.95);
   max-width: max-content;
+  padding: 5px;
+  border-radius: 5px;
 }
 @media (max-width: 767px) {
   .index__body__main__title h1 {
