@@ -1,5 +1,5 @@
 .index__body {
-  background-color: $color2;
+  background-color: $navbar-color;
   background-image: url(../img/background2.webp);
   background-attachment: fixed;
   background-position: center;
@@ -34,7 +34,6 @@
 
 .index__body__section {
   min-height: 100vh;
-  background-color: $color2;
   background-image: url(../img/background1.webp);
   background-attachment: fixed;
   background-position: center;
