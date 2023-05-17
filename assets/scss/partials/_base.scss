@@ -1,10 +1,29 @@
 // Variables
-$navbar-color: rgb(237, 224, 212, 0.95);
+$navbar-color: rgb(237, 224, 212);
+$navbar-color-transparent: rgb(237, 224, 212, 0.95);
 $color1: #E6CCB2;
+$color1-transparent: rgb(230, 204, 178, 0.6);
 $color2: #DDB892;
 $color3: #B08968;
+$color3-transparent: rgb(176, 137, 104, 0.6);
 $color4: #9C6644;
+$color4-transparent: rgb(156, 102, 68, 0.6);
 $color5: #7F5539;
+$color5-transparent: rgb(127, 85, 57, 0.6);
+$bottom-box-shadow: 0px -5px 5px 0px black inset;
+$top-box-shadow: 0px 5px 5px 0px black inset;
+
+// Classes
+
+.top-box-shadow {
+  box-shadow: $top-box-shadow;
+}
+
+.bottom-box-shadow {
+  box-shadow: $bottom-box-shadow;
+}
+
+// General Properties
 
 html,
 body {
