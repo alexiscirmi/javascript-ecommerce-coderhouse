@@ -42,3 +42,7 @@
     }
   }
 }
+
+.nav-link-custom {
+  @include zoom-in-transition-pc;
+}

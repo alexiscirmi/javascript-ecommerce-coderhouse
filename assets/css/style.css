@@ -24,7 +24,7 @@ body {
   flex-flow: column;
 }
 
-.row * h3 {
+h3 {
   font-size: larger;
 }
 
@@ -68,6 +68,15 @@ body {
   }
 }
 
+.nav-link-custom {
+  transition: all 0.25s;
+}
+@media (min-width: 1200px) {
+  .nav-link-custom:hover {
+    transform: scale(1.05);
+  }
+}
+
 /* Up button Properties */
 .up-floating-icon {
   display: flex;
@@ -81,6 +90,7 @@ body {
 
 footer {
   max-width: 100%;
+  font-size: 1.1rem;
   margin-top: 0;
   color: #E6CCB2;
   background-color: #B08968;
@@ -88,6 +98,18 @@ footer {
 
 .footer-logo {
   width: 64px;
+}
+
+.nav-link-footer {
+  transition: all 0.25s;
+}
+@media (min-width: 1200px) {
+  .nav-link-footer:hover {
+    transform: scale(1.05);
+  }
+}
+.nav-link-footer:hover {
+  color: black !important;
 }
 
 .index__body {
