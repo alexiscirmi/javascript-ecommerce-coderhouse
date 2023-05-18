@@ -12,6 +12,7 @@ $color5: #7F5539;
 $color5-transparent: rgb(127, 85, 57, 0.6);
 $bottom-box-shadow: 0px -5px 5px 0px black inset;
 $top-box-shadow: 0px 5px 5px 0px black inset;
+$y-box-shadow: 0px 0px 5px 0px black inset;
 
 // Classes
 
@@ -21,6 +22,10 @@ $top-box-shadow: 0px 5px 5px 0px black inset;
 
 .bottom-box-shadow {
   box-shadow: $bottom-box-shadow;
+}
+
+.y-box-shadow {
+  box-shadow: $y-box-shadow;
 }
 
 // General Properties
@@ -37,4 +42,8 @@ body {
 body {
   display: flex;
   flex-flow: column;
+}
+
+.row * h3 {
+  font-size: larger;
 }

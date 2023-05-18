@@ -2,9 +2,10 @@
 
 .up-floating-icon {
   display: flex;
-  position: sticky;
-  top: 87vh;
+  position: fixed;
+  top: 88vh;
   font-size: 3.5rem;
   justify-content: left;
-  margin-left: 15px;
+  margin-left: 10px;
+  margin-right: 0;
 }
