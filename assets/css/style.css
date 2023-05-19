@@ -66,9 +66,17 @@ a {
   }
 }
 
+.nav-link-cart {
+  transition: all 0.25s;
+}
 @media (max-width: 767px) {
   .nav-link-cart {
     display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .nav-link-cart:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -96,8 +104,8 @@ footer {
   max-width: 100%;
   font-size: 1.1rem;
   margin-top: 0;
-  color: #E6CCB2;
-  background-color: #B08968;
+  color: #DDB892;
+  background-color: #7F5539;
 }
 
 .footer-logo {
@@ -105,6 +113,8 @@ footer {
 }
 
 .nav-link-footer {
+  color: #E6CCB2 !important;
+  font-size: 1rem;
   transition: all 0.25s;
 }
 @media (min-width: 1200px) {
@@ -113,7 +123,7 @@ footer {
   }
 }
 .nav-link-footer:hover {
-  color: black !important;
+  color: white !important;
 }
 
 .index__body {

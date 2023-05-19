@@ -41,6 +41,8 @@
       display: none;
     }
   }
+
+  @include zoom-in-transition-pc;
 }
 
 .nav-link-custom {

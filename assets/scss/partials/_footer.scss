@@ -2,8 +2,8 @@ footer {
   max-width: 100%;
   font-size: 1.1rem;
   margin-top: 0;
-  color: $color1;
-  background-color: $color3;
+  color: $color2;
+  background-color: $color5;
 }
 
 .footer-logo {
@@ -11,9 +11,11 @@ footer {
 }
 
 .nav-link-footer {
+  color: $color1 !important;
+  font-size: 1rem;
   @include zoom-in-transition-pc;
 
   &:hover {
-    color: black !important;
+    color: white !important;
   }
 }
