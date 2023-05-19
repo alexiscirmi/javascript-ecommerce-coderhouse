@@ -28,6 +28,10 @@ h3 {
   font-size: larger;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar-custom {
   background-color: rgba(237, 224, 212, 0.95);
   padding: 0;
