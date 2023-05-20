@@ -170,7 +170,6 @@ footer {
 .index__body__section img {
   height: auto;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px black inset;
 }
 .index__body__section h2 {
   color: rgb(237, 224, 212);
