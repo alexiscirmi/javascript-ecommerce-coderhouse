@@ -93,7 +93,7 @@ a {
 .up-floating-icon {
   display: flex;
   position: fixed;
-  top: 88vh;
+  bottom: 20px;
   font-size: 3.5rem;
   justify-content: left;
   margin-left: 10px;
@@ -102,7 +102,6 @@ a {
 
 footer {
   max-width: 100%;
-  font-size: 1.1rem;
   margin-top: 0;
   color: #DDB892;
   background-color: #7F5539;
@@ -114,7 +113,6 @@ footer {
 
 .nav-link-footer {
   color: #E6CCB2 !important;
-  font-size: 1rem;
   transition: all 0.25s;
 }
 @media (min-width: 1200px) {
@@ -127,7 +125,7 @@ footer {
 }
 
 .index__body {
-  background-color: rgb(237, 224, 212);
+  background-color: #7F5539;
   background-image: url(../img/background2.webp);
   background-attachment: fixed;
   background-position: center;
@@ -142,6 +140,20 @@ footer {
 .index__body__main__title {
   position: sticky;
   top: 50vh;
+  margin-left: 3%;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-3%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.index__body__main__title {
+  animation: fadeIn 1.25s;
 }
 .index__body__main__title * {
   font-weight: bold;
@@ -152,6 +164,19 @@ footer {
   border-radius: 10px;
 }
 @media (max-width: 767px) {
+  .index__body__main__title {
+    margin-left: 0;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
   .index__body__main__title h1 {
     font-size: 2.25rem;
   }
