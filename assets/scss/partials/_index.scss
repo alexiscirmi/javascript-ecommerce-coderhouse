@@ -21,7 +21,7 @@
     background-color: $color4-transparent;
     max-width: max-content;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   @media (max-width: 767px) {
@@ -44,6 +44,8 @@
 
   & img {
     height: auto;
+    border-radius: 10px;
+    box-shadow: $y-box-shadow;
   }
 
   & h2 {
@@ -51,7 +53,7 @@
     background-color: $color4-super-transparent;
     max-width: max-content;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 }
 
