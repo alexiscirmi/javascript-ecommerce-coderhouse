@@ -9,7 +9,6 @@
 
 .index__body__main {
   min-height: 100vh;
-  padding-bottom: 25px;
 }
 
 .index__body__main__title {
@@ -37,12 +36,23 @@
 }
 
 .index__body__section {
-  min-height: 100vh;
   background-image: url(../img/background1.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  & img {
+    height: auto;
+  }
+
+  & h2 {
+    color: $navbar-color;
+    background-color: $color4-super-transparent;
+    max-width: max-content;
+    padding: 5px;
+    border-radius: 5px;
+  }
 }
 
 // .index__body__section {

@@ -137,7 +137,6 @@ footer {
 
 .index__body__main {
   min-height: 100vh;
-  padding-bottom: 25px;
 }
 
 .index__body__main__title {
@@ -162,12 +161,21 @@ footer {
 }
 
 .index__body__section {
-  min-height: 100vh;
   background-image: url(../img/background1.webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.index__body__section img {
+  height: auto;
+}
+.index__body__section h2 {
+  color: rgb(237, 224, 212);
+  background-color: rgba(156, 102, 68, 0.3);
+  max-width: max-content;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
