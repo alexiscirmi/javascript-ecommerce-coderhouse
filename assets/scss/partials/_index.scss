@@ -1,7 +1,7 @@
-.index__body {
+.index__body__navbar-main-bg {
+  min-height: 110%;
   background-color: $color5;
   background-image: url(../img/background2.webp);
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +72,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 767px) {
+    & {
+      background-attachment: scroll;
+    }
+  }
 
   & img {
     height: auto;

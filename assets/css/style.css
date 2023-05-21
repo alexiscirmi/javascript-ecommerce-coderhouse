@@ -124,10 +124,10 @@ footer {
   color: white !important;
 }
 
-.index__body {
+.index__body__navbar-main-bg {
+  min-height: 110%;
   background-color: #7F5539;
   background-image: url(../img/background2.webp);
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -191,6 +191,11 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (max-width: 767px) {
+  .index__body__section {
+    background-attachment: scroll;
+  }
 }
 .index__body__section img {
   height: auto;
