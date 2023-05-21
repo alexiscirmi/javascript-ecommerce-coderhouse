@@ -8,12 +8,12 @@
 }
 
 .index__body__main {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .index__body__main__title {
   position: sticky;
-  top: 50vh;
+  top: 50%;
   margin-left: 3%;
 
   @keyframes fadeIn {
