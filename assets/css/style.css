@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   font-family: "Lato", sans-serif;
 }
 
@@ -107,8 +107,9 @@ footer {
   background-color: #7F5539;
 }
 
-.footer-logo {
-  width: 64px;
+.footer-logo,
+.footer-logo img {
+  max-width: 64px;
 }
 
 .nav-link-footer {
@@ -192,7 +193,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .index__body__section {
     background-attachment: scroll;
   }

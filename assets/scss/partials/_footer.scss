@@ -5,8 +5,9 @@ footer {
   background-color: $color5;
 }
 
-.footer-logo {
-  width: 64px;
+.footer-logo,
+.footer-logo img {
+  max-width: 64px;
 }
 
 .nav-link-footer {
