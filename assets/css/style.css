@@ -198,9 +198,22 @@ footer {
     background-attachment: scroll;
   }
 }
+@media (max-width: 767px) {
+  .index__body__section * {
+    display: flex;
+    margin: auto;
+    text-align: center;
+  }
+}
 .index__body__section img {
   height: auto;
   border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .index__body__section img {
+    padding-top: 30px;
+    max-width: 70%;
+  }
 }
 .index__body__section h2 {
   color: rgb(237, 224, 212);
