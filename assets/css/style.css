@@ -237,4 +237,16 @@ footer h3 {
   }
 }
 
+.tienda__body__navbar-main-bg {
+  color: #7F5539;
+  background-color: #E6CCB2;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tienda__body__main {
+  padding-top: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */

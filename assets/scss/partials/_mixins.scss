@@ -1,0 +1,47 @@
+// Mixins
+
+@mixin zoom-in-transition {
+  transition: all 0.25s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin zoom-in-transition-pc {
+  transition: all 0.25s;
+
+  @media (min-width: 1200px) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@mixin fadeIn {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-3%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin fadeIn-mobile {
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
