@@ -85,10 +85,12 @@
   max-width: max-content;
   padding: 5px;
   border-radius: 10px;
+  text-align: right;
 
   @media (max-width: 767px) {
     & {
       margin: auto 50px;
+      text-align: center;
     }
   }
 }
