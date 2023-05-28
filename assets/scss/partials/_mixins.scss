@@ -19,23 +19,33 @@
 }
 
 @mixin title {
-  color: $color0;
-  background-color: $color4-transparent;
-  max-width: max-content;
-  margin-left: 60px;
-  padding: 5px;
-  border-radius: 10px;
+  & * {
+    color: $color0;
+    background-color: $color4-transparent;
+    max-width: max-content;
+    margin-left: 5%;
+    padding: 5px;
+    border-radius: 10px;
 
-  @media (max-width: 767px) {
-    margin: 0 10px;
+    @media (max-width: 767px) {
+      margin: 0 4%;
+    }
   }
 }
 
 @mixin title-tienda {
   @include title;
-  background-color: $color5-transparent;
+
+  & * {
+    background-color: $color5-transparent;
+
+    @media (max-width: 767px) {
+      margin: auto;
+      text-align: center;
+    }
+  }
 
   @media (max-width: 767px) {
-    margin: auto;
+    margin: 0 4%;
   }
 }

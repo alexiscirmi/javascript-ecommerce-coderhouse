@@ -9,16 +9,12 @@
 
 .index__body__main {
   min-height: 100%;
-  width: 100%;
 }
 
 .index__body__main__title {
   position: sticky;
   top: 50%;
-
-  & * {
-    @include title;
-  }
+  @include title;
 
   @media (max-width: 767px) {
 
@@ -72,6 +68,11 @@
   & h3 {
     margin-bottom: 1rem;
   }
+}
+
+.index__body__section__div {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .index__body__section__text {
