@@ -34,4 +34,8 @@
 @mixin title-tienda {
   @include title;
   background-color: $color5-transparent;
+
+  @media (max-width: 767px) {
+    margin: auto;
+  }
 }
