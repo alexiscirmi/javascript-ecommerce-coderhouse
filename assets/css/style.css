@@ -197,7 +197,7 @@ footer h3 {
 .index__body__main__title {
   position: sticky;
   top: 50%;
-  margin-left: 3%;
+  margin-left: 40px;
 }
 .index__body__main__title * {
   color: rgb(237, 224, 212);
@@ -207,6 +207,9 @@ footer h3 {
   border-radius: 10px;
 }
 @media (max-width: 767px) {
+  .index__body__main__title {
+    margin: 0 10px;
+  }
   .index__body__main__title h1 {
     font-size: 2.25rem;
   }
