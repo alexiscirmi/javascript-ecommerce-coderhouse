@@ -10,6 +10,58 @@
   box-shadow: 0px 0px 5px 0px black inset;
 }
 
+[data-aos=fade-in-index-main] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+[data-aos=fade-in-index-main].aos-animate {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  [data-aos=fade-in-index-main] {
+    transform: translateX(-3%);
+  }
+  [data-aos=fade-in-index-main].aos-animate {
+    transform: translateX(0);
+  }
+}
+
+[data-aos=fade-in-index-section-left] {
+  opacity: 0;
+  transform: translateY(20%);
+  transition-property: transform, opacity;
+}
+[data-aos=fade-in-index-section-left].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 768px) {
+  [data-aos=fade-in-index-section-left] {
+    transform: translateX(-5%);
+  }
+  [data-aos=fade-in-index-section-left].aos-animate {
+    transform: translateX(0);
+  }
+}
+
+[data-aos=fade-in-index-section-right] {
+  opacity: 0;
+  transform: translateY(20%);
+  transition-property: transform, opacity;
+}
+[data-aos=fade-in-index-section-right].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (min-width: 768px) {
+  [data-aos=fade-in-index-section-right] {
+    transform: translateX(5%);
+  }
+  [data-aos=fade-in-index-section-right].aos-animate {
+    transform: translateX(0);
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -147,19 +199,6 @@ footer h3 {
   top: 50%;
   margin-left: 3%;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-3%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.index__body__main__title {
-  animation: fadeIn 1.25s;
-}
 .index__body__main__title * {
   color: rgb(237, 224, 212);
   background-color: rgba(156, 102, 68, 0.8);
@@ -168,19 +207,6 @@ footer h3 {
   border-radius: 10px;
 }
 @media (max-width: 767px) {
-  .index__body__main__title {
-    margin-left: 0;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateX(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
   .index__body__main__title h1 {
     font-size: 2.25rem;
   }
