@@ -1,6 +1,6 @@
 // Variables
-$navbar-color: rgb(237, 224, 212);
-$navbar-color-transparent: rgb(237, 224, 212, 0.95);
+$color0: rgb(237, 224, 212);
+$color0-transparent: rgb(237, 224, 212, 0.95);
 $color1: #E6CCB2;
 $color1-transparent: rgb(230, 204, 178, 0.8);
 $color2: #DDB892;
@@ -13,6 +13,4 @@ $color4-super-transparent: rgb(156, 102, 68, 0.5);
 $color5: #7F5539;
 $color5-transparent: rgb(127, 85, 57, 0.8);
 $color5-super-transparent: rgb(127, 85, 57, 0.5);
-$bottom-box-shadow: 0px -5px 5px 0px black inset;
-$top-box-shadow: 0px 5px 5px 0px black inset;
-$y-box-shadow: 0px 0px 5px 0px black inset;
+$black-border: 1px solid rgb(0, 0, 0, 0.5);

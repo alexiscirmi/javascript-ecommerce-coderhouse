@@ -17,7 +17,7 @@
   margin-left: 40px;
 
   & * {
-    color: $navbar-color;
+    color: $color0;
     background-color: $color4-transparent;
     max-width: max-content;
     padding: 5px;
@@ -43,6 +43,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-top: $black-border;
 
   @media (max-width: 1200px) {
     & {
@@ -79,7 +80,7 @@
 }
 
 .index__body__section__text {
-  color: $navbar-color;
+  color: $color0;
   background-color: $color4-transparent;
   max-width: max-content;
   padding: 5px;
