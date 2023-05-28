@@ -145,8 +145,8 @@ a {
 footer {
   max-width: 100%;
   margin-top: 0;
-  color: #DDB892;
-  background-color: #7F5539;
+  color: #ddb892;
+  background-color: #7f5539;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 footer h3 {
@@ -159,7 +159,7 @@ footer h3 {
 }
 
 .nav-link-footer {
-  color: #E6CCB2 !important;
+  color: #e6ccb2 !important;
   transition: all 0.25s;
 }
 @media (min-width: 1200px) {
@@ -172,8 +172,8 @@ footer h3 {
 }
 
 .index__body__navbar-main-bg {
-  min-height: 110%;
-  background-color: #7F5539;
+  min-height: 105%;
+  background-color: #7f5539;
   background-image: url(../img/background2.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -182,24 +182,27 @@ footer h3 {
 
 .index__body__main {
   min-height: 100%;
+  width: 100%;
 }
 
 .index__body__main__title {
   position: sticky;
   top: 50%;
-  margin-left: 40px;
 }
 .index__body__main__title * {
-  color: rgb(237, 224, 212);
+  color: #ede0d4;
   background-color: rgba(156, 102, 68, 0.8);
   max-width: max-content;
+  margin-left: 60px;
   padding: 5px;
   border-radius: 10px;
 }
 @media (max-width: 767px) {
-  .index__body__main__title {
+  .index__body__main__title * {
     margin: 0 10px;
   }
+}
+@media (max-width: 767px) {
   .index__body__main__title h1 {
     font-size: 2.25rem;
   }
@@ -245,7 +248,7 @@ footer h3 {
 }
 
 .index__body__section__text {
-  color: rgb(237, 224, 212);
+  color: #ede0d4;
   background-color: rgba(156, 102, 68, 0.8);
   max-width: max-content;
   padding: 5px;
@@ -260,15 +263,29 @@ footer h3 {
 }
 
 .tienda__body__navbar-main-bg {
-  color: #7F5539;
-  background-color: #E6CCB2;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #9c6644;
+  opacity: 1;
+  background-image: radial-gradient(#ddb892 1.05px, #9c6644 1.05px);
+  background-size: 21px 21px;
 }
 
 .tienda__body__main {
   padding-top: 2rem;
+}
+
+.tienda__body__main__title {
+  color: #ede0d4;
+  background-color: rgba(156, 102, 68, 0.8);
+  max-width: max-content;
+  margin-left: 60px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(127, 85, 57, 0.8);
+}
+@media (max-width: 767px) {
+  .tienda__body__main__title {
+    margin: 0 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

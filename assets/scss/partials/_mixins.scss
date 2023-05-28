@@ -17,3 +17,21 @@
     }
   }
 }
+
+@mixin title {
+  color: $color0;
+  background-color: $color4-transparent;
+  max-width: max-content;
+  margin-left: 60px;
+  padding: 5px;
+  border-radius: 10px;
+
+  @media (max-width: 767px) {
+    margin: 0 10px;
+  }
+}
+
+@mixin title-tienda {
+  @include title;
+  background-color: $color5-transparent;
+}

@@ -1,11 +1,20 @@
 .tienda__body__navbar-main-bg {
-  color: $color5;
-  background-color: $color1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #9c6644;
+  opacity: 1;
+  background-image: radial-gradient(#ddb892 1.05px, #9c6644 1.05px);
+  background-size: 21px 21px;
+
+  // color: $color5;
+  // background-color: $color1;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 .tienda__body__main {
   padding-top: 2rem;
+}
+
+.tienda__body__main__title {
+  @include title-tienda;
 }

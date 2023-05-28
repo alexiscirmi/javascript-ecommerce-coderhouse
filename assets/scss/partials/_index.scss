@@ -1,5 +1,5 @@
 .index__body__navbar-main-bg {
-  min-height: 110%;
+  min-height: 105%;
   background-color: $color5;
   background-image: url(../img/background2.webp);
   background-position: center;
@@ -9,23 +9,18 @@
 
 .index__body__main {
   min-height: 100%;
+  width: 100%;
 }
 
 .index__body__main__title {
   position: sticky;
   top: 50%;
-  margin-left: 40px;
 
   & * {
-    color: $color0;
-    background-color: $color4-transparent;
-    max-width: max-content;
-    padding: 5px;
-    border-radius: 10px;
+    @include title;
   }
 
   @media (max-width: 767px) {
-    margin: 0 10px;
 
     & h1 {
       font-size: 2.25rem;
