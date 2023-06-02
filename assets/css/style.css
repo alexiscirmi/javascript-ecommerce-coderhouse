@@ -65,10 +65,6 @@ body {
   flex-flow: column;
 }
 
-h3 {
-  font-size: larger;
-}
-
 a {
   text-decoration: none;
 }
@@ -148,9 +144,6 @@ footer {
   color: #ddb892;
   background-color: #7f5539;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-}
-footer h3 {
-  font-size: large;
 }
 
 .footer-logo,
@@ -239,7 +232,7 @@ footer h3 {
 @media (max-width: 767px) {
   .index__body__section img {
     padding-top: 30px;
-    max-width: 50%;
+    max-width: 60%;
   }
 }
 .index__body__section h2, .index__body__section h3 {
@@ -253,11 +246,10 @@ footer h3 {
 
 .index__body__section__text {
   color: #ede0d4;
-  background-color: rgba(156, 102, 68, 0.8);
   max-width: max-content;
   padding: 5px;
-  border-radius: 10px;
   text-align: right;
+  -webkit-text-stroke: 0.5px white;
 }
 @media (max-width: 767px) {
   .index__body__section__text {
