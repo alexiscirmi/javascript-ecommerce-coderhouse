@@ -184,7 +184,7 @@ footer {
 .index__body__main__title * {
   color: #ede0d4;
   margin-left: 5%;
-  -webkit-text-stroke: 0.6px white;
+  -webkit-text-stroke: 0.6px #e6ccb2;
 }
 @media (max-width: 767px) {
   .index__body__main__title * {
@@ -229,7 +229,7 @@ footer {
 @media (max-width: 767px) {
   .index__body__section img {
     padding-top: 30px;
-    max-width: 60%;
+    max-width: 65%;
   }
 }
 .index__body__section h2, .index__body__section h3 {
@@ -244,12 +244,11 @@ footer {
 .index__body__section__text {
   color: #ede0d4;
   text-align: right;
-  -webkit-text-stroke: 0.6px white;
+  -webkit-text-stroke: 0.6px #e6ccb2;
   text-wrap: balance;
 }
 @media (max-width: 767px) {
   .index__body__section__text {
-    margin: auto 50px;
     text-align: center;
   }
 }
@@ -272,7 +271,7 @@ footer {
 .tienda__body__main__title * {
   color: #ede0d4;
   margin-left: 5%;
-  -webkit-text-stroke: 0.6px white;
+  -webkit-text-stroke: 0.6px #e6ccb2;
 }
 @media (max-width: 767px) {
   .tienda__body__main__title * {
