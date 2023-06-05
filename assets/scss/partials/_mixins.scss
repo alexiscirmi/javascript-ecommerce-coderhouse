@@ -21,11 +21,8 @@
 @mixin title {
   & * {
     color: $color0;
-    background-color: $color4-transparent;
-    max-width: max-content;
     margin-left: 5%;
-    padding: 5px;
-    border-radius: 10px;
+    -webkit-text-stroke: $white-stroke;
 
     @media (max-width: 767px) {
       margin: 0 4%;
@@ -37,8 +34,6 @@
   @include title;
 
   & * {
-    background-color: $color5-transparent;
-
     @media (max-width: 767px) {
       margin: auto;
       text-align: center;

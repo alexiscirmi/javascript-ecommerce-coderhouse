@@ -77,10 +77,9 @@
 
 .index__body__section__text {
   color: $color0;
-  max-width: max-content;
-  padding: 5px;
   text-align: right;
-  -webkit-text-stroke: 0.5px white;
+  -webkit-text-stroke: $white-stroke;
+  text-wrap: balance;
 
   @media (max-width: 767px) {
     & {

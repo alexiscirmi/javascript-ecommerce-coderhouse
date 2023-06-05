@@ -74,7 +74,7 @@ a {
   padding: 0;
   font-family: "Lato", sans-serif;
   font-size: 1.1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0.5px solid rgb(0, 0, 0);
 }
 
 .navbar-logo {
@@ -127,7 +127,7 @@ a {
   }
 }
 
-/* Up button Properties */
+/* "Up" button Properties */
 .up-floating-icon {
   display: flex;
   position: fixed;
@@ -140,10 +140,10 @@ a {
 
 footer {
   max-width: 100%;
-  margin-top: 0;
+  margin-top: auto;
   color: #ddb892;
   background-color: #7f5539;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 0.5px solid rgb(0, 0, 0);
 }
 
 .footer-logo,
@@ -183,11 +183,8 @@ footer {
 }
 .index__body__main__title * {
   color: #ede0d4;
-  background-color: rgba(156, 102, 68, 0.8);
-  max-width: max-content;
   margin-left: 5%;
-  padding: 5px;
-  border-radius: 10px;
+  -webkit-text-stroke: 0.6px white;
 }
 @media (max-width: 767px) {
   .index__body__main__title * {
@@ -209,7 +206,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 0.5px solid rgb(0, 0, 0);
 }
 @media (max-width: 1200px) {
   .index__body__section {
@@ -246,16 +243,19 @@ footer {
 
 .index__body__section__text {
   color: #ede0d4;
-  max-width: max-content;
-  padding: 5px;
   text-align: right;
-  -webkit-text-stroke: 0.5px white;
+  -webkit-text-stroke: 0.6px white;
+  text-wrap: balance;
 }
 @media (max-width: 767px) {
   .index__body__section__text {
     margin: auto 50px;
     text-align: center;
   }
+}
+
+.coworking__body__navbar-main-bg {
+  height: 100%;
 }
 
 .tienda__body__navbar-main-bg {
@@ -271,19 +271,13 @@ footer {
 
 .tienda__body__main__title * {
   color: #ede0d4;
-  background-color: rgba(156, 102, 68, 0.8);
-  max-width: max-content;
   margin-left: 5%;
-  padding: 5px;
-  border-radius: 10px;
+  -webkit-text-stroke: 0.6px white;
 }
 @media (max-width: 767px) {
   .tienda__body__main__title * {
     margin: 0 4%;
   }
-}
-.tienda__body__main__title * {
-  background-color: rgba(127, 85, 57, 0.8);
 }
 @media (max-width: 767px) {
   .tienda__body__main__title * {

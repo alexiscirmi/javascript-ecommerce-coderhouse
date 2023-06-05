@@ -1,4 +1,5 @@
-// Variables
+// Color variables
+
 $color0: #ede0d4;
 $color0-transparent: rgb(237, 224, 212, 0.95);
 $color1: #e6ccb2;
@@ -13,4 +14,8 @@ $color4-super-transparent: rgb(156, 102, 68, 0.5);
 $color5: #7f5539;
 $color5-transparent: rgb(127, 85, 57, 0.8);
 $color5-super-transparent: rgb(127, 85, 57, 0.5);
-$black-border: 1px solid rgb(0, 0, 0, 0.5);
+
+// Styles variables
+
+$black-border: 0.5px solid rgb(0, 0, 0, 1);
+$white-stroke: 0.6px white;
