@@ -13,7 +13,6 @@ footer {
 
 .nav-link-footer {
   color: $color1 !important;
-  @include zoom-in-transition-pc;
 
   &:hover {
     color: white !important;

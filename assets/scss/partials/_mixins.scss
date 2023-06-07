@@ -1,23 +1,5 @@
 // Mixins
 
-@mixin zoom-in-transition {
-  transition: all 0.25s;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-@mixin zoom-in-transition-pc {
-  transition: all 0.25s;
-
-  @media (min-width: 1200px) {
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-}
-
 @mixin title {
   & * {
     color: $color0;
