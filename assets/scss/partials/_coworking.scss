@@ -1,7 +1,14 @@
 .coworking__body__navbar-main-bg {
+  background-image: url(../img/coworking-background.webp);
+  width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.coworking__body__main {}
+.coworking__body__main {
+  height: 100%;
+}
 
 .coworking__body__main__title {}
