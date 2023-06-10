@@ -6,11 +6,17 @@
 }
 
 .coworking__body__main {
-  min-height: 100vh;
+  height: 90vh;
+  @include title-coworking;
 }
 
-.coworking__body__main__title {}
+.coworking__body__main__title {
+  height: 100%;
+  display: flex;
+}
 
 .coworking__body__section {
-  min-height: 100vh;
+  height: 90vh;
+  @include title-coworking;
+  display: flex;
 }

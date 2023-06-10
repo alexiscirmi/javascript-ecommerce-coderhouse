@@ -12,6 +12,14 @@
   }
 }
 
+@mixin title-coworking {
+  @include title;
+
+  & * {
+    margin: auto;
+  }
+}
+
 @mixin title-tienda {
   @include title;
 
