@@ -13,7 +13,12 @@
 .index__body__main__title {
   position: sticky;
   top: 55%;
-  @include title-index;
+  @include title;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  text-align: start;
+  justify-content: start;
 
   @media (max-width: 767px) {
 
@@ -50,35 +55,27 @@
     }
   }
 
-  & img {
-    border-radius: 10px;
+  .index1-img {
+    height: auto;
+    max-width: 30%;
 
-    &.index1-img {
-      height: auto;
-      max-width: 30%;
-
-      @media (max-width: 1199px) {
-        & {
-          max-width: 35%;
-        }
-      }
-
-      @media (max-width: 991px) {
-        & {
-          max-width: 40%;
-        }
-      }
-
-      @media (max-width: 767px) {
-        & {
-          margin-top: 30px;
-          max-width: 65%;
-        }
+    @media (max-width: 1199px) {
+      & {
+        max-width: 35%;
       }
     }
 
-    &.index2-img {
-      max-width: 100%;
+    @media (max-width: 991px) {
+      & {
+        max-width: 40%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      & {
+        margin-top: 30px;
+        max-width: 65%;
+      }
     }
   }
 
@@ -94,6 +91,5 @@
 }
 
 .index__body__section__text {
-  color: $color0;
-  -webkit-text-stroke: $white-stroke;
+  @include title;
 }

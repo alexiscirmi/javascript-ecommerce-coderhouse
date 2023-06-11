@@ -1,28 +1,18 @@
 // Mixins
 
-@mixin title-index {
+
+// Mixin for titles. Use on parent element.
+@mixin title {
   & * {
     color: $color0;
-    margin-left: 5%;
     -webkit-text-stroke: $white-stroke;
-
-    @media (max-width: 767px) {
-      margin: 0 4%;
-    }
   }
 }
 
-@mixin title {
-  @include title-index;
-
-  & * {
-    @media (max-width: 767px) {
-      margin: auto;
-      text-align: center;
-    }
-  }
-
+// Mixin for titles on mobile. This is going to center the content and add margins on X axis.
+@mixin title-mobile-center {
   @media (max-width: 767px) {
-    margin: 0 4%;
+    margin: auto 4%;
+    text-align: center;
   }
 }

@@ -1,5 +1,5 @@
 .coworking__body__navbar-main-bg {
-  background-image: url(../img/coworking-background.jpg);
+  background-image: url(../img/coworking/coworking-background.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,23 +13,30 @@
   height: 100%;
   @include title;
   display: flex;
+  justify-content: center;
+  text-align: center;
 
   & * {
-    margin: auto;
+    margin: auto 4%;
   }
 }
 
 .coworking__body__section {
-  height: 90vh;
+  height: 100vh;
   @include title;
-  display: flex;
 
   & * {
     margin: auto;
   }
 }
 
+.coworking__body__section__div {
+  @extend .index__body__section__div;
+}
+
 .coworking__body__section--last {
   @extend .coworking__body__section;
+  display: flex;
+  justify-content: center;
   margin-bottom: 40rem;
 }
