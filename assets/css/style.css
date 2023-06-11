@@ -275,25 +275,36 @@ footer {
 }
 
 .coworking__body__main {
-  height: 90vh;
-}
-.coworking__body__main * {
-  color: #ede0d4;
-  margin-left: 5%;
-  -webkit-text-stroke: 0.6px #e6ccb2;
-}
-@media (max-width: 767px) {
-  .coworking__body__main * {
-    margin: 0 4%;
-  }
-}
-.coworking__body__main * {
-  margin: auto;
+  height: 85vh;
 }
 
 .coworking__body__main__title {
   height: 100%;
   display: flex;
+}
+.coworking__body__main__title * {
+  color: #ede0d4;
+  margin-left: 5%;
+  -webkit-text-stroke: 0.6px #e6ccb2;
+}
+@media (max-width: 767px) {
+  .coworking__body__main__title * {
+    margin: 0 4%;
+  }
+}
+@media (max-width: 767px) {
+  .coworking__body__main__title * {
+    margin: auto;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .coworking__body__main__title {
+    margin: 0 4%;
+  }
+}
+.coworking__body__main__title * {
+  margin: auto;
 }
 
 .coworking__body__section {
@@ -307,6 +318,17 @@ footer {
 }
 @media (max-width: 767px) {
   .coworking__body__section * {
+    margin: 0 4%;
+  }
+}
+@media (max-width: 767px) {
+  .coworking__body__section * {
+    margin: auto;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .coworking__body__section {
     margin: 0 4%;
   }
 }

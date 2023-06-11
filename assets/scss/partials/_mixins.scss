@@ -1,6 +1,6 @@
 // Mixins
 
-@mixin title {
+@mixin title-index {
   & * {
     color: $color0;
     margin-left: 5%;
@@ -12,16 +12,8 @@
   }
 }
 
-@mixin title-coworking {
-  @include title;
-
-  & * {
-    margin: auto;
-  }
-}
-
-@mixin title-tienda {
-  @include title;
+@mixin title {
+  @include title-index;
 
   & * {
     @media (max-width: 767px) {

@@ -13,7 +13,7 @@
 .index__body__main__title {
   position: sticky;
   top: 55%;
-  @include title;
+  @include title-index;
 
   @media (max-width: 767px) {
 
