@@ -1,3 +1,7 @@
+.balance {
+  text-wrap: balance;
+}
+
 [data-aos=fade-in-index-main] {
   opacity: 0;
   transition-property: transform, opacity;
@@ -264,7 +268,6 @@ footer {
 .index__body__section__text {
   color: #ede0d4;
   -webkit-text-stroke: 0.6px #e6ccb2;
-  text-wrap: balance;
 }
 
 .coworking__body__navbar-main-bg {
@@ -307,33 +310,37 @@ footer {
   margin: auto;
 }
 
-.coworking__body__section {
+.coworking__body__section, .coworking__body__section--last {
   height: 90vh;
   display: flex;
 }
-.coworking__body__section * {
+.coworking__body__section *, .coworking__body__section--last * {
   color: #ede0d4;
   margin-left: 5%;
   -webkit-text-stroke: 0.6px #e6ccb2;
 }
 @media (max-width: 767px) {
-  .coworking__body__section * {
+  .coworking__body__section *, .coworking__body__section--last * {
     margin: 0 4%;
   }
 }
 @media (max-width: 767px) {
-  .coworking__body__section * {
+  .coworking__body__section *, .coworking__body__section--last * {
     margin: auto;
     text-align: center;
   }
 }
 @media (max-width: 767px) {
-  .coworking__body__section {
+  .coworking__body__section, .coworking__body__section--last {
     margin: 0 4%;
   }
 }
-.coworking__body__section * {
+.coworking__body__section *, .coworking__body__section--last * {
   margin: auto;
+}
+
+.coworking__body__section--last {
+  margin-bottom: 40rem;
 }
 
 .tienda__body__navbar-main-bg {

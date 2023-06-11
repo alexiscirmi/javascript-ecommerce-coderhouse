@@ -28,3 +28,8 @@
     margin: auto;
   }
 }
+
+.coworking__body__section--last {
+  @extend .coworking__body__section;
+  margin-bottom: 40rem;
+}
