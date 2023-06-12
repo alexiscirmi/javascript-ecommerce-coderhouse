@@ -36,7 +36,9 @@
 
 .coworking__body__section--last {
   @extend .coworking__body__section;
+  @extend .coworking__body__section__div;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 40rem;
 }

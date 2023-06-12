@@ -113,6 +113,10 @@ figcaption {
   }
 }
 
+iframe {
+  max-width: 100%;
+}
+
 .navbar-custom {
   background-color: rgba(237, 224, 212, 0.95);
   padding: 0;
@@ -242,11 +246,11 @@ footer {
   margin-bottom: 1rem;
 }
 
-.index__body__section__div, .coworking__body__section__div {
+.index__body__section__div, .coworking__body__section__div, .coworking__body__section--last {
   margin-left: 5%;
   margin-right: 5%;
 }
-.index__body__section__div *, .coworking__body__section__div * {
+.index__body__section__div *, .coworking__body__section__div *, .coworking__body__section--last * {
   color: #ede0d4;
   -webkit-text-stroke: 0.6px #e6ccb2;
 }
@@ -307,6 +311,7 @@ footer {
 
 .coworking__body__section--last {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 40rem;
 }
