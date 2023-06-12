@@ -104,6 +104,17 @@ a {
 
 figcaption {
   width: max-content;
+  margin: auto;
+}
+
+figure {
+  width: min-content !important;
+}
+
+@media (max-width: 768px) {
+  img {
+    max-height: 70vh;
+  }
 }
 
 .navbar-custom {
@@ -220,9 +231,6 @@ footer {
   background-size: cover;
   border-top: 0.5px solid rgb(0, 0, 0);
 }
-.index__body__section * {
-  margin: auto;
-}
 @media (max-width: 1200px) {
   .index__body__section {
     background-attachment: scroll;
@@ -230,6 +238,7 @@ footer {
 }
 @media (max-width: 767px) {
   .index__body__section * {
+    margin: auto;
     text-align: center;
   }
 }
@@ -249,6 +258,15 @@ footer {
 .index__body__section__text * {
   color: #ede0d4;
   -webkit-text-stroke: 0.6px #e6ccb2;
+}
+
+.index1-img {
+  max-width: 30vw;
+}
+@media (max-width: 767px) {
+  .index1-img {
+    max-width: 70vw;
+  }
 }
 
 .coworking__body__navbar-main-bg {

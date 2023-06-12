@@ -40,10 +40,6 @@
   background-size: cover;
   border-top: $black-border;
 
-  & * {
-    margin: auto;
-  }
-
   @media (max-width: 1200px) {
     & {
       background-attachment: scroll;
@@ -52,6 +48,7 @@
 
   @media (max-width: 767px) {
     & * {
+      margin: auto;
       text-align: center;
     }
   }
@@ -73,6 +70,11 @@
 }
 
 .index1-img {
-  // max-height: 60%;
-  // width: auto;
+  max-width: 30vw;
+
+  @media (max-width: 767px) {
+    & {
+      max-width: 70vw;
+    }
+  }
 }
