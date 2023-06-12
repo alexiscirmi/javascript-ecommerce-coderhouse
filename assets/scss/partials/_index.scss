@@ -40,6 +40,10 @@
   background-size: cover;
   border-top: $black-border;
 
+  & * {
+    margin: auto;
+  }
+
   @media (max-width: 1200px) {
     & {
       background-attachment: scroll;
@@ -48,34 +52,7 @@
 
   @media (max-width: 767px) {
     & * {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
       text-align: center;
-    }
-  }
-
-  .index1-img {
-    height: auto;
-    max-width: 30%;
-
-    @media (max-width: 1199px) {
-      & {
-        max-width: 35%;
-      }
-    }
-
-    @media (max-width: 991px) {
-      & {
-        max-width: 40%;
-      }
-    }
-
-    @media (max-width: 767px) {
-      & {
-        margin-top: 30px;
-        max-width: 65%;
-      }
     }
   }
 
@@ -88,8 +65,14 @@
 .index__body__section__div {
   margin-left: 5%;
   margin-right: 5%;
+  @include title;
 }
 
 .index__body__section__text {
   @include title;
+}
+
+.index1-img {
+  // max-height: 60%;
+  // width: auto;
 }

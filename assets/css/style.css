@@ -2,11 +2,6 @@
   text-wrap: balance;
 }
 
-.img-standard {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
 [data-aos=fade-in-index-main] {
   opacity: 0;
   transition-property: transform, opacity;
@@ -105,6 +100,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+figcaption {
+  width: max-content;
 }
 
 .navbar-custom {
@@ -221,6 +220,9 @@ footer {
   background-size: cover;
   border-top: 0.5px solid rgb(0, 0, 0);
 }
+.index__body__section * {
+  margin: auto;
+}
 @media (max-width: 1200px) {
   .index__body__section {
     background-attachment: scroll;
@@ -228,30 +230,7 @@ footer {
 }
 @media (max-width: 767px) {
   .index__body__section * {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
     text-align: center;
-  }
-}
-.index__body__section .index1-img {
-  height: auto;
-  max-width: 30%;
-}
-@media (max-width: 1199px) {
-  .index__body__section .index1-img {
-    max-width: 35%;
-  }
-}
-@media (max-width: 991px) {
-  .index__body__section .index1-img {
-    max-width: 40%;
-  }
-}
-@media (max-width: 767px) {
-  .index__body__section .index1-img {
-    margin-top: 30px;
-    max-width: 65%;
   }
 }
 .index__body__section h2, .index__body__section h3 {
@@ -261,6 +240,10 @@ footer {
 .index__body__section__div, .coworking__body__section__div {
   margin-left: 5%;
   margin-right: 5%;
+}
+.index__body__section__div *, .coworking__body__section__div * {
+  color: #ede0d4;
+  -webkit-text-stroke: 0.6px #e6ccb2;
 }
 
 .index__body__section__text * {
