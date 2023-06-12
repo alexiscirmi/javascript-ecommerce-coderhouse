@@ -107,10 +107,6 @@ figcaption {
   margin: auto;
 }
 
-figure {
-  width: min-content !important;
-}
-
 @media (max-width: 768px) {
   img {
     max-height: 70vh;
@@ -258,6 +254,10 @@ footer {
 .index__body__section__text * {
   color: #ede0d4;
   -webkit-text-stroke: 0.6px #e6ccb2;
+}
+
+.figure-index1-img {
+  width: min-content !important;
 }
 
 .index1-img {

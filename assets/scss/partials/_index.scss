@@ -69,6 +69,10 @@
   @include title;
 }
 
+.figure-index1-img {
+  width: min-content !important;
+}
+
 .index1-img {
   max-width: 30vw;
 
