@@ -5,9 +5,12 @@ My project for Coderhouse's JavaScript course.
 
 GNU Affero General Public License v3.0
 
-Royalty-free images acknowledgments:
+# Royalty-free images acknowledgments:
 
 Nahima Aparicio (Unsplash): https://unsplash.com/es/fotos/LKfdNPHiFro
+
 Mike Kenneally (Unsplash): https://unsplash.com/es/fotos/TD4DBagg2wE
+
 StockSnap (Pixabay): https://pixabay.com/photos/cup-mug-steaming-smoke-coffee-tea-2619216/
+
 Pexels (Pixabay): https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/
