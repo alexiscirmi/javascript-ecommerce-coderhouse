@@ -1,5 +1,5 @@
 .coworking__body__navbar-main-bg {
-  background-image: url(../img/coworking/coworking-background.jpg);
+  background-image: url(../img/coworking/coworking-background.jpg), url(../img/coworking/coworking-background-low.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,7 +22,7 @@
 }
 
 .coworking__body__section {
-  height: 100vh;
+  min-height: 100vh;
   @include title;
 
   & * {
