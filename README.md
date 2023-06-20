@@ -15,4 +15,20 @@ Mike Kenneally (Unsplash): https://unsplash.com/es/fotos/TD4DBagg2wE
 
 StockSnap (Pixabay): https://pixabay.com/photos/cup-mug-steaming-smoke-coffee-tea-2619216/
 
-Pexels (Pixabay): https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/
+Jéssica Silveira (Unsplash): https://unsplash.com/es/fotos/SZUDyEMBaV8
+
+Taisiia Shestopal (Unsplash): https://unsplash.com/es/fotos/xO9NotFY4mU
+
+Anubhav Arora (Unsplash): https://unsplash.com/es/fotos/RFLDagtOsMM
+
+Cesar Carlevarino Aragon (Unsplash): https://unsplash.com/es/fotos/NWpsGgYHGng
+
+MikeGz (Pexels): https://www.pexels.com/es-es/foto/comida-plato-sandwich-brindis-14941252/
+
+Jordane Mathieu (Unsplash): https://unsplash.com/es/fotos/13GNZD_JuZM
+
+Kofi Okyere (Unsplash): https://unsplash.com/es/fotos/xx1USWIvIFc
+
+1195798 (Pixabay): https://pixabay.com/photos/cake-cakes-cream-cake-cream-yummy-1227842/
+
+Ira Ushak (Unsplash): https://unsplash.com/es/fotos/taiSXoS_wRM
