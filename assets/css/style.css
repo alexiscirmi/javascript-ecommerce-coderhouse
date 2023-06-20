@@ -203,7 +203,7 @@ footer {
 
 .index__body__main__title {
   position: sticky;
-  top: 55%;
+  top: 58%;
   display: flex;
   flex-direction: column;
   margin-left: 5%;
@@ -212,7 +212,7 @@ footer {
 }
 .index__body__main__title * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 @media (max-width: 767px) {
   .index__body__main__title h1 {
@@ -252,12 +252,12 @@ footer {
 }
 .index__body__section__div *, .coworking__body__section__div *, .coworking__body__section--last * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 
 .index__body__section__text * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 
 .figure-index1-img {
@@ -281,7 +281,7 @@ footer {
 }
 
 .coworking__body__main {
-  height: 85vh;
+  height: 90vh;
 }
 
 .coworking__body__main__title {
@@ -292,7 +292,7 @@ footer {
 }
 .coworking__body__main__title * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 .coworking__body__main__title * {
   margin: auto 4%;
@@ -303,7 +303,7 @@ footer {
 }
 .coworking__body__section *, .coworking__body__section--last * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 .coworking__body__section *, .coworking__body__section--last * {
   margin: auto;
@@ -332,7 +332,7 @@ footer {
 }
 .tienda__body__main__title * {
   color: #ede0d4;
-  -webkit-text-stroke: 0.6px #e6ccb2;
+  -webkit-text-stroke: 0.1px #7f5539;
 }
 
 /*# sourceMappingURL=style.css.map */

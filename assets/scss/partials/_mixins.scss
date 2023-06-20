@@ -5,7 +5,7 @@
 @mixin title {
   & * {
     color: $color0;
-    -webkit-text-stroke: $white-stroke;
+    -webkit-text-stroke: $text-stroke;
   }
 }
 
