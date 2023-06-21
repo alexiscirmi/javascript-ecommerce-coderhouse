@@ -358,4 +358,11 @@ footer {
   transition: all 0.25s;
 }
 
+#todo,
+#infusiones,
+#snacks,
+#pasteleria {
+  width: 100px;
+}
+
 /*# sourceMappingURL=style.css.map */
