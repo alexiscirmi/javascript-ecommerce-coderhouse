@@ -54,6 +54,20 @@
   }
 }
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 1500ms;
+}
+
 @media (min-width: 768px) {
   .hover-underline-animation {
     display: inline-block;

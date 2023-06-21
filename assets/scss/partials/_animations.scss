@@ -55,6 +55,26 @@
   }
 }
 
+// Custom animations
+
+.fade-up {
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10%)
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  & {
+    animation: fadeUp 1500ms;
+  }
+}
+
 // Hover underline animation
 
 .hover-underline-animation {
