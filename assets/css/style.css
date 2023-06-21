@@ -117,6 +117,10 @@ iframe {
   max-width: 100%;
 }
 
+li {
+  list-style: none;
+}
+
 .navbar-custom {
   background-color: rgba(237, 224, 212, 0.95);
   padding: 0;

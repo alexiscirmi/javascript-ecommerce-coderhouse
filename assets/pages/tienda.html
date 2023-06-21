@@ -57,7 +57,13 @@
       <div class="tienda__body__main__title balance">
         <h2 class="pb-3 text-center text-md-start">Tienda de Café Palermo</h2>
         <h3 class="fs-4 text-center text-md-start">Seleccioná los productos que quieras agregar a tu carro</h3>
-        <h4 class="fs-5 pt-2">Filtros:</h4>
+        <h4 class="fs-5 pt-2 d-inline">Filtros:</h4>
+        <form class="d-inline" action="">
+          <label class="d-inline" for="todo"><input type="radio" name="filtro" id="todo" checked> Todo </label>
+          <label class="d-inline" for="infusiones"><input type="radio" name="filtro" id="infusiones"> Infusiones </label>
+          <label class="d-inline" for="snacks"><input type="radio" name="filtro" id="snacks"> Snacks </label>
+          <label class="d-inline" for="pasteleria"><input type="radio" name="filtro" id="pasteleria"> Pastelería </label>
+        </form>
       </div>
 
       <!-- Products cards -->
@@ -66,7 +72,7 @@
 
         <!-- Card 1 -->
 
-        <div class="col">
+        <div class="col infusiones">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/cafe.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -79,7 +85,7 @@
 
         <!-- Card 2 -->
 
-        <div class="col">
+        <div class="col infusiones">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/latte.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -92,7 +98,7 @@
 
         <!-- Card 3 -->
 
-        <div class="col">
+        <div class="col infusiones">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/capuccino.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -105,7 +111,7 @@
 
         <!-- Card 4 -->
 
-        <div class="col">
+        <div class="col snacks">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/medialuna.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -118,7 +124,7 @@
 
         <!-- Card 5 -->
 
-        <div class="col">
+        <div class="col snacks">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/tostado.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -131,7 +137,7 @@
 
         <!-- Card 6 -->
 
-        <div class="col">
+        <div class="col snacks">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/alfajor.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -144,7 +150,7 @@
 
         <!-- Card 7 -->
 
-        <div class="col">
+        <div class="col pasteleria">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/cheesecake.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -157,7 +163,7 @@
 
         <!-- Card 8 -->
 
-        <div class="col">
+        <div class="col pasteleria">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/selva-negra.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -170,7 +176,7 @@
 
         <!-- Card 9 -->
 
-        <div class="col">
+        <div class="col pasteleria">
           <div class="card mb-5 mx-auto" style="width: 18rem;">
             <img src="../img/tienda/lemon-pie.webp" class="card-img-top" alt="...">
             <div class="card-body">
@@ -241,7 +247,7 @@
 
   <!-- JS file -->
 
-  <script src="./assets/js/index.js"></script>
+  <script src="../js/index.js"></script>
 
 </body>
 
