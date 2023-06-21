@@ -1,15 +1,25 @@
 .tienda__body__navbar-main-bg {
-  background-color: #9c6644;
-  opacity: 1;
-  background-image: radial-gradient(#ddb892 1.05px, #9c6644 1.05px);
-  background-size: 21px 21px;
-}
-
-.tienda__body__main {
-  padding-top: 2rem;
+  background-color: #3e291b;
+  background-size: 20px 20px;
+  background-image: repeating-linear-gradient(to right, #7f5539, #7f5539 1px, #3e291b 1px, #3e291b);
 }
 
 .tienda__body__main__title {
+  background-color: rgb(0, 0, 0, 0.5);
   @include title;
-  margin-left: 5%;
+  padding: 2rem 0;
+  padding-left: 5%;
+  padding-right: 5%
+}
+
+.agregar-button {
+  & {
+    transform: scale(1);
+    transition: all 0.25s;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.25s;
+  }
 }
