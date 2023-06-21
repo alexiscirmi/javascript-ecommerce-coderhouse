@@ -7,9 +7,7 @@
 .tienda__body__main__title {
   background-color: rgb(0, 0, 0, 0.5);
   @include title;
-  padding: 2rem 0;
-  padding-left: 5%;
-  padding-right: 5%
+  padding: 2rem 5%;
 }
 
 .agregar-button {

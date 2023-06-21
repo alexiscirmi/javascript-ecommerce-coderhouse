@@ -324,9 +324,7 @@ footer {
 
 .tienda__body__main__title {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 2rem 0;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 2rem 5%;
 }
 .tienda__body__main__title * {
   color: #ede0d4;
