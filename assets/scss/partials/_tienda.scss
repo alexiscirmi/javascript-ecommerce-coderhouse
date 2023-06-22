@@ -11,6 +11,8 @@
 }
 
 .button-scale {
+  width: 100px;
+
   & {
     transform: scale(1);
     transition: all 0.25s;
@@ -20,11 +22,4 @@
     transform: scale(1.05);
     transition: all 0.25s;
   }
-}
-
-#todo,
-#infusiones,
-#snacks,
-#pasteleria {
-  width: 100px;
 }
