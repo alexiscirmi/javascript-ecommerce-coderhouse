@@ -131,8 +131,8 @@ iframe {
   max-width: 100%;
 }
 
-li {
-  list-style: none;
+input[type=radio] {
+  display: none;
 }
 
 .navbar-custom {
@@ -349,12 +349,12 @@ footer {
   -webkit-text-stroke: 0.1px #7f5539;
 }
 
-.agregar-button {
+.button-scale {
   transform: scale(1);
   transition: all 0.25s;
 }
-.agregar-button:hover {
-  transform: scale(1.1);
+.button-scale:hover {
+  transform: scale(1.05);
   transition: all 0.25s;
 }
 

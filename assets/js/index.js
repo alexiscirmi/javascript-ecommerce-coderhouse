@@ -1,28 +1,43 @@
-const todoSelected = () => {
-  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'block');
-  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'block');
-  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'block');
-};
+// Event listeners para que, al hacer clic en algún botón del filtro, aparezcan los elementos correspondientes con sus respectivas animaciones.
 
-const infusionesSelected = () => {
-  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'block');
-  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'none');
-  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
-};
-
-const snacksSelected = () => {
-  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
-  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'block');
-  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
-};
-
-const pasteleriaSelected = () => {
+document.querySelector("#todo").addEventListener("click", () => {
   document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
   document.querySelectorAll(".snacks").forEach(item => item.style.display = 'none');
-  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'block');
-};
+  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
+  setTimeout(() => {
+    document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'block');
+  }, 1);
+  setTimeout(() => {
+    document.querySelectorAll(".snacks").forEach(item => item.style.display = 'block');
+  }, 1);
+  setTimeout(() => {
+    document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'block');
+  }, 1);
+});
 
-document.querySelector("#todo").addEventListener("click", todoSelected);
-document.querySelector("#infusiones").addEventListener("click", infusionesSelected);
-document.querySelector("#snacks").addEventListener("click", snacksSelected);
-document.querySelector("#pasteleria").addEventListener("click", pasteleriaSelected);
+document.querySelector("#infusiones").addEventListener("click", () => {
+  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
+  setTimeout(() => {
+    document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'block');
+  }, 1);
+  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'none');
+  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
+});
+
+document.querySelector("#snacks").addEventListener("click", () => {
+  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
+  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'none');
+  setTimeout(() => {
+    document.querySelectorAll(".snacks").forEach(item => item.style.display = 'block');
+  }, 1);
+  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
+});
+
+document.querySelector("#pasteleria").addEventListener("click", () => {
+  document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
+  document.querySelectorAll(".snacks").forEach(item => item.style.display = 'none');
+  document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'none');
+  setTimeout(() => {
+    document.querySelectorAll(".pasteleria").forEach(item => item.style.display = 'block');
+  }, 1);
+});
