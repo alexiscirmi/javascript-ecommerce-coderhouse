@@ -7,12 +7,12 @@
 }
 
 .index__body__main {
-  height: 100vh;
+  height: 105vh;
 }
 
 .index__body__main__title {
   position: sticky;
-  top: 58%;
+  top: 65%;
   @include title;
   display: flex;
   flex-direction: column;
