@@ -176,6 +176,12 @@ input[type=radio] {
   }
 }
 
+.dropdown-item-custom,
+.dropdown-item-custom:hover,
+.dropdown-menu-custom {
+  background-color: #ede0d4;
+}
+
 /* "Up" button Properties */
 .up-floating-icon {
   display: flex;
