@@ -23,3 +23,9 @@
     transition: all 0.25s;
   }
 }
+
+.btn-custom,
+.btn-custom:hover {
+  color: $color0;
+  background-color: $color5;
+}

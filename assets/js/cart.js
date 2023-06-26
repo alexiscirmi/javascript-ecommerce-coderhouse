@@ -1,6 +1,6 @@
 // Defining variables
 
-let cart = document.querySelector('#cart');
+let cartElement = document.querySelector('#cartIcon');
 let total = 0;
 let id = 0;
 

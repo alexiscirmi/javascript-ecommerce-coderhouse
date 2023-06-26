@@ -368,4 +368,10 @@ footer {
   transition: all 0.25s;
 }
 
+.btn-custom,
+.btn-custom:hover {
+  color: #ede0d4;
+  background-color: #7f5539;
+}
+
 /*# sourceMappingURL=style.css.map */
