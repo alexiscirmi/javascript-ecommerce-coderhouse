@@ -1,34 +1,12 @@
 // Defining variables
 
-let cartElement = document.querySelector('#cartIcon');
+let cartElement = document.querySelector('#cart-icon');
 let total = 0;
 let id = 0;
 
 // Defining array with empty shopping cart
 
 let cartArray = [];
-
-// Defining class & objects
-
-class Product {
-  constructor(id, amount, type, description, price) {
-    this.id = id;
-    this.amount = amount;
-    this.type = type;
-    this.description = description;
-    this.price = price;
-  }
-};
-
-const cafe = new Product(0, 0, infusiones, "Café", 1.50);
-const latte = new Product(0, 0, infusiones, "Latte", 1.25);
-const capuccino = new Product(0, 0, infusiones, "Capuccino", 1.75);
-const medialuna = new Product(0, 0, snacks, "Medialuna", 1.00);
-const tostado = new Product(0, 0, snacks, "Tostado de Jamón y Queso", 1.75);
-const alfajor = new Product(0, 0, snacks, "Alfajor artesanal", 0.75);
-const cheesecake = new Product(0, 0, pasteleria, "Porción de Cheesecake", 3.25);
-const selvaNegra = new Product(0, 0, pasteleria, "Porción de Selva Negra", 3.00);
-const lemonPie = new Product(0, 0, pasteleria, "Porción de Lemon Pie", 2.75);
 
 // Definición de la función "agregar" que suma cantidades al objeto y lo agrega al cart en caso de que no haya sido previamente agregado
 

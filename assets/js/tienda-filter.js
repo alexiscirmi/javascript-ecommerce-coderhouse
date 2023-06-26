@@ -1,4 +1,4 @@
-// Event listeners para que, al hacer clic en algún botón del filtro, aparezcan los elementos correspondientes con sus respectivas animaciones.
+// Event listeners to make the appropiate elements to appear with their respetive animations, when clicking on a filter button
 
 document.querySelector("#todo").addEventListener("click", () => {
   document.querySelectorAll(".infusiones").forEach(item => item.style.display = 'none');
