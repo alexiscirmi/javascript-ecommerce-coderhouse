@@ -1,8 +1,8 @@
 // Defining variables
 
+let cart = document.querySelector('#cart');
 let total = 0;
 let id = 0;
-let cart = document.querySelector('#cart');
 
 // Defining array with empty shopping cart
 
@@ -20,15 +20,15 @@ class Product {
   }
 };
 
-const cafe = new Product(0, 0, "Café", 1.50);
-const latte = new Product(0, 0, "Latte", 1.25);
-const capuccino = new Product(0, 0, "Capuccino", 1.75);
-const medialuna = new Product(0, 0, "Medialuna", 1.00);
-const tostado = new Product(0, 0, "Tostado de Jamón y Queso", 1.75);
-const alfajor = new Product(0, 0, "Alfajor artesanal", 0.75);
-const cheesecake = new Product(0, 0, "Porción de Cheesecake", 3.25);
-const selvaNegra = new Product(0, 0, "Porción de Selva Negra", 3.25);
-const lemonPie = new Product(0, 0, "Porción de Lemon Pie", 2.75);
+const cafe = new Product(0, 0, infusiones, "Café", 1.50);
+const latte = new Product(0, 0, infusiones, "Latte", 1.25);
+const capuccino = new Product(0, 0, infusiones, "Capuccino", 1.75);
+const medialuna = new Product(0, 0, snacks, "Medialuna", 1.00);
+const tostado = new Product(0, 0, snacks, "Tostado de Jamón y Queso", 1.75);
+const alfajor = new Product(0, 0, snacks, "Alfajor artesanal", 0.75);
+const cheesecake = new Product(0, 0, pasteleria, "Porción de Cheesecake", 3.25);
+const selvaNegra = new Product(0, 0, pasteleria, "Porción de Selva Negra", 3.00);
+const lemonPie = new Product(0, 0, pasteleria, "Porción de Lemon Pie", 2.75);
 
 // Definición de la función "agregar" que suma cantidades al objeto y lo agrega al cart en caso de que no haya sido previamente agregado
 
