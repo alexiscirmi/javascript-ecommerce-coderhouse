@@ -3,7 +3,7 @@
 let container = document.querySelector('#cards-container');
 let cardList = [];
 
-// Defining class & objects
+// Defining class & objects. Pushing objects to "cardList".
 
 class Product {
   constructor(id, amount, type, name, description, price) {
@@ -28,7 +28,7 @@ const lemonPie = new Product(0, 0, "pasteleria", "lemonPie", "Porción de Lemon 
 
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
 
-// Generating cards' HTML
+// Generating cards on HTML
 
 cardList.forEach(product => {
   let div = document.createElement("div");
@@ -38,10 +38,37 @@ cardList.forEach(product => {
                      <div class="card-body">
                       <h5 class="card-title">${product.description}</h5>
                       <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
-                      <div id="cafe-buttons">
+                      <div class="d-flex justify-content-around" id="${product.name}-buttons">
                         <div class="btn btn-custom button-scale" id="${product.name}-agregar-button">Agregar</div>
                       </div>
                     </div>
                   </div>`;
-  container.appendChild(div)
+  container.appendChild(div);
+
+  let agregarButton = document.querySelector(`#${product.name}-agregar-button`);
+  agregarButton.addEventListener("click", () => {
+    add(product);
+    if (product.amount > 0) {
+      // "Agregar" button disappears and "minus" and "plus" buttons appear alongside with the current product amount
+      agregarButton.className = "d-none";
+      let buttons = document.querySelector(`#${product.name}-buttons`);
+      buttons.innerHTML = `
+      <div class="btn btn-custom btn-minus-plus button-scale" id="id${product.id}-subtract-button">-</div>
+      <div class="fs-5 align-self-center" id="amount-${product.id}">${product.amount}</div>
+      <div class="btn btn-custom btn-minus-plus button-scale" id="id${product.id}-add-button">+</div>
+      `
+      // "Minus" button code
+      // let subtractButton = document.querySelector(`${product.id}-subtract-button`);
+      // subtractButton.addEventListener("click", () => {
+      //   subtract(product);
+      // })
+
+      // "Plus" button code
+      let addButton = document.querySelector(`#id${product.id}-add-button`);
+      addButton.addEventListener("click", () => {
+        add(product);
+        document.querySelector(`#amount-${product.id}`).innerText = `${product.amount}`;
+      });
+    };
+  });
 });
