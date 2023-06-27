@@ -30,7 +30,7 @@ cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, s
 
 // Generating cards on HTML
 
-cardList.forEach(product => {
+cardList.forEach((product, index) => {
   let div = document.createElement("div");
   div.className = `col ${product.type} fade-up`;
   div.innerHTML = `<div class="card mb-5 mx-auto" style="width: 18rem;">
@@ -38,49 +38,47 @@ cardList.forEach(product => {
                      <div class="card-body">
                       <h5 class="card-title">${product.description}</h5>
                       <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
-                      <div class="d-flex justify-content-around" id="${product.name}-buttons">
-                        <div class="btn btn-custom button-scale" id="${product.name}-agregar-button">Agregar</div>
-                        <div class="d-none btn btn-custom btn-minus-plus button-scale" id="id${product.id}-subtract-button">-</div>
-                        <div class="d-none fs-5 align-self-center" id="amount-${product.id}">${product.amount}</div>
-                        <div class="d-none btn btn-custom btn-minus-plus button-scale" id="id${product.id}-add-button">+</div>
+                      <div class="d-flex justify-content-around">
+                        <div class="btn btn-custom button-scale agregar-button">Agregar</div>
+                        <div class="d-none btn btn-custom btn-minus-plus button-scale subtract-button">-</div>
+                        <div class="d-none fs-5 align-self-center amount-display">${product.amount}</div>
+                        <div class="d-none btn btn-custom btn-minus-plus button-scale add-button">+</div>
                       </div>
                     </div>
                   </div>`;
   container.appendChild(div);
 
-  let agregarButton = document.querySelector(`#${product.name}-agregar-button`);
-  let subtractButton = document.querySelector(`#id${product.id}-subtract-button`);
-  let amountDisplay = document.querySelector(`#amount-${product.id}`);
-  let addButton = document.querySelector(`#id${product.id}-add-button`);
+  let agregarButton = div.querySelector(".agregar-button");
+  let subtractButton = div.querySelector(".subtract-button");
+  let amountDisplay = div.querySelector(".amount-display");
+  let addButton = div.querySelector(".add-button");
 
+  // "Agregar" button
   agregarButton.addEventListener("click", () => {
+    agregarButton.classList.add("d-none");
+    subtractButton.classList.remove("d-none");
+    amountDisplay.classList.remove("d-none");
+    addButton.classList.remove("d-none");
     add(product);
-    if (product.amount > 0) {
+    checkout();
+    amountDisplay.innerText = `${product.amount}`;
+  });
 
-      // "Agregar" button disappears and "minus" and "plus" buttons appear alongside with the current product amount
-      agregarButton.classList.add("d-none");
-      subtractButton.classList.remove("d-none");
-      amountDisplay.classList.remove("d-none");
-      addButton.classList.remove("d-none");
-      amountDisplay.innerText = `${product.amount}`;
+  // "Plus" button
+  addButton.addEventListener("click", () => {
+    add(product);
+    amountDisplay.innerText = `${product.amount}`;
+  });
 
-      // "Minus" button code
-      subtractButton.addEventListener("click", () => {
-        subtract(product);
-        amountDisplay.innerText = `${product.amount}`;
-        if (product.amount == 0) {
-          agregarButton.classList.remove("d-none");
-          subtractButton.classList.add("d-none");
-          amountDisplay.classList.add("d-none");
-          addButton.classList.add("d-none");
-        }
-      })
-
-      // "Plus" button code
-      addButton.addEventListener("click", () => {
-        add(product);
-        amountDisplay.innerText = `${product.amount}`;
-      });
+  // "Minus" button
+  subtractButton.addEventListener("click", () => {
+    subtract(product);
+    amountDisplay.innerText = `${product.amount}`;
+    if (product.amount == 0) {
+      subtractButton.classList.add("d-none");
+      amountDisplay.classList.add("d-none");
+      addButton.classList.add("d-none");
+      agregarButton.classList.remove("d-none");
     };
   });
 });
