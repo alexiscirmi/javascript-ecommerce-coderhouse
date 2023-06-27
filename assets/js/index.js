@@ -5,7 +5,7 @@ let id = 0;
 
 // Defining array with empty shopping cart
 
-const cartArray = [];
+let cartArray = [];
 
 // Defining "add" function que suma cantidades al objeto y lo agrega al cart en caso de que no haya sido previamente agregado
 
@@ -17,29 +17,20 @@ const add = (product) => {
   }
 };
 
+// Defining "subtract" function
+
+const subtract = (product) => {
+  if (cartArray.includes(product) && product.amount > 0) {
+    product.amount -= 1;
+    cartArray = cartArray.filter((product) => product.amount != 0);
+  }
+};
+
 // Definición de la función "updateCart" que quitará del carrito los objetos de cantidad cero
 
-const updateCart = () => {
-  cart = cartArray.filter((product) => product.amount != 0);
-};
-
-// Definición de la función "subtract"
-
-const subtract = () => {
-  if (cartArray.length == 0) {
-    // alert("El cart está vacío");
-  }
-
-  while (cartArray.length > 0 && opcionMenuQuitar !== 0) {
-
-    updateCart();
-
-  }
-
-  if (cartArray.length == 0) {
-    // alert("El cart está vacío");
-  }
-};
+// const updateCart = () => {
+//   cartArray = cartArray.filter((product) => product.amount != 0);
+// };
 
 // Definición de la función "checkout"
 

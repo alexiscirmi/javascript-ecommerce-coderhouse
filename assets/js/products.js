@@ -40,34 +40,46 @@ cardList.forEach(product => {
                       <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
                       <div class="d-flex justify-content-around" id="${product.name}-buttons">
                         <div class="btn btn-custom button-scale" id="${product.name}-agregar-button">Agregar</div>
+                        <div class="d-none btn btn-custom btn-minus-plus button-scale" id="id${product.id}-subtract-button">-</div>
+                        <div class="d-none fs-5 align-self-center" id="amount-${product.id}">${product.amount}</div>
+                        <div class="d-none btn btn-custom btn-minus-plus button-scale" id="id${product.id}-add-button">+</div>
                       </div>
                     </div>
                   </div>`;
   container.appendChild(div);
 
   let agregarButton = document.querySelector(`#${product.name}-agregar-button`);
+  let subtractButton = document.querySelector(`#id${product.id}-subtract-button`);
+  let amountDisplay = document.querySelector(`#amount-${product.id}`);
+  let addButton = document.querySelector(`#id${product.id}-add-button`);
+
   agregarButton.addEventListener("click", () => {
     add(product);
     if (product.amount > 0) {
+
       // "Agregar" button disappears and "minus" and "plus" buttons appear alongside with the current product amount
-      agregarButton.className = "d-none";
-      let buttons = document.querySelector(`#${product.name}-buttons`);
-      buttons.innerHTML = `
-      <div class="btn btn-custom btn-minus-plus button-scale" id="id${product.id}-subtract-button">-</div>
-      <div class="fs-5 align-self-center" id="amount-${product.id}">${product.amount}</div>
-      <div class="btn btn-custom btn-minus-plus button-scale" id="id${product.id}-add-button">+</div>
-      `
+      agregarButton.classList.add("d-none");
+      subtractButton.classList.remove("d-none");
+      amountDisplay.classList.remove("d-none");
+      addButton.classList.remove("d-none");
+      amountDisplay.innerText = `${product.amount}`;
+
       // "Minus" button code
-      // let subtractButton = document.querySelector(`${product.id}-subtract-button`);
-      // subtractButton.addEventListener("click", () => {
-      //   subtract(product);
-      // })
+      subtractButton.addEventListener("click", () => {
+        subtract(product);
+        amountDisplay.innerText = `${product.amount}`;
+        if (product.amount == 0) {
+          agregarButton.classList.remove("d-none");
+          subtractButton.classList.add("d-none");
+          amountDisplay.classList.add("d-none");
+          addButton.classList.add("d-none");
+        }
+      })
 
       // "Plus" button code
-      let addButton = document.querySelector(`#id${product.id}-add-button`);
       addButton.addEventListener("click", () => {
         add(product);
-        document.querySelector(`#amount-${product.id}`).innerText = `${product.amount}`;
+        amountDisplay.innerText = `${product.amount}`;
       });
     };
   });
