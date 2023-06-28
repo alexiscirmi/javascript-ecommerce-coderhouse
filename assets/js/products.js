@@ -28,7 +28,7 @@ cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, s
 
 // Defining total variable & array with shopping cart
 
-let total = parseInt(localStorage.getItem("total")) || 0;
+let total = parseFloat(localStorage.getItem("total")) || 0;
 let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Defining "cartFiler" function to delete objects with .amount == 0
@@ -55,7 +55,7 @@ const add = (product) => {
   }
   checkout();
   localStorage.setItem("cart", JSON.stringify(cartArray));
-  localStorage.setItem("total", total);
+  localStorage.setItem("total", total.toFixed(2));
 };
 
 // Defining "subtract" function
@@ -67,7 +67,7 @@ const subtract = (product) => {
     checkout();
   };
   localStorage.setItem("cart", JSON.stringify(cartArray));
-  localStorage.setItem("total", total);
+  localStorage.setItem("total", total.toFixed(2));
 };
 
 // Generating cards on HTML
