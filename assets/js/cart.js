@@ -1,3 +1,3 @@
 // Defining variables
 
-const cartElement = document.querySelector('#cart-icon');
+const cartIcon = document.querySelector('#cart-icon');
