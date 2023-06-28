@@ -1,7 +1,7 @@
 // Defining product cards container & array
 
 let container = document.querySelector('#cards-container');
-let cardList = [];
+let cardList = JSON.parse(localStorage.getItem("cardList")) || [];
 
 // Defining class & objects. Pushing objects to "cardList".
 
@@ -16,17 +16,20 @@ class Product {
   };
 };
 
-const cafe = new Product(id += 1, 0, "infusiones", "cafe", "Café", 1.50);
-const latte = new Product(id += 1, 0, "infusiones", "latte", "Latte", 1.25);
-const capuccino = new Product(id += 1, 0, "infusiones", "capuccino", "Capuccino", 1.75);
-const medialuna = new Product(id += 1, 0, "snacks", "medialuna", "Medialuna", 1.00);
-const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado de Jamón y Queso", 1.75);
-const alfajor = new Product(id += 1, 0, "snacks", "alfajor", "Alfajor artesanal", 0.75);
-const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción de Cheesecake", 3.25);
-const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción de Selva Negra", 3.00);
-const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción de Lemon Pie", 2.75);
+if (cardList.length == 0) {
+  const cafe = new Product(id += 1, 0, "infusiones", "cafe", "Café", 1.50);
+  const latte = new Product(id += 1, 0, "infusiones", "latte", "Latte", 1.25);
+  const capuccino = new Product(id += 1, 0, "infusiones", "capuccino", "Capuccino", 1.75);
+  const medialuna = new Product(id += 1, 0, "snacks", "medialuna", "Medialuna", 1.00);
+  const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado de Jamón y Queso", 1.75);
+  const alfajor = new Product(id += 1, 0, "snacks", "alfajor", "Alfajor artesanal", 0.75);
+  const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción de Cheesecake", 3.25);
+  const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción de Selva Negra", 3.00);
+  const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción de Lemon Pie", 2.75);
 
-cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
+  cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
+  localStorage.setItem("cardList", JSON.stringify(cardList));
+};
 
 // Generating cards on HTML
 
