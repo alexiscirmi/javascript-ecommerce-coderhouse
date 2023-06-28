@@ -3,9 +3,9 @@
 let total = 0;
 let id = 0;
 
-// Defining array with empty shopping cart
+// Defining array with shopping cart
 
-let cartArray = [];
+let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Defining "cartFiler" function to delete objects with .amount == 0
 
@@ -23,11 +23,11 @@ const checkout = () => {
 
 const add = (product) => {
   product.amount += 1;
-  checkout()
+  checkout();
   if (!cartArray.includes(product)) {
-    product.id = id += 1;
     cartArray.push(product);
-  }
+  };
+  localStorage.setItem("cart", JSON.stringify(cartArray));
 };
 
 // Defining "subtract" function
@@ -37,5 +37,6 @@ const subtract = (product) => {
     product.amount -= 1;
     cartFilter();
     checkout();
-  }
+  };
+  localStorage.setItem("cart", JSON.stringify(cartArray));
 };
