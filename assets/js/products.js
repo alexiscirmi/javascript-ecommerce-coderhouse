@@ -1,51 +1,6 @@
-// Defining variables & array with shopping cart
+// Defining class & objects. Pushing objects to "cardList" array
 
-let total = parseInt(localStorage.getItem("total")) || 0;
 let id = 0;
-let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Defining "cartFiler" function to delete objects with .amount == 0
-
-const cartFilter = () => {
-  cartArray = cartArray.filter((product) => product.amount > 0);
-};
-
-// Defining "checkout" function with total
-
-const checkout = () => {
-  total = cartArray.reduce((previousValue, currentValue) => previousValue + currentValue.amount * currentValue.price, 0);
-};
-
-// Defining "add" function que suma cantidades al objeto y lo agrega al cart en caso de que no haya sido previamente agregado
-
-const add = (product) => {
-  if (!cartArray.includes(product)) {
-    cartArray.push(product);
-  };
-  product.amount += 1;
-  checkout();
-  localStorage.setItem("cart", JSON.stringify(cartArray));
-  localStorage.setItem("total", total);
-};
-
-// Defining "subtract" function
-
-const subtract = (product) => {
-  if (product.amount > 0) {
-    product.amount -= 1;
-    cartFilter();
-    checkout();
-  };
-  localStorage.setItem("cart", JSON.stringify(cartArray));
-  localStorage.setItem("total", total);
-};
-
-// Defining product cards container & array
-
-let container = document.querySelector('#cards-container');
-let cardList = [];
-
-// Defining class & objects. Pushing objects to "cardList".
 
 class Product {
   constructor(id, amount, type, name, description, price) {
@@ -68,10 +23,60 @@ const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción
 const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción de Selva Negra", 3.00);
 const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción de Lemon Pie", 2.75);
 
+let cardList = [];
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
 
+// Defining total variable & array with shopping cart
+
+let total = parseInt(localStorage.getItem("total")) || 0;
+let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
+
+// Defining "cartFiler" function to delete objects with .amount == 0
+
+const cartFilter = () => {
+  cartArray = cartArray.filter((product) => product.amount > 0);
+};
+
+// Defining "checkout" function with total
+
+const checkout = () => {
+  total = cartArray.reduce((previousValue, currentValue) => previousValue + currentValue.amount * currentValue.price, 0);
+};
+
+// Defining "add" function. It checks whether an object inside "cartArray" has the same "id". In case it does, it will add 1 to amount. In case it doesn't, it will add 1 to amount and push the new object to "cartArray".
+
+const add = (product) => {
+  let object = cartArray.find(object => object.id === product.id);
+  if (object) {
+    object.amount += 1;
+  } else {
+    product.amount += 1;
+    cartArray.push(product);
+  }
+  checkout();
+  localStorage.setItem("cart", JSON.stringify(cartArray));
+  localStorage.setItem("total", total);
+};
+
+// Defining "subtract" function
+
+const subtract = (product) => {
+  if (product.amount > 0) {
+    product.amount -= 1;
+    cartFilter();
+    checkout();
+  };
+  localStorage.setItem("cart", JSON.stringify(cartArray));
+  localStorage.setItem("total", total);
+};
+
 // Generating cards on HTML
+let container = document.querySelector('#cards-container');
 cardList.forEach(product => {
+
+  // The next line will force "product" to take the place of any other object with the same "id" in "cartArray". This is useful when reloading the page, as localStorage won't treat old objects generated with a class as it treats the new ones.
+  product = cartArray.find(object => object.id === product.id) || product;
+
   let div = document.createElement("div");
   div.className = `col ${product.type} fade-up`;
   if (cartArray.includes(product)) {
