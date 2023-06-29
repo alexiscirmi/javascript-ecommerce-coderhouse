@@ -4,7 +4,7 @@
   @keyframes fadeIn-Up {
     0% {
       opacity: 0;
-      transform: translate3D(0, 15%, 0)
+      transform: translate3D(0, 20%, 0)
     }
 
     100% {
@@ -35,7 +35,7 @@
     @keyframes fadeIn-Index-Title {
       0% {
         opacity: 0;
-        transform: translate3D(0, 25%, 0);
+        transform: translate3D(0, 20%, 0);
       }
 
       100% {
@@ -67,7 +67,7 @@
     @keyframes fadeIn-Right {
       0% {
         opacity: 0;
-        transform: translate3D(0, 25%, 0);
+        transform: translate3D(0, 20%, 0);
       }
 
       100% {
@@ -99,7 +99,7 @@
     @keyframes fadeIn-Left {
       0% {
         opacity: 0;
-        transform: translate3D(0, 25%, 0);
+        transform: translate3D(0, 20%, 0);
       }
 
       100% {

@@ -8,7 +8,7 @@ const fadeInUp = document.querySelectorAll('.fadein-js-up');
 // Create an Intersection Observer instance
 const observerLeft = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+    if (entry.isIntersecting || window.scrollY >= entry.target.offsetTop) {
       // Element is visible
       setTimeout(() => {
         entry.target.style.visibility = 'visible';
@@ -24,7 +24,7 @@ const observerLeft = new IntersectionObserver((entries) => {
 
 const observerRight = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+    if (entry.isIntersecting || window.scrollY >= entry.target.offsetTop) {
       // Element is visible
       setTimeout(() => {
         entry.target.style.visibility = 'visible';
