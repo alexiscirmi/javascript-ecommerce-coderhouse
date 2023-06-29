@@ -78,7 +78,7 @@ cardList.forEach(product => {
   product = cartArray.find(object => object.id === product.id) || product;
 
   let div = document.createElement("div");
-  div.className = `col ${product.type} fade-up`;
+  div.className = `col ${product.type} fadein-up`;
   if (cartArray.includes(product)) {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">

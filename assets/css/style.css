@@ -38,7 +38,7 @@
   }
 }
 
-@keyframes fadeUp {
+@keyframes fadeIn-Up {
   0% {
     opacity: 0;
     transform: translateY(15%);
@@ -48,11 +48,11 @@
     transform: translateY(0);
   }
 }
-.fade-up {
-  animation: fadeUp 1500ms;
+.fadein-up {
+  animation: fadeIn-Up 1500ms;
 }
 
-@keyframes fadeLeftToCenter {
+@keyframes fadeIn-Index-Title {
   0% {
     opacity: 0;
     transform: translateX(-3%);
@@ -63,7 +63,7 @@
   }
 }
 @media (max-width: 767px) {
-  @keyframes fadeLeftToCenter {
+  @keyframes fadeIn-Index-Title {
     0% {
       opacity: 0;
       transform: translateY(25%);
@@ -74,8 +74,60 @@
     }
   }
 }
-.fade-leftToCenter {
-  animation: fadeLeftToCenter 1500ms;
+.fadein-index-title {
+  animation: fadeIn-Index-Title 1500ms;
+}
+
+@keyframes fadeIn-Right {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 767px) {
+  @keyframes fadeIn-Right {
+    0% {
+      opacity: 0;
+      transform: translateY(25%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.fadein-right {
+  animation: fadeIn-Right 1500ms;
+}
+
+@keyframes fadeIn-Left {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 767px) {
+  @keyframes fadeIn-Left {
+    0% {
+      opacity: 0;
+      transform: translateY(25%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.fadein-left {
+  animation: fadeIn-Left 1500ms;
 }
 
 @media (min-width: 768px) {
