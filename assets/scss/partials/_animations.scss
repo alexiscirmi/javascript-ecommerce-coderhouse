@@ -1,55 +1,15 @@
-// Animate On Scroll - Custom animations
-
-[data-aos="fade-in-index-section-left"] {
-  opacity: 0;
-  transform: translate(0%, 20%);
-  transition-property: transform, opacity;
-
-  &.aos-animate {
-    opacity: 1;
-    transform: translate(0);
-  }
-
-  @media (min-width: 768px) {
-    transform: translate(-10%, 0%);
-
-    &.aos-animate {
-      transform: translateX(0);
-    }
-  }
-}
-
-[data-aos="fade-in-index-section-right"] {
-  opacity: 0;
-  transform: translate(0%, 20%);
-  transition-property: transform, opacity;
-
-  &.aos-animate {
-    opacity: 1;
-    transform: translate(0);
-  }
-
-  @media (min-width: 768px) {
-    transform: translate(10%, 0%);
-
-    &.aos-animate {
-      transform: translate(0);
-    }
-  }
-}
-
 // Custom animations
 
 .fadein-up {
   @keyframes fadeIn-Up {
     0% {
       opacity: 0;
-      transform: translateY(15%)
+      transform: translate3D(0, 15%, 0)
     }
 
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3D(0);
     }
   }
 
@@ -62,12 +22,12 @@
   @keyframes fadeIn-Index-Title {
     0% {
       opacity: 0;
-      transform: translateX(-3%);
+      transform: translate3D(-3%, 0, 0);
     }
 
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translate3D(0);
     }
   }
 
@@ -75,12 +35,12 @@
     @keyframes fadeIn-Index-Title {
       0% {
         opacity: 0;
-        transform: translateY(25%);
+        transform: translate3D(0, 25%, 0);
       }
 
       100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3D(0);
       }
     }
   }
@@ -94,12 +54,12 @@
   @keyframes fadeIn-Right {
     0% {
       opacity: 0;
-      transform: translateX(-10%);
+      transform: translate3D(-10%, 0, 0);
     }
 
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translate3D(0);
     }
   }
 
@@ -107,12 +67,12 @@
     @keyframes fadeIn-Right {
       0% {
         opacity: 0;
-        transform: translateY(25%);
+        transform: translate3D(0, 25%, 0);
       }
 
       100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3D(0);
       }
     }
   }
@@ -126,12 +86,12 @@
   @keyframes fadeIn-Left {
     0% {
       opacity: 0;
-      transform: translateX(10%);
+      transform: translate3D(10%, 0, 0);
     }
 
     100% {
       opacity: 1;
-      transform: translateX(0);
+      transform: translate3D(0);
     }
   }
 
@@ -139,12 +99,12 @@
     @keyframes fadeIn-Left {
       0% {
         opacity: 0;
-        transform: translateY(25%);
+        transform: translate3D(0, 25%, 0);
       }
 
       100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3D(0);
       }
     }
   }
