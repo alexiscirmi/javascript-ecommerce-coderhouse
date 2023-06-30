@@ -25,15 +25,10 @@ cartArray.forEach(product => {
 
   // "Minus" button
   cartSubtractButton.addEventListener("click", () => {
-    if (product.amount > 1) {
-      subtract(product);
-      document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-        element.innerText = `${product.amount}`;
-      });
-    } else {
-      li.remove();
-    }
-
+    subtract(product);
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
   });
 
   // "Plus" button
