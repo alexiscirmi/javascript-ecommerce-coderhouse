@@ -17,11 +17,11 @@ const cafe = new Product(id += 1, 0, "infusiones", "cafe", "Café", 1.50);
 const latte = new Product(id += 1, 0, "infusiones", "latte", "Latte", 1.25);
 const capuccino = new Product(id += 1, 0, "infusiones", "capuccino", "Capuccino", 1.75);
 const medialuna = new Product(id += 1, 0, "snacks", "medialuna", "Medialuna", 1.00);
-const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado de Jamón y Queso", 1.75);
+const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado Jamón y Queso", 1.75);
 const alfajor = new Product(id += 1, 0, "snacks", "alfajor", "Alfajor artesanal", 0.75);
-const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción de Cheesecake", 3.25);
-const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción de Selva Negra", 3.00);
-const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción de Lemon Pie", 2.75);
+const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción Cheesecake", 3.25);
+const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción Selva Negra", 3.00);
+const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción Lemon Pie", 2.75);
 
 let cardList = [];
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
@@ -78,15 +78,15 @@ cardList.forEach(product => {
   if (cartArray.includes(product)) {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="...">
+    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
           <div class="d-none btn btn-custom button-scale agregar-button">Agregar</div>
-          <div class="btn btn-custom btn-minus-plus button-scale subtract-button">-</div>
+          <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale subtract-button">
           <div class="fs-5 align-self-center amount-display">${product.amount}</div>
-          <div class="btn btn-custom btn-minus-plus button-scale add-button">+</div>
+          <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale add-button">
         </div>
       </div>
     </div>
@@ -94,15 +94,15 @@ cardList.forEach(product => {
   } else {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="...">
+    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
           <div class="btn btn-custom button-scale agregar-button">Agregar</div>
-          <div class="d-none btn btn-custom btn-minus-plus button-scale subtract-button">-</div>
+          <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale subtract-button">
           <div class="d-none fs-5 align-self-center amount-display">${product.amount}</div>
-          <div class="d-none btn btn-custom btn-minus-plus button-scale add-button">+</div>
+          <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale add-button">
         </div>
       </div>
     </div>

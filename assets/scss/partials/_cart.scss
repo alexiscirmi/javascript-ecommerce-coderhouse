@@ -3,3 +3,34 @@
 .dropdown-menu-custom {
   background-color: $color0;
 }
+
+#cart-icon {
+  width: 500px;
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  img {
+    width: 60px;
+  }
+
+}
+
+.cart-button {
+  width: 50px !important;
+  height: 40px;
+}
+
+.cart-span-description {
+  width: 120px;
+}
+
+.cart-span-amount {
+  width: 60px;
+}
+
+.cart-span-money {
+  width: 80px;
+}
