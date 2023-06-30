@@ -85,7 +85,7 @@ cardList.forEach(product => {
         <div class="d-flex justify-content-around">
           <div class="d-none btn btn-custom button-scale agregar-button">Agregar</div>
           <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale subtract-button">
-          <div class="fs-5 align-self-center amount-display">${product.amount}</div>
+          <div class="fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
           <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale add-button">
         </div>
       </div>
@@ -101,7 +101,7 @@ cardList.forEach(product => {
         <div class="d-flex justify-content-around">
           <div class="btn btn-custom button-scale agregar-button">Agregar</div>
           <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale subtract-button">
-          <div class="d-none fs-5 align-self-center amount-display">${product.amount}</div>
+          <div class="d-none fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
           <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale add-button">
         </div>
       </div>
@@ -112,7 +112,7 @@ cardList.forEach(product => {
 
   let agregarButton = div.querySelector(".agregar-button");
   let subtractButton = div.querySelector(".subtract-button");
-  let amountDisplay = div.querySelector(".amount-display");
+  let amountDisplay = div.querySelector(`.id${product.id}-amount-display`);
   let addButton = div.querySelector(".add-button");
 
   // "Agregar" button
@@ -122,24 +122,33 @@ cardList.forEach(product => {
     amountDisplay.classList.remove("d-none");
     addButton.classList.remove("d-none");
     add(product);
-    amountDisplay.innerText = `${product.amount}`;
-  });
-
-  // "Plus" button
-  addButton.addEventListener("click", () => {
-    add(product);
-    amountDisplay.innerText = `${product.amount}`;
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
+    // amountDisplay.innerText = `${product.amount}`;
   });
 
   // "Minus" button
   subtractButton.addEventListener("click", () => {
     subtract(product);
-    amountDisplay.innerText = `${product.amount}`;
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
+    // amountDisplay.innerText = `${product.amount}`;
     if (product.amount == 0) {
       subtractButton.classList.add("d-none");
       amountDisplay.classList.add("d-none");
       addButton.classList.add("d-none");
       agregarButton.classList.remove("d-none");
     };
+  });
+
+  // "Plus" button
+  addButton.addEventListener("click", () => {
+    add(product);
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
+    // amountDisplay.innerText = `${product.amount}`;
   });
 });
