@@ -10,10 +10,8 @@ const observerLeft = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting || window.scrollY >= entry.target.offsetTop) {
       // Element is visible
-      setTimeout(() => {
-        entry.target.style.visibility = 'visible';
-        entry.target.classList.add('fadein-left');
-      }, 1);
+      entry.target.style.visibility = 'visible';
+      entry.target.classList.add('fadein-left');
     } else {
       // Element is not visible
       entry.target.style.visibility = 'hidden';
@@ -26,10 +24,8 @@ const observerRight = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting || window.scrollY >= entry.target.offsetTop) {
       // Element is visible
-      setTimeout(() => {
-        entry.target.style.visibility = 'visible';
-        entry.target.classList.add('fadein-right');
-      }, 1);
+      entry.target.style.visibility = 'visible';
+      entry.target.classList.add('fadein-right');
     } else {
       // Element is not visible
       entry.target.style.visibility = 'hidden';
@@ -42,10 +38,8 @@ const observerUp = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting || window.scrollY >= entry.target.offsetTop) {
       // Element is visible
-      setTimeout(() => {
-        entry.target.style.visibility = 'visible';
-        entry.target.classList.add('fadein-up');
-      }, 1);
+      entry.target.style.visibility = 'visible';
+      entry.target.classList.add('fadein-up');
     } else {
       // Element is not visible
       entry.target.style.visibility = 'hidden';

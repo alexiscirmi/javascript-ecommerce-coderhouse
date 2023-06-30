@@ -1,7 +1,6 @@
 .navbar-custom {
   background-color: $color0-transparent;
   padding: 0;
-  font-family: 'Lato', sans-serif;
   font-size: 1.1rem;
   border-bottom: $black-border;
 }
@@ -15,9 +14,9 @@
 .navbar-brand-custom {
   display: flex;
   flex-direction: row;
-  font-family: 'Parisienne', cursive;
-  font-size: 2rem;
-  padding-bottom: 0;
+  font-family: cursive;
+  font-size: 1.9rem;
+  padding: auto;
 }
 
 .navbar-nav-custom {
