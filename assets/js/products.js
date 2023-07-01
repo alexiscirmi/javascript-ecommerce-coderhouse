@@ -68,8 +68,41 @@ const subtract = (product) => {
   localStorage.setItem("total", total.toFixed(2));
 };
 
+// Define cart "Minus" button handler function
+const cartSubtractButtonHandler = (product) => {
+  if (document.querySelector(`.id${product.id}-cart-subtract-button`)) {
+    document.querySelector(`.id${product.id}-cart-subtract-button`).addEventListener("click", () => {
+      subtract(product);
+      document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+        element.innerText = `${product.amount}`;
+      });
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+      if (product.amount == 0) {
+        document.querySelector(`.id${product.id}-li`).remove();
+      };
+    });
+  };
+};
+
+
+// Define cart "Plus" button handler function
+const cartAddButtonHandler = (product) => {
+  if (document.querySelector(`.id${product.id}-cart-add-button`)) {
+    document.querySelector(`.id${product.id}-cart-add-button`).addEventListener("click", () => {
+      add(product);
+      document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+        element.innerText = `${product.amount}`;
+      });
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+    });
+  };
+};
+
+
 
 // Generate updated list of products on "cartIcon" when refreshing the page
+
+
 
 document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
   event.stopPropagation(); // Avoid dropdown menu to close on click inside
@@ -85,36 +118,18 @@ cartArray.forEach(product => {
                   <span class="id${product.id}-amount-display">${product.amount}</span>
                   <span class="px-1">u</span>
                 </div>
-                <span class="id${product.id}-cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
                 <div class="px-1 align-self-center">
-                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button cart-subtract-button">
-                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button cart-add-button">
+                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
+                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                 </div>`
   cartIcon.appendChild(li)
 
-  let cartSubtractButton = li.querySelector(".cart-subtract-button");
-  let cartAddButton = li.querySelector(".cart-add-button");
-
   // Cart "Minus" button
-  cartSubtractButton.addEventListener("click", () => {
-    subtract(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
-    document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
-    if (product.amount == 0) {
-      li.remove();
-    };
-  });
+  cartSubtractButtonHandler(product);
 
   // Cart "Plus" button
-  cartAddButton.addEventListener("click", () => {
-    add(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
-    document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
-  });
+  cartAddButtonHandler(product);
 });
 
 
@@ -184,17 +199,22 @@ cardList.forEach(product => {
                     <span class="id${product.id}-amount-display">${product.amount}</span>
                     <span class="px-1">u</span>
                   </div>
-                  <span class="id${product.id}-cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                  <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
                   <div class="px-1 align-self-center">
-                  <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button cart-subtract-button">
-                  <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button cart-add-button">
+                  <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
+                  <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li)
-
 
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
     });
+
+    // Cart "Minus" button
+    cartSubtractButtonHandler(product);
+
+    // Cart "Plus" button
+    cartAddButtonHandler(product);
   });
 
   // "Minus" button
