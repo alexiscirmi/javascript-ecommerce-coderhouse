@@ -68,7 +68,7 @@ const subtract = (product) => {
   localStorage.setItem("total", total.toFixed(2));
 };
 
-// Define cart "Minus" button handler function
+// Define cart "Minus" button click handler function
 const cartSubtractButtonHandler = (product) => {
   if (document.querySelector(`.id${product.id}-cart-subtract-button`)) {
     document.querySelector(`.id${product.id}-cart-subtract-button`).addEventListener("click", () => {
@@ -84,8 +84,7 @@ const cartSubtractButtonHandler = (product) => {
   };
 };
 
-
-// Define cart "Plus" button handler function
+// Define cart "Plus" button click handler function
 const cartAddButtonHandler = (product) => {
   if (document.querySelector(`.id${product.id}-cart-add-button`)) {
     document.querySelector(`.id${product.id}-cart-add-button`).addEventListener("click", () => {
@@ -99,9 +98,7 @@ const cartAddButtonHandler = (product) => {
 };
 
 
-
 // Generate updated list of products on "cartIcon" when refreshing the page
-
 
 
 document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
@@ -123,12 +120,9 @@ cartArray.forEach(product => {
                 <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
                 <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                 </div>`
-  cartIcon.appendChild(li)
+  cartIcon.appendChild(li);
 
-  // Cart "Minus" button
   cartSubtractButtonHandler(product);
-
-  // Cart "Plus" button
   cartAddButtonHandler(product);
 });
 
@@ -204,16 +198,13 @@ cardList.forEach(product => {
                   <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
                   <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                   </div>`
-    cartIcon.appendChild(li)
+    cartIcon.appendChild(li);
 
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
     });
 
-    // Cart "Minus" button
     cartSubtractButtonHandler(product);
-
-    // Cart "Plus" button
     cartAddButtonHandler(product);
   });
 
