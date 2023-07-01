@@ -106,40 +106,19 @@ const cartAddButtonHandler = (product) => {
   };
 };
 
-// // Avoid "cartIcon" dropdown menu to close on click inside
+// Avoid "cartIcon" dropdown menu to close on click inside
 document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
+// Manipulate "cartIcon" stored elements
 
-
-// // Generate updated list of products on "cartIcon" when refreshing the page
-
-// cartArray.forEach(product => {
-//   let li = document.createElement("li");
-//   li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
-//   li.innerHTML = `
-//                 <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
-//                 <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
-//                 <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
-//                   <span class="id${product.id}-amount-display">${product.amount}</span>
-//                   <span class="px-1">u</span>
-//                 </div>
-//                 <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
-//                 <div class="px-1 align-self-center">
-//                 <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
-//                 <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
-//                 </div>`
-//   cartIcon.appendChild(li);
-
-//   cartSubtractButtonHandler(product);
-//   cartAddButtonHandler(product);
-// });
-
-
+cartArray.forEach(product => {
+  cartSubtractButtonHandler(product);
+  cartAddButtonHandler(product);
+});
 
 // Generate cards on HTML
-
 
 cardList.forEach(product => {
 
