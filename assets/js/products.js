@@ -33,14 +33,19 @@ const container = document.querySelector("#cards-container");
 const cartIcon = document.querySelector("#cart-icon");
 cartIcon.innerHTML = localStorage.getItem("cartIcon");
 
-// Empty cart message
-
-if (cartIcon.childNodes.length == 0) {
-  let li = document.createElement("li");
-  li.className = "d-flex justify-content-center py-1 emptyCart";
-  li.innerText = "El carrito está vacío";
-  cartIcon.appendChild(li);
-}
+// Empty cartIcon function
+const emptyCartIcon = () => {
+  if (document.querySelector(".emptyCart")) {
+    document.querySelector(".emptyCart").remove();
+  }
+  if (cartIcon.childNodes.length == 0) {
+    let li = document.createElement("li");
+    li.className = "d-flex justify-content-center py-1 emptyCart";
+    li.innerText = "El carrito está vacío";
+    cartIcon.appendChild(li);
+  }
+};
+emptyCartIcon();
 
 // Define "checkout" function with total
 const checkout = () => {
@@ -96,6 +101,7 @@ const cartSubtractButtonHandler = (product) => {
         document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
         document.querySelector(`.id${product.id}-li`).remove();
       };
+      emptyCartIcon();
       localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
   };
@@ -110,6 +116,7 @@ const cartAddButtonHandler = (product) => {
         element.innerText = `${product.amount}`;
       });
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+      emptyCartIcon();
       localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
   };
@@ -186,7 +193,7 @@ cardList.forEach(product => {
     let li = document.createElement("li");
     li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
     li.innerHTML = `
-                  <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
+                  <img class="ms-2 rounded" src="../img/tienda/${product.name}.webp" alt="${product.description}">
                   <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
                   <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
                     <span class="id${product.id}-amount-display">${product.amount}</span>
@@ -198,6 +205,7 @@ cardList.forEach(product => {
                   <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li);
+    emptyCartIcon();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
 
     cartSubtractButtonHandler(product);
@@ -219,6 +227,7 @@ cardList.forEach(product => {
         document.querySelector(`.id${product.id}-li`).remove();
       }
     };
+    emptyCartIcon();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 
@@ -228,6 +237,7 @@ cardList.forEach(product => {
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
     };
+    emptyCartIcon();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 });

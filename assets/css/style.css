@@ -209,8 +209,6 @@ input[type=radio] {
 
 #cart-icon {
   width: 500px;
-}
-#cart-icon ul {
   padding: 0;
   list-style: none;
 }
