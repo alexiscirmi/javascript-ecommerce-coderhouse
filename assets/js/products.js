@@ -26,17 +26,12 @@ const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción Lem
 const cardList = [];
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
 
-// Define variables
+// Define variables & read localStorage
 let total = parseFloat(localStorage.getItem("total")) || 0;
 let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
 const container = document.querySelector('#cards-container');
 const cartIcon = document.querySelector('#cart-icon');
-
-// Define "cartFiler" function to delete objects with .amount == 0
-
-// const cartFilter = () => {
-//   cartArray = cartArray.filter((product) => product.amount > 0);
-// };
+cartIcon.innerHTML = localStorage.getItem("cartIcon");
 
 // Define "checkout" function with total
 const checkout = () => {
@@ -53,6 +48,9 @@ const add = (product) => {
     cartArray.push(product);
   }
   checkout();
+  document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+    element.innerText = `${product.amount}`;
+  });
   localStorage.setItem("cart", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
 };
@@ -63,6 +61,9 @@ const subtract = (product) => {
     product.amount -= 1;
     cartArray = cartArray.filter((product) => product.amount > 0);
     checkout();
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
   };
   localStorage.setItem("cart", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
@@ -86,6 +87,7 @@ const cartSubtractButtonHandler = (product) => {
         document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
         document.querySelector(`.id${product.id}-li`).remove();
       };
+      localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
   };
 };
@@ -99,38 +101,41 @@ const cartAddButtonHandler = (product) => {
         element.innerText = `${product.amount}`;
       });
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+      localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
   };
 };
 
-
-// Generate updated list of products on "cartIcon" when refreshing the page
-
-
+// // Avoid "cartIcon" dropdown menu to close on click inside
 document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
-  event.stopPropagation(); // Avoid dropdown menu to close on click inside
+  event.stopPropagation();
 });
 
-cartArray.forEach(product => {
-  let li = document.createElement("li");
-  li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
-  li.innerHTML = `
-                <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
-                <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
-                <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
-                  <span class="id${product.id}-amount-display">${product.amount}</span>
-                  <span class="px-1">u</span>
-                </div>
-                <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
-                <div class="px-1 align-self-center">
-                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
-                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
-                </div>`
-  cartIcon.appendChild(li);
 
-  cartSubtractButtonHandler(product);
-  cartAddButtonHandler(product);
-});
+
+// // Generate updated list of products on "cartIcon" when refreshing the page
+
+// cartArray.forEach(product => {
+//   let li = document.createElement("li");
+//   li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
+//   li.innerHTML = `
+//                 <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
+//                 <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
+//                 <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
+//                   <span class="id${product.id}-amount-display">${product.amount}</span>
+//                   <span class="px-1">u</span>
+//                 </div>
+//                 <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+//                 <div class="px-1 align-self-center">
+//                 <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
+//                 <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
+//                 </div>`
+//   cartIcon.appendChild(li);
+
+//   cartSubtractButtonHandler(product);
+//   cartAddButtonHandler(product);
+// });
+
 
 
 // Generate cards on HTML
@@ -206,10 +211,6 @@ cardList.forEach(product => {
                   </div>`
     cartIcon.appendChild(li);
 
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
-
     cartSubtractButtonHandler(product);
     cartAddButtonHandler(product);
   });
@@ -217,9 +218,6 @@ cardList.forEach(product => {
   // "Minus" button
   subtractButton.addEventListener("click", () => {
     subtract(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
     }
@@ -232,16 +230,15 @@ cardList.forEach(product => {
         document.querySelector(`.id${product.id}-li`).remove();
       }
     };
+    localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 
   // "Plus" button
   addButton.addEventListener("click", () => {
     add(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
-    }
+    };
+    localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 });
