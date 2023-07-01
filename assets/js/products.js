@@ -29,9 +29,18 @@ cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, s
 // Define variables & read localStorage
 let total = parseFloat(localStorage.getItem("total")) || 0;
 let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
-const container = document.querySelector('#cards-container');
-const cartIcon = document.querySelector('#cart-icon');
+const container = document.querySelector("#cards-container");
+const cartIcon = document.querySelector("#cart-icon");
 cartIcon.innerHTML = localStorage.getItem("cartIcon");
+
+// Empty cart message
+
+if (cartIcon.childNodes.length == 0) {
+  let li = document.createElement("li");
+  li.className = "d-flex justify-content-center py-1 emptyCart";
+  li.innerText = "El carrito está vacío";
+  cartIcon.appendChild(li);
+}
 
 // Define "checkout" function with total
 const checkout = () => {
@@ -189,6 +198,7 @@ cardList.forEach(product => {
                   <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li);
+    localStorage.setItem("cartIcon", cartIcon.innerHTML);
 
     cartSubtractButtonHandler(product);
     cartAddButtonHandler(product);
