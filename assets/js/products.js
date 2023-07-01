@@ -78,6 +78,12 @@ const cartSubtractButtonHandler = (product) => {
       });
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
       if (product.amount == 0) {
+        document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
+        document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
+        document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
+          display.classList.add("d-none");
+        });
+        document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
         document.querySelector(`.id${product.id}-li`).remove();
       };
     });
@@ -145,10 +151,10 @@ cardList.forEach(product => {
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
-          <div class="d-none btn btn-custom button-scale agregar-button">Agregar</div>
-          <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale subtract-button">
+          <div class="d-none btn btn-custom button-scale id${product.id}-agregar-button">Agregar</div>
+          <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale id${product.id}-subtract-button">
           <div class="fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
-          <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale add-button">
+          <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale id${product.id}-add-button">
         </div>
       </div>
     </div>`;
@@ -160,20 +166,20 @@ cardList.forEach(product => {
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
-          <div class="btn btn-custom button-scale agregar-button">Agregar</div>
-          <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale subtract-button">
+          <div class="btn btn-custom button-scale id${product.id}-agregar-button">Agregar</div>
+          <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale id${product.id}-subtract-button">
           <div class="d-none fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
-          <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale add-button">
+          <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale id${product.id}-add-button">
         </div>
       </div>
     </div>`;
   }
   container.appendChild(div);
 
-  let agregarButton = div.querySelector(".agregar-button");
-  let subtractButton = div.querySelector(".subtract-button");
+  let agregarButton = div.querySelector(`.id${product.id}-agregar-button`);
+  let subtractButton = div.querySelector(`.id${product.id}-subtract-button`);
   let amountDisplay = div.querySelector(`.id${product.id}-amount-display`);
-  let addButton = div.querySelector(".add-button");
+  let addButton = div.querySelector(`.id${product.id}-add-button`);
 
   // "Agregar" button
   agregarButton.addEventListener("click", () => {
