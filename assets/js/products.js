@@ -187,17 +187,17 @@ cartArray.forEach(product => {
                 </div>
                 <span class="cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
                 <div class="px-1 align-self-center">
-                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button cart-subtract-button">
-                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button cart-add-button">
+                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button subtract-button">
+                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button add-button">
                 </div>`
   cartIcon.appendChild(li)
 
-  let cartSubtractButton = li.querySelector(".cart-subtract-button");
-  let cartAddButton = li.querySelector(".cart-add-button");
+  let subtractButton = li.querySelector(".subtract-button");
+  let addButton = li.querySelector(".add-button");
   let cartSpanMoney = li.querySelector(".cart-span-money");
 
   // "Minus" button
-  cartSubtractButton.addEventListener("click", () => {
+  subtractButton.addEventListener("click", () => {
     subtract(product);
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
@@ -206,7 +206,7 @@ cartArray.forEach(product => {
   });
 
   // "Plus" button
-  cartAddButton.addEventListener("click", () => {
+  addButton.addEventListener("click", () => {
     add(product);
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
