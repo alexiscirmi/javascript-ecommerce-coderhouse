@@ -68,7 +68,59 @@ const subtract = (product) => {
   localStorage.setItem("total", total.toFixed(2));
 };
 
+
+// Generate updated list of products on "cartIcon" when refreshing the page
+
+document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
+  event.stopPropagation(); // Avoid dropdown menu to close on click inside
+});
+
+cartArray.forEach(product => {
+  let li = document.createElement("li");
+  li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
+  li.innerHTML = `
+                <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
+                <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
+                <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
+                  <span class="id${product.id}-amount-display">${product.amount}</span>
+                  <span class="px-1">u</span>
+                </div>
+                <span class="id${product.id}-cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                <div class="px-1 align-self-center">
+                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button cart-subtract-button">
+                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button cart-add-button">
+                </div>`
+  cartIcon.appendChild(li)
+
+  let cartSubtractButton = li.querySelector(".cart-subtract-button");
+  let cartAddButton = li.querySelector(".cart-add-button");
+
+  // Cart "Minus" button
+  cartSubtractButton.addEventListener("click", () => {
+    subtract(product);
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
+    document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+    if (product.amount == 0) {
+      li.remove();
+    };
+  });
+
+  // Cart "Plus" button
+  cartAddButton.addEventListener("click", () => {
+    add(product);
+    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+      element.innerText = `${product.amount}`;
+    });
+    document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+  });
+});
+
+
 // Generate cards on HTML
+
+
 cardList.forEach(product => {
 
   // The next line forces "product" to take the place of any other object with the same "id" in "cartArray". This is useful when reloading the page, as localStorage won't treat old objects generated with a class as it treats the new ones.
@@ -124,7 +176,7 @@ cardList.forEach(product => {
 
     // Create list item on "cartIcon"
     let li = document.createElement("li");
-    li.className = "d-flex justify-content-between py-1";
+    li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
     li.innerHTML = `
                   <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
                   <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
@@ -132,12 +184,12 @@ cardList.forEach(product => {
                     <span class="id${product.id}-amount-display">${product.amount}</span>
                     <span class="px-1">u</span>
                   </div>
-                  <span class="cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                  <span class="id${product.id}-cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
                   <div class="px-1 align-self-center">
                   <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button cart-subtract-button">
                   <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button cart-add-button">
                   </div>`
-    cartIcon.appendChild(li);
+    cartIcon.appendChild(li)
 
 
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
@@ -151,11 +203,17 @@ cardList.forEach(product => {
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
     });
+    if (document.querySelector(`.id${product.id}-cart-span-money`)) {
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+    }
     if (product.amount == 0) {
       subtractButton.classList.add("d-none");
       amountDisplay.classList.add("d-none");
       addButton.classList.add("d-none");
       agregarButton.classList.remove("d-none");
+      if (document.querySelector(`.id${product.id}-li`)) {
+        document.querySelector(`.id${product.id}-li`).remove();
+      }
     };
   });
 
@@ -165,52 +223,8 @@ cardList.forEach(product => {
     document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
       element.innerText = `${product.amount}`;
     });
-  });
-});
-
-
-
-
-
-
-
-// Generate updated list of products on "cartIcon" when refreshing the page
-cartArray.forEach(product => {
-  let li = document.createElement("li");
-  li.className = "d-flex justify-content-between py-1";
-  li.innerHTML = `
-                <img class="ps-1" src="../img/tienda/${product.name}.webp" alt="${product.description}">
-                <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
-                <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
-                  <span class="id${product.id}-amount-display">${product.amount}</span>
-                  <span class="px-1">u</span>
-                </div>
-                <span class="cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
-                <div class="px-1 align-self-center">
-                <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button subtract-button">
-                <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button add-button">
-                </div>`
-  cartIcon.appendChild(li)
-
-  let subtractButton = li.querySelector(".subtract-button");
-  let addButton = li.querySelector(".add-button");
-  let cartSpanMoney = li.querySelector(".cart-span-money");
-
-  // "Minus" button
-  subtractButton.addEventListener("click", () => {
-    subtract(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
-    cartSpanMoney.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`
-  });
-
-  // "Plus" button
-  addButton.addEventListener("click", () => {
-    add(product);
-    document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-      element.innerText = `${product.amount}`;
-    });
-    cartSpanMoney.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`
+    if (document.querySelector(`.id${product.id}-cart-span-money`)) {
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+    }
   });
 });
