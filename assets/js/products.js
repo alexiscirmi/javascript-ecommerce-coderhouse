@@ -23,7 +23,7 @@ const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción
 const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción Selva Negra", 3.00);
 const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción Lemon Pie", 2.75);
 
-let cardList = [];
+const cardList = [];
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
 
 // Define variables
@@ -34,9 +34,9 @@ const cartIcon = document.querySelector('#cart-icon');
 
 // Define "cartFiler" function to delete objects with .amount == 0
 
-const cartFilter = () => {
-  cartArray = cartArray.filter((product) => product.amount > 0);
-};
+// const cartFilter = () => {
+//   cartArray = cartArray.filter((product) => product.amount > 0);
+// };
 
 // Define "checkout" function with total
 const checkout = () => {
@@ -61,7 +61,7 @@ const add = (product) => {
 const subtract = (product) => {
   if (product.amount > 0) {
     product.amount -= 1;
-    cartFilter();
+    cartArray = cartArray.filter((product) => product.amount > 0);
     checkout();
   };
   localStorage.setItem("cart", JSON.stringify(cartArray));
@@ -133,7 +133,7 @@ cartArray.forEach(product => {
 cardList.forEach(product => {
 
   // The next line forces "product" to take the place of any other object with the same "id" in "cartArray". This is useful when reloading the page, as localStorage won't treat old objects generated with a class as it treats the new ones.
-  product = cartArray.find(object => object.id === product.id) || product;
+  product = cartArray.find(previousProduct => previousProduct.id === product.id) || product;
 
   let div = document.createElement("div");
   div.className = `col ${product.type} fadein-up`;
