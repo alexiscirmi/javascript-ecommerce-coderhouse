@@ -158,7 +158,7 @@ cardList.forEach(product => {
   if (cartArray.includes(product)) {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
+    <img src="/assets/img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
@@ -173,7 +173,7 @@ cardList.forEach(product => {
   } else {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
+    <img src="/assets/img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
@@ -207,7 +207,7 @@ cardList.forEach(product => {
     let li = document.createElement("li");
     li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
     li.innerHTML = `
-                  <img class="ms-2 rounded" src="../img/tienda/${product.name}.webp" alt="${product.description}">
+                  <img class="ms-2 rounded" src="/assets/img/tienda/${product.name}.webp" alt="${product.description}">
                   <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
                   <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
                     <span class="id${product.id}-amount-display">${product.amount}</span>
