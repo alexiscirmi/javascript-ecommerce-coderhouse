@@ -233,6 +233,13 @@ input[type=radio] {
   width: 80px;
 }
 
+.cart-icon-footer span {
+  border-top: 0.5px solid rgb(0, 0, 0);
+}
+.cart-icon-footer a {
+  color: #7f5539;
+}
+
 /* "Up" button Properties */
 .up-floating-icon {
   display: flex;

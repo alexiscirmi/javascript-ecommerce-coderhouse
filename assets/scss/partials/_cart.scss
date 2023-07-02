@@ -31,3 +31,13 @@
 .cart-span-money {
   width: 80px;
 }
+
+.cart-icon-footer {
+  span {
+    border-top: $black-border;
+  }
+
+  a {
+    color: $color5;
+  }
+}

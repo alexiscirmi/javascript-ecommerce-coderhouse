@@ -43,6 +43,10 @@ const emptyCartIcon = () => {
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";
     cartIcon.appendChild(li);
+    document.querySelector(".cart-icon-footer").style.display = "none";
+  } else {
+    document.querySelector(".cart-icon-footer").style.display = "flex";
+    document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`;
   }
 };
 emptyCartIcon();
