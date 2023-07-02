@@ -46,7 +46,20 @@
 
               <!-- Cart dropdown menu -->
 
-              <a class="nav-link nav-link-cart" href="#"><i class="fa-solid fa-cart-shopping" title="Ver carrito"></i></a>
+              <div class="dropdown-center">
+                <a class="nav-link nav-link-cart dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-cart-shopping" title="Ver carrito"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-custom">
+                  <ul class="mb-0" id="cart-icon">
+                    <!-- Cart products will be listed here with JavaScript -->
+                  </ul>
+                  <div class="justify-content-end mx-3 fs-5 cart-icon-footer">
+                    <span class="me-4" id="cart-icon-total"></span>
+                    <a href="#" onclick="alert('(Working on this feature)')">Ver carrito</a>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>

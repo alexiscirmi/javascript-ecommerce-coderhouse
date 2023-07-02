@@ -97,12 +97,20 @@ const cartSubtractButtonHandler = (product) => {
       });
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
       if (product.amount == 0) {
-        document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
-        document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
-        document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
-          display.classList.add("d-none");
-        });
-        document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
+        if (document.querySelector(`.id${product.id}-agregar-button`)) {
+          document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
+        }
+        if (document.querySelector(`.id${product.id}-subtract-button`)) {
+          document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
+        }
+        if (document.querySelectorAll(`.id${product.id}-amount-display`)) {
+          document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
+            display.classList.add("d-none");
+          });
+        }
+        if (document.querySelector(`.id${product.id}-add-button`)) {
+          document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
+        }
         document.querySelector(`.id${product.id}-li`).remove();
       };
       emptyCartIcon();
@@ -178,7 +186,9 @@ cardList.forEach(product => {
       </div>
     </div>`;
   }
-  container.appendChild(div);
+  if (container) {
+    container.appendChild(div);
+  }
 
   let agregarButton = div.querySelector(`.id${product.id}-agregar-button`);
   let subtractButton = div.querySelector(`.id${product.id}-subtract-button`);
