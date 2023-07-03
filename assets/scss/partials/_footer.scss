@@ -1,6 +1,5 @@
 footer {
   max-width: 100%;
-  margin-top: auto;
   color: $color2;
   background-color: $color5;
   border-top: $black-border;
@@ -17,4 +16,8 @@ footer {
   &:hover {
     color: white !important;
   }
+}
+
+.bi-c-circle {
+  color: #DDB892;
 }

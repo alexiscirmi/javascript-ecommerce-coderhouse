@@ -244,17 +244,32 @@ input[type=radio] {
 .up-floating-icon {
   display: flex;
   position: sticky;
-  top: 91%;
+  top: 89%;
   font-size: 3rem;
-  margin-top: -3rem;
+  margin-top: -4.5rem;
   justify-content: left;
-  margin-left: 7px;
+  margin-left: 6px;
   margin-right: 99%;
+  color: rgb(237, 224, 212);
+}
+@keyframes bouncingArrow {
+  0% {
+    transform: translate3D(0);
+  }
+  20% {
+    transform: translate3D(0, -30%, 0);
+  }
+  100% {
+    transform: translate3D(0);
+  }
+}
+.up-floating-icon {
+  animation: bouncingArrow 1000ms;
+  animation-iteration-count: infinite;
 }
 
 footer {
   max-width: 100%;
-  margin-top: auto;
   color: #ddb892;
   background-color: #7f5539;
   border-top: 0.5px solid rgb(0, 0, 0);
@@ -270,6 +285,10 @@ footer {
 }
 .nav-link-footer:hover {
   color: white !important;
+}
+
+.bi-c-circle {
+  color: #DDB892;
 }
 
 .index__body__navbar-main-bg {
