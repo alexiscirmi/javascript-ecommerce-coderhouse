@@ -35,9 +35,8 @@ cartIcon.innerHTML = localStorage.getItem("cartIcon");
 
 // Empty cartIcon function
 const emptyCartIcon = () => {
-  if (document.querySelector(".emptyCart")) {
-    document.querySelector(".emptyCart").remove();
-  }
+  document.querySelector(".emptyCart") && document.querySelector(".emptyCart").remove();
+
   if (cartIcon.childNodes.length == 0) {
     let li = document.createElement("li");
     li.className = "d-flex justify-content-center py-1 emptyCart";
@@ -49,6 +48,7 @@ const emptyCartIcon = () => {
     document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`;
   }
 };
+
 emptyCartIcon();
 
 // Define "checkout" function with total
@@ -59,12 +59,7 @@ const checkout = () => {
 // Define "add" function. It checks whether an object inside "cartArray" has the same "id". In case it does, it will add 1 to amount. In case it doesn't, it will add 1 to amount and push the new object to "cartArray".
 const add = (product) => {
   let object = cartArray.find(object => object.id === product.id);
-  if (object) {
-    object.amount += 1;
-  } else {
-    product.amount += 1;
-    cartArray.push(product);
-  }
+  object ? object.amount += 1 : (product.amount += 1, cartArray.push(product));
   checkout();
   document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
     element.innerText = `${product.amount}`;
@@ -75,6 +70,7 @@ const add = (product) => {
 
 // Define "subtract" function
 const subtract = (product) => {
+
   if (product.amount > 0) {
     product.amount -= 1;
     cartArray = cartArray.filter((product) => product.amount > 0);
@@ -83,36 +79,38 @@ const subtract = (product) => {
       element.innerText = `${product.amount}`;
     });
   };
+
   localStorage.setItem("cart", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
 };
 
 // Define cart "Minus" button click handler function
 const cartSubtractButtonHandler = (product) => {
+
   if (document.querySelector(`.id${product.id}-cart-subtract-button`)) {
+
     document.querySelector(`.id${product.id}-cart-subtract-button`).addEventListener("click", () => {
+
       subtract(product);
       document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
         element.innerText = `${product.amount}`;
       });
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+
       if (product.amount == 0) {
-        if (document.querySelector(`.id${product.id}-agregar-button`)) {
-          document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
-        }
-        if (document.querySelector(`.id${product.id}-subtract-button`)) {
-          document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
-        }
+        document.querySelector(`.id${product.id}-agregar-button`) && document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
+        document.querySelector(`.id${product.id}-subtract-button`) && document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
+
         if (document.querySelectorAll(`.id${product.id}-amount-display`)) {
           document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
             display.classList.add("d-none");
           });
-        }
-        if (document.querySelector(`.id${product.id}-add-button`)) {
-          document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
-        }
+        };
+
+        document.querySelector(`.id${product.id}-add-button`) && document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
         document.querySelector(`.id${product.id}-li`).remove();
       };
+
       emptyCartIcon();
       localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
@@ -121,8 +119,11 @@ const cartSubtractButtonHandler = (product) => {
 
 // Define cart "Plus" button click handler function
 const cartAddButtonHandler = (product) => {
+
   if (document.querySelector(`.id${product.id}-cart-add-button`)) {
+
     document.querySelector(`.id${product.id}-cart-add-button`).addEventListener("click", () => {
+
       add(product);
       document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
         element.innerText = `${product.amount}`;
@@ -135,9 +136,7 @@ const cartAddButtonHandler = (product) => {
 };
 
 // Avoid "cartIcon" dropdown menu to close on click inside
-document.querySelector('.dropdown-menu').addEventListener('click', (event) => {
-  event.stopPropagation();
-});
+document.querySelector('.dropdown-menu').addEventListener('click', (event) => { event.stopPropagation() });
 
 // Manipulate "cartIcon" stored elements
 
@@ -186,9 +185,8 @@ cardList.forEach(product => {
       </div>
     </div>`;
   }
-  if (container) {
-    container.appendChild(div);
-  }
+
+  container && container.appendChild(div);
 
   let agregarButton = div.querySelector(`.id${product.id}-agregar-button`);
   let subtractButton = div.querySelector(`.id${product.id}-subtract-button`);
@@ -229,18 +227,19 @@ cardList.forEach(product => {
   // "Minus" button
   subtractButton.addEventListener("click", () => {
     subtract(product);
+
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
     }
+
     if (product.amount == 0) {
       subtractButton.classList.add("d-none");
       amountDisplay.classList.add("d-none");
       addButton.classList.add("d-none");
       agregarButton.classList.remove("d-none");
-      if (document.querySelector(`.id${product.id}-li`)) {
-        document.querySelector(`.id${product.id}-li`).remove();
-      }
+      document.querySelector(`.id${product.id}-li`) && document.querySelector(`.id${product.id}-li`).remove();
     };
+
     emptyCartIcon();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
@@ -248,9 +247,11 @@ cardList.forEach(product => {
   // "Plus" button
   addButton.addEventListener("click", () => {
     add(product);
+
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
     };
+
     emptyCartIcon();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
