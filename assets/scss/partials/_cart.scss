@@ -45,3 +45,29 @@
 }
 
 // Cart Page
+
+.carrito__body {
+  background-color: $color1;
+  color: $color5;
+}
+
+.carrito__body__main {
+  color: $color5;
+}
+
+.carrito__body__main__title {
+  padding: 2rem 5%;
+}
+
+#cart-page {
+  @extend #cart-icon;
+  width: 100%;
+
+  li {
+    height: 150px;
+  }
+
+  img {
+    width: 150px;
+  }
+}
