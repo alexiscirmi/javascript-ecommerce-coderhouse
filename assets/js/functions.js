@@ -51,32 +51,36 @@ export const subtract = (product) => {
 // Define cart "Minus" button click handler function
 export const cartSubtractButtonHandler = (product) => {
 
-  if (document.querySelector(`.id${product.id}-cart-subtract-button`)) {
+  if (document.querySelectorAll(`.id${product.id}-cart-subtract-button`)) {
 
-    document.querySelector(`.id${product.id}-cart-subtract-button`).addEventListener("click", () => {
+    document.querySelectorAll(`.id${product.id}-cart-subtract-button`).forEach(element => {
+      element.addEventListener("click", () => {
 
-      subtract(product);
-      document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-        element.innerText = `${product.amount}`;
-      });
-      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+        subtract(product);
+        document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+          element.innerText = `${product.amount}`;
+        });
+        document.querySelectorAll(`.id${product.id}-cart-span-money`).forEach(element => {
+          element.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+        });
 
-      if (product.amount == 0) {
-        document.querySelector(`.id${product.id}-agregar-button`) && document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
-        document.querySelector(`.id${product.id}-subtract-button`) && document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
+        if (product.amount == 0) {
+          document.querySelector(`.id${product.id}-agregar-button`) && document.querySelector(`.id${product.id}-agregar-button`).classList.remove("d-none");
+          document.querySelector(`.id${product.id}-subtract-button`) && document.querySelector(`.id${product.id}-subtract-button`).classList.add("d-none");
 
-        if (document.querySelectorAll(`.id${product.id}-amount-display`)) {
-          document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
-            display.classList.add("d-none");
-          });
+          if (document.querySelectorAll(`.id${product.id}-amount-display`)) {
+            document.querySelectorAll(`.id${product.id}-amount-display`).forEach(display => {
+              display.classList.add("d-none");
+            });
+          };
+
+          document.querySelector(`.id${product.id}-add-button`) && document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
+          document.querySelector(`.id${product.id}-li`).remove();
         };
 
-        document.querySelector(`.id${product.id}-add-button`) && document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
-        document.querySelector(`.id${product.id}-li`).remove();
-      };
-
-      checkEmptyCartIcon();
-      localStorage.setItem("cartIcon", cartIcon.innerHTML);
+        checkEmptyCartIcon();
+        localStorage.setItem("cartIcon", cartIcon.innerHTML);
+      });
     });
   };
 };
@@ -84,17 +88,21 @@ export const cartSubtractButtonHandler = (product) => {
 // Define cart "Plus" button click handler function
 export const cartAddButtonHandler = (product) => {
 
-  if (document.querySelector(`.id${product.id}-cart-add-button`)) {
+  if (document.querySelectorAll(`.id${product.id}-cart-add-button`)) {
 
-    document.querySelector(`.id${product.id}-cart-add-button`).addEventListener("click", () => {
+    document.querySelectorAll(`.id${product.id}-cart-add-button`).forEach(element => {
+      element.addEventListener("click", () => {
 
-      add(product);
-      document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
-        element.innerText = `${product.amount}`;
+        add(product);
+        document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
+          element.innerText = `${product.amount}`;
+        });
+        document.querySelectorAll(`.id${product.id}-cart-span-money`).forEach(element => {
+          element.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+        });
+        checkEmptyCartIcon();
+        localStorage.setItem("cartIcon", cartIcon.innerHTML);
       });
-      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
-      checkEmptyCartIcon();
-      localStorage.setItem("cartIcon", cartIcon.innerHTML);
     });
   };
 };

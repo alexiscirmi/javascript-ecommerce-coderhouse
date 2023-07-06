@@ -4,7 +4,7 @@ import { cartArray, checkEmptyCartIcon, cartSubtractButtonHandler, cartAddButton
 export const cartIcon = document.querySelector("#cart-icon");
 cartIcon.innerHTML = localStorage.getItem("cartIcon");
 
-document.querySelector("#cart-page") && (document.querySelector("#cart-page").innerHTML = localStorage.getItem("cartIcon"));
+document.querySelector("#cart-page") && (document.querySelector("#cart-page").innerHTML = cartIcon.innerHTML);
 
 // Avoid "cartIcon" dropdown menu to close on click inside
 document.querySelector('.dropdown-menu').addEventListener('click', (event) => { event.stopPropagation() });
