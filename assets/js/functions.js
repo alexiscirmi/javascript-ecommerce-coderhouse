@@ -13,6 +13,7 @@ export const checkEmptyCartIcon = () => {
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";
     cartIcon.appendChild(li);
+    document.querySelector("#cart-page") && (document.querySelector("#cart-page").innerHTML = cartIcon.innerHTML);
     document.querySelector(".cart-icon-footer").style.display = "none";
   } else {
     document.querySelector(".cart-icon-footer").style.display = "flex";
@@ -75,7 +76,9 @@ export const cartSubtractButtonHandler = (product) => {
           };
 
           document.querySelector(`.id${product.id}-add-button`) && document.querySelector(`.id${product.id}-add-button`).classList.add("d-none");
-          document.querySelector(`.id${product.id}-li`).remove();
+          document.querySelectorAll(`.id${product.id}-li`).forEach(element => {
+            element.remove();
+          });
         };
 
         checkEmptyCartIcon();

@@ -127,13 +127,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   width: 100%;
   font-family: Helvetica, sans-serif;
   font-size: 16px;
-}
-html body,
-body body {
-  height: 100%;
 }
 
 body {
@@ -339,6 +336,10 @@ footer {
   .index1-img {
     max-width: 70vw;
   }
+}
+
+.coworking__html {
+  height: auto;
 }
 
 .coworking__body-bg {
