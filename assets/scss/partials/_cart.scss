@@ -60,14 +60,21 @@
 }
 
 #cart-page {
-  @extend #cart-icon;
   width: 100%;
 
   li {
     height: 120px;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    div {
+      display: flex;
+    }
   }
 
   img {
-    width: 120px;
+    align-self: center;
+    max-height: 120px;
+    width: auto;
   }
 }

@@ -424,12 +424,12 @@ footer {
   background-color: #ede0d4;
 }
 
-#cart-icon, #cart-page {
+#cart-icon {
   width: 500px;
   padding: 0;
   list-style: none;
 }
-#cart-icon img, #cart-page img {
+#cart-icon img {
   width: 60px;
 }
 
@@ -475,9 +475,16 @@ footer {
 }
 #cart-page li {
   height: 120px;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+#cart-page li div {
+  display: flex;
 }
 #cart-page img {
-  width: 120px;
+  align-self: center;
+  max-height: 120px;
+  width: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
