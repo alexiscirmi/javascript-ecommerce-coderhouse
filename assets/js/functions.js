@@ -2,7 +2,7 @@ import { cartIcon } from "./cart.js";
 
 // Define variables & read localStorage
 let total = parseFloat(localStorage.getItem("total")) || 0;
-export let cartArray = JSON.parse(localStorage.getItem("cart")) || [];
+export let cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
 
 // Define "checkEmptyCartIcon" function
 export const checkEmptyCartIcon = () => {
@@ -14,6 +14,7 @@ export const checkEmptyCartIcon = () => {
     li.innerText = "El carrito está vacío";
 
     if (document.querySelector("#cart-page")) {
+      alert("El carrito se ha vaciado");
       location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
     };
 
@@ -34,7 +35,7 @@ export const add = (product) => {
   document.querySelectorAll(`.id${product.id}-amount-display`).forEach(element => {
     element.innerText = `${product.amount}`;
   });
-  localStorage.setItem("cart", JSON.stringify(cartArray));
+  localStorage.setItem("cartArray", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
 };
 
@@ -50,7 +51,7 @@ export const subtract = (product) => {
     });
   };
 
-  localStorage.setItem("cart", JSON.stringify(cartArray));
+  localStorage.setItem("cartArray", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
 };
 
@@ -113,4 +114,17 @@ export const cartAddButtonHandler = (product) => {
       });
     });
   };
+};
+
+// Define "emptyCart" function for "Vaciar carrito" button on carrito.html
+export const emptyCart = () => {
+  if (document.querySelector("#vaciar-carrito-button")) {
+    document.querySelector("#vaciar-carrito-button").addEventListener("click", () => {
+      localStorage.removeItem("cartArray");
+      localStorage.removeItem("total");
+      localStorage.removeItem("cartIcon");
+      alert("El carrito se ha vaciado");
+      location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+    })
+  }
 };
