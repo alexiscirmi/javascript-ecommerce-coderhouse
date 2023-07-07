@@ -400,16 +400,17 @@ footer {
   -webkit-text-stroke: 0.1px #7f5539;
 }
 
-.button-scale {
-  width: 100px;
-}
-.button-scale {
+.button-scale, .button-scale-100 {
   transform: scale(1);
   transition: all 0.25s;
 }
-.button-scale:hover {
+.button-scale:hover, .button-scale-100:hover {
   transform: scale(1.05);
   transition: all 0.25s;
+}
+
+.button-scale-100 {
+  width: 100px;
 }
 
 .btn-custom,

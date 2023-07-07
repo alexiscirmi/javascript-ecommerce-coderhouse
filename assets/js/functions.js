@@ -22,6 +22,7 @@ export const checkEmptyCartIcon = () => {
   } else {
     document.querySelector(".cart-icon-footer").style.display = "flex";
     document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`;
+    document.querySelector("#cart-page-total") && (document.querySelector("#cart-page-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`);
   }
 };
 

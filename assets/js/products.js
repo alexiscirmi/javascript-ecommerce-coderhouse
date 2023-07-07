@@ -46,10 +46,10 @@ cardList.forEach(product => {
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
-          <div class="d-none btn btn-custom button-scale id${product.id}-agregar-button">Agregar</div>
-          <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale id${product.id}-subtract-button">
+          <div class="d-none btn btn-custom button-scale-100 id${product.id}-agregar-button">Agregar</div>
+          <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale-100 id${product.id}-subtract-button">
           <div class="fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
-          <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale id${product.id}-add-button">
+          <input type="button" value="+" class="btn btn-custom btn-minus-plus button-scale-100 id${product.id}-add-button">
         </div>
       </div>
     </div>`;
@@ -61,10 +61,10 @@ cardList.forEach(product => {
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
         <div class="d-flex justify-content-around">
-          <div class="btn btn-custom button-scale id${product.id}-agregar-button">Agregar</div>
-          <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale id${product.id}-subtract-button">
+          <div class="btn btn-custom button-scale-100 id${product.id}-agregar-button">Agregar</div>
+          <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale-100 id${product.id}-subtract-button">
           <div class="d-none fs-5 align-self-center id${product.id}-amount-display">${product.amount}</div>
-          <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale id${product.id}-add-button">
+          <input type="button" value="+" class="d-none btn btn-custom btn-minus-plus button-scale-100 id${product.id}-add-button">
         </div>
       </div>
     </div>`;
@@ -97,8 +97,8 @@ cardList.forEach(product => {
                   </div>
                   <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
                   <div class="cart-buttons px-1 align-self-center">
-                    <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
-                    <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
+                    <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
+                    <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li);
     checkEmptyCartIcon();
