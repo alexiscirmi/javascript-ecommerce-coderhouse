@@ -485,8 +485,14 @@ footer {
   gap: 0.5rem;
   margin: 1rem 0;
 }
+#cart-page li .cart-span-description {
+  width: 200px;
+}
 #cart-page li .cart-span-amount, #cart-page li .cart-span-money {
   white-space: nowrap;
+}
+#cart-page li .cart-span-money {
+  width: 110px;
 }
 @media (max-width: 575px) {
   #cart-page li .cart-span-money {

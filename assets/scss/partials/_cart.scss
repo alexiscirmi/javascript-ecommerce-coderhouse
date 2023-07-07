@@ -14,7 +14,6 @@
   img {
     width: 60px;
   }
-
 }
 
 .cart-button {
@@ -70,12 +69,17 @@
     gap: 0.5rem;
     margin: 1rem 0;
 
+    .cart-span-description {
+      width: 200px;
+    }
+
     .cart-span-amount {
       white-space: nowrap
     }
 
     .cart-span-money {
       @extend .cart-span-amount;
+      width: 110px;
 
       @media (max-width: 575px) {
         & {
