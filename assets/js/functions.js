@@ -12,8 +12,12 @@ export const checkEmptyCartIcon = () => {
     let li = document.createElement("li");
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";
+
+    if (document.querySelector("#cart-page")) {
+      location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+    };
+
     cartIcon.appendChild(li);
-    document.querySelector("#cart-page") && (document.querySelector("#cart-page").innerHTML = cartIcon.innerHTML);
     document.querySelector(".cart-icon-footer").style.display = "none";
   } else {
     document.querySelector(".cart-icon-footer").style.display = "flex";

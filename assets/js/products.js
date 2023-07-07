@@ -91,14 +91,14 @@ cardList.forEach(product => {
     li.innerHTML = `
                   <img class="ms-2 rounded" src="/coderhouse-javascript-project/assets/img/tienda/${product.name}.webp" alt="${product.description}">
                   <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
-                  <div class="cart-span-amount align-self-center text-center d-flex justify-content-end">
+                  <div class="cart-span-amount align-self-center text-center d-flex justify-content-center">
                     <span class="id${product.id}-amount-display">${product.amount}</span>
                     <span class="px-1">u</span>
                   </div>
                   <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
-                  <div class="px-1 align-self-center">
-                  <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
-                  <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
+                  <div class="cart-buttons px-1 align-self-center">
+                    <input type="button" value="-" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-subtract-button">
+                    <input type="button" value="+" class="mx-1 btn btn-custom button-scale cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li);
     checkEmptyCartIcon();
