@@ -14,8 +14,17 @@ export const checkEmptyCartIcon = () => {
     li.innerText = "El carrito está vacío";
 
     if (document.querySelector("#cart-page")) {
-      alert("El carrito se ha vaciado");
-      location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+      Swal.fire({
+        text: 'El carrito fue vaciado',
+        icon: 'success',
+        iconColor: '#7f5539',
+        color: '#9c6644',
+        background: '#ede0d4',
+        confirmButtonColor: '#7f5539',
+      });
+      setTimeout(() => {
+        location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+      }, 2000);
     };
 
     cartIcon.appendChild(li);
@@ -120,11 +129,37 @@ export const cartAddButtonHandler = (product) => {
 export const emptyCart = () => {
   if (document.querySelector("#vaciar-carrito-button")) {
     document.querySelector("#vaciar-carrito-button").addEventListener("click", () => {
-      localStorage.removeItem("cartArray");
-      localStorage.removeItem("total");
-      localStorage.removeItem("cartIcon");
-      alert("El carrito se ha vaciado");
-      location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+
+      Swal.fire({
+        title: '¿Estás seguro/a?',
+        icon: 'warning',
+        iconColor: '#7f5539',
+        showCancelButton: true,
+        confirmButtonColor: '#b08968',
+        cancelButtonColor: '#7f5539',
+        color: '#9c6644',
+        background: '#ede0d4',
+        confirmButtonText: 'Sí, vaciar carrito',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.removeItem("cartArray");
+          localStorage.removeItem("total");
+          localStorage.removeItem("cartIcon");
+          Swal.fire({
+            title: '¡Listo!',
+            text: 'El carrito fue vaciado',
+            icon: 'success',
+            iconColor: '#7f5539',
+            color: '#9c6644',
+            background: '#ede0d4',
+            confirmButtonColor: '#7f5539',
+          });
+          setTimeout(() => {
+            location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+          }, 2000);
+        }
+      })
     })
   }
 };

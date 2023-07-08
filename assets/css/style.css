@@ -470,6 +470,7 @@ footer {
 
 .carrito__body__main {
   color: #7f5539;
+  min-height: 80vh;
 }
 
 .carrito__body__main__title {
