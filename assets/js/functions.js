@@ -14,14 +14,19 @@ export const checkEmptyCartIcon = () => {
     li.innerText = "El carrito está vacío";
 
     if (document.querySelector("#cart-page")) {
+      document.querySelector('.carrito__body__main').style.height = "100vh";
+      document.querySelector('#cart-page').remove();
+      document.querySelector('#cart-page-bottom-buttons').remove();
       Swal.fire({
-        text: 'El carrito fue vaciado',
+        title: '¡El carrito fue vaciado!',
+        text: 'Redireccionando a Tienda...',
         icon: 'success',
         iconColor: '#7f5539',
         color: '#9c6644',
         background: '#ede0d4',
         confirmButtonColor: '#7f5539',
       });
+
       setTimeout(() => {
         location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
       }, 2000);
@@ -143,18 +148,23 @@ export const emptyCart = () => {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
+          document.querySelector('.carrito__body__main').style.height = "100vh";
+          document.querySelector('#cart-page').remove();
+          document.querySelector('#cart-page-bottom-buttons').remove();
           localStorage.removeItem("cartArray");
           localStorage.removeItem("total");
           localStorage.removeItem("cartIcon");
+
           Swal.fire({
-            title: '¡Listo!',
-            text: 'El carrito fue vaciado',
+            title: '¡El carrito fue vaciado!',
+            text: 'Redireccionando a Tienda...',
             icon: 'success',
             iconColor: '#7f5539',
             color: '#9c6644',
             background: '#ede0d4',
             confirmButtonColor: '#7f5539',
           });
+
           setTimeout(() => {
             location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
           }, 2000);
