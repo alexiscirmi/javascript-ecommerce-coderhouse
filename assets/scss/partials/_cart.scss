@@ -43,6 +43,60 @@
   }
 }
 
+// Cart Icon for mobile
+
+.cart-icon-mobile-container {
+  left: auto;
+  margin-right: 11px;
+  margin-bottom: 11px;
+  opacity: 85%;
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  & {
+    animation: zoomIn 1500ms;
+    animation-iteration-count: infinite;
+  }
+}
+
+.cart-icon-mobile {
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: $color0;
+
+  .bi-cart-fill {
+    color: $color5;
+    font-size: 45px;
+  }
+}
+
+.cart-icon-mobile-amount {
+  display: inline-block;
+  position: fixed;
+  text-align: center;
+  top: -10px;
+  left: 30px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  color: $color0;
+  background-color: $color3;
+}
+
 // Cart Page
 
 .carrito__body {

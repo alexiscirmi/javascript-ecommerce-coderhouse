@@ -1,4 +1,4 @@
-import { cartArray, add, subtract, checkEmptyCartIcon, cartSubtractButtonHandler, cartAddButtonHandler } from "./functions.js";
+import { cartArray, add, subtract, checkEmptyCart, cartSubtractButtonHandler, cartAddButtonHandler } from "./functions.js";
 import { cartIcon } from "./cart.js";
 
 // Define class & objects. Push objects to "cardList" array
@@ -101,7 +101,7 @@ cardList.forEach(product => {
                     <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
                   </div>`
     cartIcon.appendChild(li);
-    checkEmptyCartIcon();
+    checkEmptyCart();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
 
     cartSubtractButtonHandler(product);
@@ -124,7 +124,7 @@ cardList.forEach(product => {
       document.querySelector(`.id${product.id}-li`) && document.querySelector(`.id${product.id}-li`).remove();
     };
 
-    checkEmptyCartIcon();
+    checkEmptyCart();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 
@@ -136,7 +136,7 @@ cardList.forEach(product => {
       document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
     };
 
-    checkEmptyCartIcon();
+    checkEmptyCart();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
   });
 });

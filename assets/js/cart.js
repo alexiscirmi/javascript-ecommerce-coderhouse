@@ -1,4 +1,4 @@
-import { cartArray, checkEmptyCartIcon, cartSubtractButtonHandler, cartAddButtonHandler, emptyCart } from "./functions.js";
+import { cartArray, checkEmptyCart, cartSubtractButtonHandler, cartAddButtonHandler } from "./functions.js";
 
 // Define variables & read localStorage
 export const cartIcon = document.querySelector("#cart-icon");
@@ -9,12 +9,10 @@ document.querySelector("#cart-page") && (document.querySelector("#cart-page").in
 // Avoid "cartIcon" dropdown menu to close on click inside
 document.querySelector(".dropdown-menu").addEventListener("click", (event) => { event.stopPropagation() });
 
-checkEmptyCartIcon();
+checkEmptyCart();
 
 // Manipulate "cartIcon" stored elements
 cartArray.forEach(product => {
   cartSubtractButtonHandler(product);
   cartAddButtonHandler(product);
 });
-
-emptyCart();

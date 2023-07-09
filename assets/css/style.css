@@ -205,11 +205,11 @@ input[type=radio] {
 .up-floating-icon {
   display: flex;
   position: sticky;
-  top: 89%;
-  font-size: 3rem;
+  top: 91%;
+  font-size: 2.5rem;
   margin-top: -4.5rem;
   justify-content: left;
-  margin-left: 6px;
+  margin-left: 4px;
   margin-right: 99%;
   color: rgb(237, 224, 212);
 }
@@ -235,7 +235,6 @@ footer {
   color: #ddb892;
   background-color: #7f5539;
   border-top: 0.5px solid rgb(0, 0, 0);
-  padding-bottom: 10px;
 }
 
 .footer-logo,
@@ -461,6 +460,53 @@ footer {
 }
 .cart-icon-footer a {
   color: #7f5539;
+}
+
+.cart-icon-mobile-container {
+  left: auto;
+  margin-right: 11px;
+  margin-bottom: 11px;
+  opacity: 85%;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.cart-icon-mobile-container {
+  animation: zoomIn 1500ms;
+  animation-iteration-count: infinite;
+}
+
+.cart-icon-mobile {
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #ede0d4;
+}
+.cart-icon-mobile .bi-cart-fill {
+  color: #7f5539;
+  font-size: 45px;
+}
+
+.cart-icon-mobile-amount {
+  display: inline-block;
+  position: fixed;
+  text-align: center;
+  top: -10px;
+  left: 30px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  color: #ede0d4;
+  background-color: #b08968;
 }
 
 .carrito__body {
