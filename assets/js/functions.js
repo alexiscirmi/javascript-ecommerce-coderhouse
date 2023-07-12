@@ -33,7 +33,7 @@ export const checkEmptyCart = () => {
       });
 
       setTimeout(() => {
-        location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+        location.assign("./tienda.html");
       }, 2000);
     };
   } else {
@@ -82,7 +82,7 @@ export const checkEmptyCart = () => {
           });
 
           setTimeout(() => {
-            location.assign("/coderhouse-javascript-project/assets/pages/tienda.html");
+            location.assign("./tienda.html");
           }, 2000);
         }
       })
