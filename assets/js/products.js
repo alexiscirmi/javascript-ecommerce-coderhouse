@@ -42,7 +42,7 @@ cardList.forEach(product => {
   if (cartArray.includes(product)) {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../../assets/img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
+    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
@@ -57,7 +57,7 @@ cardList.forEach(product => {
   } else {
     div.innerHTML = `
     <div class="card mb-5 mx-auto" style="width: 18rem;">
-    <img src="../../assets/img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
+    <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
         <p class="card-text">U$S ${product.price.toFixed(2).toString().replace(".", ",")}</p>
@@ -89,9 +89,8 @@ cardList.forEach(product => {
     // Create list item on "cartIcon"
     let li = document.createElement("li");
     li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
-    li.innerHTML = `${document.querySelector(".index") ?
-      `
-                  <img class="ms-2 rounded" src="./assets/img/tienda/${product.name}.webp" alt="${product.description}">
+    li.innerHTML = `
+                  <img class="ms-2 rounded" src="/assets/img/tienda/${product.name}.webp" alt="${product.description}">
                   <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
                   <div class="cart-span-amount align-self-center text-center d-flex justify-content-center">
                     <span class="id${product.id}-amount-display">${product.amount}</span>
@@ -102,20 +101,6 @@ cardList.forEach(product => {
                     <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
                     <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
                   </div>`
-      :
-      `
-                  <img class="ms-2 rounded" src="../../assets/img/tienda/${product.name}.webp" alt="${product.description}">
-                  <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
-                  <div class="cart-span-amount align-self-center text-center d-flex justify-content-center">
-                    <span class="id${product.id}-amount-display">${product.amount}</span>
-                    <span class="px-1">u</span>
-                  </div>
-                  <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
-                  <div class="cart-buttons px-1 align-self-center">
-                    <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
-                    <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
-                  </div>`
-      }`
     cartIcon.appendChild(li);
     checkEmptyCart();
     localStorage.setItem("cartIcon", cartIcon.innerHTML);
