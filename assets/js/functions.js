@@ -12,7 +12,9 @@ export const checkCart = () => {
 
   // Handle cartIcon
   cartArray.forEach(product => {
+
     if (!document.querySelector(`.id${product.id}-li`)) {
+
       if (document.querySelector(".index")) {
         let li = document.createElement("li");
         li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
