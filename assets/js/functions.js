@@ -1,11 +1,37 @@
 import { cartIcon } from "./cart.js";
 
+
 // Define variables & read localStorage
 let total = parseFloat(localStorage.getItem("total")) || 0;
 export let cartArray = JSON.parse(localStorage.getItem("cartArray")) || [];
 
-// Define "checkEmptyCart" function to trigger instructions according to cart status
-export const checkEmptyCart = () => {
+
+// Define "checkCart" function to trigger instructions according to cart status
+
+export const checkCart = () => {
+
+  // Handle cartIcon
+  cartArray.forEach(product => {
+    if (!document.querySelector(`.id${product.id}-li`)) {
+      let li = document.createElement("li");
+      li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
+      li.innerHTML = `
+                    <img class="ms-2 rounded" src="/assets/img/tienda/${product.name}.webp" alt="${product.description}">
+                    <span class="cart-span-description align-self-center text-wrap">${product.description}</span>
+                    <div class="cart-span-amount align-self-center text-center d-flex justify-content-center">
+                      <span class="id${product.id}-amount-display">${product.amount}</span>
+                      <span class="px-1">u</span>
+                    </div>
+                    <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                    <div class="cart-buttons px-1 align-self-center">
+                      <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
+                      <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
+                    </div>`
+      cartIcon.appendChild(li);
+    }
+  });
+
+  // Handle empty cart
   document.querySelector(".emptyCart") && document.querySelector(".emptyCart").remove();
 
   // "El carrito está vacío" message on cart dropdown
@@ -69,7 +95,6 @@ export const checkEmptyCart = () => {
           document.querySelector('#cart-page-bottom-buttons').remove();
           localStorage.removeItem("cartArray");
           localStorage.removeItem("total");
-          localStorage.removeItem("cartIcon");
 
           Swal.fire({
             title: '¡El carrito fue vaciado!',
@@ -88,7 +113,8 @@ export const checkEmptyCart = () => {
       })
     })
   }
-};
+}
+
 
 // Define "add" function. It checks whether an object inside "cartArray" has the same "id". In case it does, it will add 1 to amount. In case it doesn't, it will add 1 to amount and push the new object to "cartArray".
 export const add = (product) => {
@@ -102,6 +128,7 @@ export const add = (product) => {
   localStorage.setItem("cartArray", JSON.stringify(cartArray));
   localStorage.setItem("total", total.toFixed(2));
 };
+
 
 // Define "subtract" function
 export const subtract = (product) => {
@@ -119,7 +146,9 @@ export const subtract = (product) => {
   localStorage.setItem("total", total.toFixed(2));
 };
 
+
 // Define cart "Minus" button click handler function
+
 export const cartSubtractButtonHandler = (product) => {
 
   if (document.querySelectorAll(`.id${product.id}-cart-subtract-button`)) {
@@ -151,14 +180,15 @@ export const cartSubtractButtonHandler = (product) => {
           });
         };
 
-        checkEmptyCart();
-        localStorage.setItem("cartIcon", cartIcon.innerHTML);
+        checkCart();
       });
     });
   };
 };
 
+
 // Define cart "Plus" button click handler function
+
 export const cartAddButtonHandler = (product) => {
 
   if (document.querySelectorAll(`.id${product.id}-cart-add-button`)) {
@@ -173,8 +203,7 @@ export const cartAddButtonHandler = (product) => {
         document.querySelectorAll(`.id${product.id}-cart-span-money`).forEach(element => {
           element.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
         });
-        checkEmptyCart();
-        localStorage.setItem("cartIcon", cartIcon.innerHTML);
+        checkCart();
       });
     });
   };
