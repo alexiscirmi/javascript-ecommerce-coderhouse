@@ -35,7 +35,7 @@ export const checkCart = () => {
   document.querySelector(".emptyCart") && document.querySelector(".emptyCart").remove();
 
   // "El carrito está vacío" message on cart dropdown
-  if (cartIcon.childNodes.length == 0) {
+  if (cartIcon.childElementCount == 0) {
     let li = document.createElement("li");
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";

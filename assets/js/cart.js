@@ -4,6 +4,7 @@ import { cartArray, checkCart, cartSubtractButtonHandler, cartAddButtonHandler }
 // Define variables & read localStorage
 export const cartIcon = document.querySelector("#cart-icon");
 checkCart();
+document.querySelector("#cart-page") && (document.querySelector("#cart-page").innerHTML = cartIcon.innerHTML);
 
 
 // Avoid "cartIcon" dropdown menu to close on click inside
