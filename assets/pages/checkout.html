@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO tags -->
+  <meta name="description" content="El mayor espacio de coworking de Buenos Aires. Trabajá en un ambiente agradable y disfrutá de nuestra cafetería.">
+  <meta name="keywords" content="coffee, café, coworking, trabajo, work, Palermo, Buenos Aires, pastelería, tortas">
+  <!-- Title -->
+  <title>Finalizar compra</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- style.css -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+</head>
+
+<body class="carrito__body" id="checkout">
+
+  <!-- Navbar -->
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-custom">
+      <div class="container-fluid container-lg">
+        <a class="navbar-brand active navbar-brand-custom" aria-current="page" href="../../index.html"><img src="../img/logo.svg" alt="Logo (Taza de café)" class="navbar-logo">Café Palermo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav navbar-nav-custom">
+
+            <!-- Link to Coworking -->
+
+            <a class="nav-link nav-link-custom active hover-underline-animation" href="./coworking.html">Coworking</a>
+
+            <!-- Link to Tienda -->
+
+            <a class="nav-link nav-link-custom hover-underline-animation" href="./tienda.html">Tienda</a>
+
+            <!-- Cart dropdown menu -->
+
+            <div class="dropdown-center">
+              <a class="nav-link nav-link-cart dropdown-toggle py-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-cart fs-5" title="Ver carrito"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end dropdown-menu-custom">
+                <div class="d-flex justify-content-center fs-5 cart-icon-footer">
+                  <a href="./carrito.html">Ver carrito</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+
+  <main class="carrito__body__main pb-5 mx-2">
+    <h2 class="carrito__body__main__title pb-5 text-center text-md-start">Finalizar compra</h2>
+
+    <!-- Checkout form -->
+
+    <div class="container">
+      <div class="col">
+        <h4 class="mb-3">Dirección de envío</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required="">
+              <div class="invalid-feedback">
+                Nombre requerido.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Pérez" value="" required="">
+              <div class="invalid-feedback">
+                Apellido requerido.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com">
+              <div class="invalid-feedback">
+                Por favor, ingresá un correo electrónico válido.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required="">
+              <div class="invalid-feedback">
+                Por favor, ingresá la dirección de envío.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Nro. de departamento o casa <span class="text-body-secondary">(Opcional)</span></label>
+              <input type="text" class="form-control" id="address2">
+            </div>
+
+            <div class="col-md-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <select class="form-select" id="ciudad" required="">
+                <option value="">Ciudad Autónoma de Buenos Aires</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor, ingresá una ciudad válida.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="barrio" class="form-label">Barrio</label>
+              <select class="form-select" id="barrio" required="">
+                <option value="">Elegir...</option>
+                <option>Agronomía</option>
+                <option>Almagro</option>
+                <option>Balvanera</option>
+                <option>Barracas</option>
+                <option>Belgrano</option>
+                <option>Boedo</option>
+                <option>Caballito</option>
+                <option>Chacarita</option>
+                <option>Coghlan</option>
+                <option>Colegiales</option>
+                <option>Constitución</option>
+                <option>Flores</option>
+                <option>Floresta</option>
+                <option>La Boca</option>
+                <option>Liniers</option>
+                <option>Mataderos</option>
+                <option>Monserrat</option>
+                <option>Monte Castro</option>
+                <option>Nueva Pompeya</option>
+                <option>Nuñez</option>
+                <option>Palermo</option>
+                <option>Parque Avellaneda</option>
+                <option>Parque Chacabuco</option>
+                <option>Parque Chas</option>
+                <option>Parque Patricios</option>
+                <option>La Paternal</option>
+                <option>Puerto Madero</option>
+                <option>La Recoleta</option>
+                <option>Retiro</option>
+                <option>Saavedra</option>
+                <option>San Cristobal</option>
+                <option>San Nicolás</option>
+                <option>San Telmo</option>
+                <option>Velez Sarsfield</option>
+                <option>Versalles</option>
+                <option>Villa Crespo</option>
+                <option>Villa del Parque</option>
+                <option>Villa Devoto</option>
+                <option>Villa General Mitre</option>
+                <option>Villa Lugano</option>
+                <option>Villa Luro</option>
+                <option>Villa Ortúzar</option>
+                <option>Villa Pueyrredón</option>
+                <option>Villa Real</option>
+                <option>Villa Riachuello</option>
+                <option>Villa Santa Rita</option>
+                <option>Villa Soldati</option>
+                <option>Villa Urquiza</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor, ingresá un barrio válido.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Método de pago</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input d-block" checked="" required="">
+              <label class="form-check-label" for="credit">Efectivo - pesos y/o dólares</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input d-block" required="">
+              <label class="form-check-label" for="debit">Mercado Pago - pesos</label>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="d-flex justify-content-between fs-5 mb-3">
+            <span>Subtotal U$S:</span>
+            <span id="checkout-page-subtotal"></span>
+          </div>
+
+          <div class="d-flex justify-content-between fs-5 mb-3">
+            <span>Envío U$S:</span>
+            <span id="delivery-price"></span>
+          </div>
+
+          <div class="d-flex justify-content-between fs-3 mb-3">
+            <span>Total U$S:</span>
+            <span id="checkout-page-total"></span>
+          </div>
+
+          <div class="d-flex justify-content-between fs-3">
+            <span>Total pesos:</span>
+            <span></span>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-custom btn-lg mb-4" type="submit" id="finalizar-button">Finalizar compra</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Cart icon for mobile -->
+
+  <div class="fixed-bottom d-md-none cart-icon-mobile-container">
+    <div class="cart-icon-mobile-amount"></div>
+    <div class="cart-icon-mobile">
+      <a href="./carrito.html">
+        <i class="bi bi-cart-fill"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="container-fluid container-lg py-5">
+
+      <div class="d-flex flex-row justify-content-between justify-content-sm-evenly">
+        <div>
+          <a href="../../index.html" class="d-flex mx-auto mb-3 link-body-emphasis text-decoration-none footer-logo">
+            <img src="../img/logo.svg" alt="Logo (Taza de café)">
+          </a>
+          <p class="text-body-secondary d-flex align-items-center"><i class="bi bi-c-circle"></i><a href="https://github.com/cirmialexis/coderhouse-javascript-project" target="_blank" class="nav-link-footer ps-1">Alexis Cirmi</a></p>
+        </div>
+
+        <div class="mb-2">
+          <h3 class="mb-3 fs-5">Secciones</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-3"><a href="../../index.html" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">Inicio</a></li>
+            <li class="nav-item mb-3"><a href="../pages/coworking.html" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">Coworking</a></li>
+            <li class="nav-item mb-3"><a href="../pages/tienda.html" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">Tienda</a></li>
+          </ul>
+        </div>
+
+        <div class="mb-2">
+          <h3 class="mb-3 fs-5">Redes sociales</h3>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-3"><a href="#" onclick="alert('(Link a Facebook)')" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">Facebook</a></li>
+            <li class="nav-item mb-3"><a href="#" onclick="alert('(Link a Instagram)')" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">Instagram</a></li>
+            <li class="nav-item mb-3"><a href="#" onclick="alert('(Link a WhatsApp)')" class="nav-link d-inline-block p-0 text-body-secondary nav-link-footer">WhatsApp</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- JavaScript files -->
+  <script src="../js/cart.js" type="module"></script>
+
+</body>
+
+</html>

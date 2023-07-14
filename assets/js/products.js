@@ -31,6 +31,35 @@ cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, s
 // Define variables
 const container = document.querySelector("#cards-container");
 
+// Tienda ToastifyJS messages
+if (document.querySelector('.tienda__body-bg')) {
+  Toastify({
+    text: "¡Envíos gratis desde U$S 10!",
+    gravity: "bottom",
+    offset: {
+      y: 80 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      color: "#7f5539",
+      background: "#ede0d4",
+    },
+    duration: 3000
+  }).showToast();
+
+  Toastify({
+    text: "Aceptamos pesos y dólares",
+    gravity: "bottom",
+    offset: {
+      y: 80 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      color: "#7f5539",
+      background: "#ede0d4",
+    },
+    duration: 3000
+  }).showToast();
+}
+
 // Generate cards on HTML
 cardList.forEach(product => {
   // The next line forces "product" to take the place of any other object with the same "id" in "cartArray". This is useful when reloading the page, as localStorage won't treat old objects generated with a class as it treats the new ones.

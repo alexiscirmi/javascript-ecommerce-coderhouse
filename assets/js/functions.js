@@ -15,7 +15,7 @@ export const checkCart = () => {
 
     if (!document.querySelector(`.id${product.id}-li`)) {
 
-      if (document.querySelector(".index")) {
+      if (document.querySelector("#index")) {
         let li = document.createElement("li");
         li.className = `d-flex justify-content-between py-1 id${product.id}-li`;
         li.innerHTML = `
@@ -46,7 +46,9 @@ export const checkCart = () => {
                       <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
                       <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
                     </div>`
-        cartIcon.appendChild(li);
+        if (!document.querySelector("#checkout")) {
+          cartIcon.appendChild(li);
+        }
       }
     }
   });
@@ -55,7 +57,7 @@ export const checkCart = () => {
   document.querySelector(".emptyCart") && document.querySelector(".emptyCart").remove();
 
   // "El carrito está vacío" message on cart dropdown
-  if (cartIcon.childElementCount == 0) {
+  if (!document.querySelector("#checkout") && cartIcon.childElementCount == 0) {
     let li = document.createElement("li");
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";
@@ -84,7 +86,7 @@ export const checkCart = () => {
     };
   } else {
     document.querySelector(".cart-icon-footer").style.display = "flex";
-    document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`;
+    document.querySelector("#cart-icon-total") && (document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`);
     document.querySelector("#cart-page-total") && (document.querySelector("#cart-page-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`);
     if (document.querySelector(".cart-icon-mobile-container")) {
       document.querySelector(".cart-icon-mobile-container").classList.remove("d-none");
