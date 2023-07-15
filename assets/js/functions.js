@@ -230,3 +230,17 @@ export const cartAddButtonHandler = (product) => {
     });
   };
 };
+
+// Define "fetchPrice" async function to get USDT/ARS price from Binance
+
+export const fetchPrice = async (total, deliveryPrice) => {
+  try {
+    const response = await fetch("https://api.binance.com/api/v3/depth?symbol=USDTARS");
+    const data = await response.json();
+    const price = (parseInt(data.asks[0][0]) + parseInt(data.bids[0][0])) / 2
+    document.querySelector("#exchangeRate").innerText = `$${price}`;
+    document.querySelector("#arsPrice").innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+  } catch (error) {
+    console.error("Failed to fetch data from the API.", error);
+  }
+}

@@ -15,15 +15,15 @@ class Product {
   };
 };
 
-const cafe = new Product(id += 1, 0, "infusiones", "cafe", "Café", 1.50);
-const latte = new Product(id += 1, 0, "infusiones", "latte", "Latte", 1.25);
-const capuccino = new Product(id += 1, 0, "infusiones", "capuccino", "Capuccino", 1.75);
-const medialuna = new Product(id += 1, 0, "snacks", "medialuna", "Medialuna", 1.00);
-const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado Jamón y Queso", 1.75);
-const alfajor = new Product(id += 1, 0, "snacks", "alfajor", "Alfajor artesanal", 0.75);
-const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción Cheesecake", 3.25);
-const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción Selva Negra", 3.00);
-const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción Lemon Pie", 2.75);
+const cafe = new Product(id += 1, 0, "infusiones", "cafe", "Café", 1.75);
+const latte = new Product(id += 1, 0, "infusiones", "latte", "Latte", 1.50);
+const capuccino = new Product(id += 1, 0, "infusiones", "capuccino", "Capuccino", 2.00);
+const medialuna = new Product(id += 1, 0, "snacks", "medialuna", "Medialuna", 1.25);
+const tostado = new Product(id += 1, 0, "snacks", "tostado", "Tostado Jamón y Queso", 2.00);
+const alfajor = new Product(id += 1, 0, "snacks", "alfajor", "Alfajor artesanal", 1.00);
+const cheesecake = new Product(id += 1, 0, "pasteleria", "cheesecake", "Porción Cheesecake", 3.50);
+const selvaNegra = new Product(id += 1, 0, "pasteleria", "selvaNegra", "Porción Selva Negra", 3.25);
+const lemonPie = new Product(id += 1, 0, "pasteleria", "lemonPie", "Porción Lemon Pie", 3.00);
 
 const cardList = [];
 cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, selvaNegra, lemonPie);
