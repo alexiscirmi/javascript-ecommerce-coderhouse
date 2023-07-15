@@ -36,6 +36,7 @@ if (document.querySelector('.tienda__body-bg')) {
   Toastify({
     text: "¡Envíos gratis desde U$S 10!",
     gravity: "bottom",
+    position: "right",
     offset: {
       y: 80 // vertical axis - can be a number or a string indicating unity. eg: '2em'
     },
@@ -49,6 +50,7 @@ if (document.querySelector('.tienda__body-bg')) {
   Toastify({
     text: "Aceptamos pesos y dólares",
     gravity: "bottom",
+    position: "right",
     offset: {
       y: 80 // vertical axis - can be a number or a string indicating unity. eg: '2em'
     },
