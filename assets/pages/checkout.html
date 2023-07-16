@@ -71,11 +71,11 @@
     <div class="container">
       <div class="col">
         <h4 class="mb-3">Dirección de envío</h4>
-        <form class="needs-validation" novalidate="">
+        <form class="needs-validation" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required="">
+              <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required>
               <div class="invalid-feedback">
                 Nombre requerido.
               </div>
@@ -83,36 +83,44 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="lastName" placeholder="Pérez" value="" required="">
+              <input type="text" class="form-control" id="lastName" placeholder="Pérez" value="" required>
               <div class="invalid-feedback">
                 Apellido requerido.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com">
+              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" required>
               <div class="invalid-feedback">
                 Por favor, ingresá un correo electrónico válido.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
+              <label for="email" class="form-label">Número de celular (sin 0 ni 15)</label>
+              <input type="number" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required>
+              <div class="invalid-feedback">
+                Por favor, ingresá número válido de 10 caracteres.
+              </div>
+            </div>
+
+            <div class="col-6">
               <label for="address" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required="">
+              <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required>
               <div class="invalid-feedback">
                 Por favor, ingresá la dirección de envío.
               </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="address2" class="form-label">Nro. de departamento o casa <span class="text-body-secondary">(Opcional)</span></label>
               <input type="text" class="form-control" id="address2">
             </div>
 
             <div class="col-md-6">
               <label for="ciudad" class="form-label">Ciudad</label>
-              <select class="form-select" id="ciudad" required="">
+              <select class="form-select" id="ciudad" required>
                 <option value="">Ciudad Autónoma de Buenos Aires</option>
               </select>
               <div class="invalid-feedback">
@@ -122,7 +130,7 @@
 
             <div class="col-md-6">
               <label for="barrio" class="form-label">Barrio</label>
-              <select class="form-select" id="barrio" required="">
+              <select class="form-select" id="barrio" required>
                 <option value="">Elegir...</option>
                 <option>Agronomía</option>
                 <option>Almagro</option>
@@ -185,11 +193,11 @@
 
           <div class="my-3">
             <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input d-block" checked="" required="">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input d-block" checked required>
               <label class="form-check-label" for="credit">Efectivo - pesos y/o dólares</label>
             </div>
             <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input d-block" required="" disabled>
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input d-block" required disabled>
               <label class="form-check-label" for="debit">Mercado Pago - pesos (no disponible)</label>
             </div>
           </div>
