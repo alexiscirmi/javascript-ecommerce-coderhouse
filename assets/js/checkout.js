@@ -1,4 +1,4 @@
-import { fetchPrice } from "./functions.js";
+import { fetchPrice, resetCart } from "./functions.js";
 
 
 // Bootstrap: disabling form submissions if there are invalid fields
@@ -14,7 +14,26 @@ import { fetchPrice } from "./functions.js";
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
-      };
+      } else {
+        event.preventDefault();
+        localStorage.removeItem("cartArray");
+        localStorage.removeItem("total");
+        localStorage.removeItem("cartIcon");
+        Swal.fire({
+          title: '¡Pedido completado!',
+          text: 'Te enviamos un correo con el detalle de tu compra',
+          icon: 'success',
+          iconColor: '#7f5539',
+          color: '#9c6644',
+          background: '#ede0d4',
+          showConfirmButton: true,
+          confirmButtonColor: '#b08968'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.assign("../../index.html");
+          }
+        })
+      }
 
       form.classList.add('was-validated');
     }, false)

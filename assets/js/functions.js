@@ -58,6 +58,7 @@ export const checkCart = () => {
 
   // "El carrito está vacío" message on cart dropdown
   if (!document.querySelector("#checkout") && cartIcon.childElementCount == 0) {
+    localStorage.removeItem("cartIcon");
     let li = document.createElement("li");
     li.className = "d-flex justify-content-center py-1 emptyCart";
     li.innerText = "El carrito está vacío";
@@ -117,6 +118,7 @@ export const checkCart = () => {
           document.querySelector('#cart-page-bottom-buttons').remove();
           localStorage.removeItem("cartArray");
           localStorage.removeItem("total");
+          localStorage.removeItem("cartIcon");
 
           Swal.fire({
             title: '¡El carrito fue vaciado!',
@@ -231,6 +233,7 @@ export const cartAddButtonHandler = (product) => {
   };
 };
 
+
 // Define "fetchPrice" async function to get USDT/ARS price from Binance
 
 export const fetchPrice = async (total, deliveryPrice) => {
@@ -246,5 +249,11 @@ export const fetchPrice = async (total, deliveryPrice) => {
     document.querySelector("#exchangeRate").innerText = `$${price}`;
     document.querySelector("#arsPrice").innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
   }
-
 }
+
+
+// Define "resetCart" function
+
+export const resetCart = () => {
+  cartArray = [];
+};
