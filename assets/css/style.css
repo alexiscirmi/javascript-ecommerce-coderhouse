@@ -2,6 +2,10 @@
   text-wrap: balance;
 }
 
+.color3 {
+  color: #b08968;
+}
+
 @keyframes fadeIn-Up {
   0% {
     opacity: 0;
@@ -159,6 +163,10 @@ iframe {
 
 input[type=radio] {
   display: none;
+}
+
+::placeholder {
+  color: #ddb892 !important;
 }
 
 .navbar-custom {

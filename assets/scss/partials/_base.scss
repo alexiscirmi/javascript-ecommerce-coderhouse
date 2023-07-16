@@ -37,3 +37,7 @@ iframe {
 input[type="radio"] {
   display: none;
 }
+
+::placeholder {
+  color: $color2 !important;
+}
