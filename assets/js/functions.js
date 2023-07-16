@@ -234,7 +234,7 @@ export const cartAddButtonHandler = (product) => {
 };
 
 
-// Define "fetchPrice" async function to get USDT/ARS price from Binance
+// Define "fetchPrice" async function to get USDT/ARS price from Binance API
 
 export const fetchPrice = async (total, deliveryPrice) => {
   try {
