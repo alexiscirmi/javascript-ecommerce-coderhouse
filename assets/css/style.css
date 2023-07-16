@@ -17,7 +17,7 @@
   }
 }
 .fadein-up {
-  animation: fadeIn-Up 1500ms;
+  animation: fadeIn-Up 1000ms;
 }
 
 @keyframes fadeIn-Index-Title {
@@ -43,7 +43,7 @@
   }
 }
 .fadein-index-title {
-  animation: fadeIn-Index-Title 1500ms;
+  animation: fadeIn-Index-Title 1000ms;
 }
 
 @keyframes fadeIn-Right {
@@ -69,7 +69,7 @@
   }
 }
 .fadein-right {
-  animation: fadeIn-Right 1500ms;
+  animation: fadeIn-Right 1000ms;
 }
 
 @keyframes fadeIn-Left {
@@ -95,7 +95,7 @@
   }
 }
 .fadein-left {
-  animation: fadeIn-Left 1500ms;
+  animation: fadeIn-Left 1000ms;
 }
 
 @media (min-width: 768px) {

@@ -91,7 +91,7 @@
 
             <div class="col-6">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" required>
+              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" minlength="10" required>
               <div class="invalid-feedback">
                 Por favor, ingresá un correo electrónico válido.
               </div>
@@ -99,9 +99,9 @@
 
             <div class="col-6">
               <label for="email" class="form-label">Número de celular (sin 0 ni 15)</label>
-              <input type="number" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required>
+              <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required>
               <div class="invalid-feedback">
-                Por favor, ingresá número válido de 10 caracteres.
+                Por favor, ingresá un número válido de 10 caracteres.
               </div>
             </div>
 
@@ -121,7 +121,7 @@
             <div class="col-md-6">
               <label for="ciudad" class="form-label">Ciudad</label>
               <select class="form-select" id="ciudad" required>
-                <option value="">Ciudad Autónoma de Buenos Aires</option>
+                <option>Ciudad Autónoma de Buenos Aires</option>
               </select>
               <div class="invalid-feedback">
                 Por favor, ingresá una ciudad válida.
@@ -295,6 +295,7 @@
 
   <!-- JavaScript files -->
   <script src="../js/cart.js" type="module"></script>
+  <script src="../js/checkout.js" type="module"></script>
 
 </body>
 
