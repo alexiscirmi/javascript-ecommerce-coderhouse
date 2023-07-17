@@ -250,10 +250,3 @@ export const fetchPrice = async (total, deliveryPrice) => {
     document.querySelector("#arsPrice").innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
   }
 }
-
-
-// Define "resetCart" function
-
-export const resetCart = () => {
-  cartArray = [];
-};

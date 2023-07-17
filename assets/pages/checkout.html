@@ -18,6 +18,31 @@
   <link rel="stylesheet" href="../css/style.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('REEhkt901aBpw2cW4');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('checkoutForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('service_7y665pr', 'template_cshn9g6', this)
+          .then(function () {
+            console.log('¡Envío de correo electrónico exitoso!');
+          }, function (error) {
+            console.log('Error al enviar correo electrónico.', error);
+          });
+      });
+    }
+  </script>
+
 </head>
 
 <body class="carrito__body" id="checkout">
@@ -71,8 +96,11 @@
     <div class="container">
       <div class="col">
         <h4 class="mb-3">Dirección de envío</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate id="checkoutForm">
           <div class="row g-3">
+
+            <input type="hidden" name="contact_number">
+
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required>

@@ -1,4 +1,4 @@
-import { fetchPrice, resetCart } from "./functions.js";
+import { fetchPrice } from "./functions.js";
 
 
 // Bootstrap: disabling form submissions if there are invalid fields
@@ -42,7 +42,7 @@ import { fetchPrice, resetCart } from "./functions.js";
 
 
 // Show total price details
-let total = parseFloat(localStorage.getItem("total")) || 0;
+let total = parseFloat(localStorage.getItem("total")) || location.assign("../../index.html");
 let deliveryPrice = total + 2;
 document.querySelector("#checkout-page-subtotal").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`;
 
