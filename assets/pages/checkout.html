@@ -103,7 +103,7 @@
 
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="Juan" value="" required name="nombre">
               <div class="invalid-feedback">
                 Nombre requerido.
               </div>
@@ -111,7 +111,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="lastName" placeholder="Pérez" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="Pérez" value="" required name="apellido">
               <div class="invalid-feedback">
                 Apellido requerido.
               </div>
@@ -119,7 +119,7 @@
 
             <div class="col-6">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" minlength="10" required>
+              <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" minlength="10" required name="email">
               <div class="invalid-feedback">
                 Por favor, ingresá un correo electrónico válido.
               </div>
@@ -217,6 +217,8 @@
 
           <hr class="my-4">
 
+          <textarea id="emailDetail" name="detalle" hidden></textarea>
+
           <h4 class="mb-3">Método de pago</h4>
 
           <div class="my-3">
@@ -244,12 +246,16 @@
 
           <div class="d-flex justify-content-between fs-3 mb-3">
             <span>Total U$S:</span>
-            <span id="checkout-page-total"></span>
+            <span class="checkout-page-total"></span>
+            <!-- Hidden textarea for EmailJS -->
+            <textarea name="total-dolares" class="checkout-page-total" hidden></textarea>
           </div>
 
           <div class="d-flex justify-content-between fs-3">
             <span>Total pesos:</span>
-            <span id="arsPrice"></span>
+            <span class="arsPrice"></span>
+            <!-- Hidden textarea for EmailJS -->
+            <textarea name="total-pesos" class="arsPrice" hidden></textarea>
           </div>
 
           <div class="d-flex fst-italic color3">

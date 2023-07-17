@@ -242,11 +242,15 @@ export const fetchPrice = async (total, deliveryPrice) => {
     const data = await response.json();
     const price = (parseInt(data.asks[0][0]) + parseInt(data.bids[0][0])) / 2
     document.querySelector("#exchangeRate").innerText = `$${price}`;
-    document.querySelector("#arsPrice").innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+    document.querySelectorAll(".arsPrice").forEach(element => {
+      element.innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+    });
   } catch (error) {
     console.error("Failed to fetch data from the API. Using manual exchange rate.", error);
     const price = 520;
     document.querySelector("#exchangeRate").innerText = `$${price}`;
-    document.querySelector("#arsPrice").innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+    document.querySelectorAll(".arsPrice").forEach(element => {
+      element.innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+    });
   }
 }
