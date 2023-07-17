@@ -95,7 +95,7 @@
 
     <div class="container">
       <div class="col">
-        <h4 class="mb-3">Dirección de envío</h4>
+        <h4 class="mb-3">Información para el envío</h4>
         <form class="needs-validation" novalidate id="checkoutForm">
           <div class="row g-3">
 
@@ -127,7 +127,7 @@
 
             <div class="col-6">
               <label for="email" class="form-label">Número de celular (sin 0 ni 15)</label>
-              <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required>
+              <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required name="telefono">
               <div class="invalid-feedback">
                 Por favor, ingresá un número válido de 10 caracteres.
               </div>
@@ -135,7 +135,7 @@
 
             <div class="col-6">
               <label for="address" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required>
+              <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required name="direccion">
               <div class="invalid-feedback">
                 Por favor, ingresá la dirección de envío.
               </div>
@@ -158,7 +158,7 @@
 
             <div class="col-md-6">
               <label for="barrio" class="form-label">Barrio</label>
-              <select class="form-select" id="barrio" required>
+              <select class="form-select" id="barrio" required name="barrio">
                 <option value="">Elegir...</option>
                 <option>Agronomía</option>
                 <option>Almagro</option>
