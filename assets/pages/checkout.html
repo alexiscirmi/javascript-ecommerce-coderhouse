@@ -117,23 +117,23 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="email" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="email" placeholder="juan.perez@gmail.com" minlength="10" required name="email">
               <div class="invalid-feedback">
-                Por favor, ingresá un correo electrónico válido.
+                Por favor, ingresá un correo válido.
               </div>
             </div>
 
-            <div class="col-6">
-              <label for="email" class="form-label">Número de celular (sin 0 ni 15)</label>
+            <div class="col-sm-6">
+              <label for="email" class="form-label">Nro. celular (sin 0 ni 15)</label>
               <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone" placeholder="1112345678" minlength="10" maxlength="10" required name="telefono">
               <div class="invalid-feedback">
-                Por favor, ingresá un número válido de 10 caracteres.
+                Por favor, ingresá un número válido.
               </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-sm-6">
               <label for="address" class="form-label">Dirección</label>
               <input type="text" class="form-control" id="address" placeholder="Brandsen 805" required name="direccion">
               <div class="invalid-feedback">
@@ -141,8 +141,8 @@
               </div>
             </div>
 
-            <div class="col-6">
-              <label for="address2" class="form-label">Nro. de departamento o casa <span class="text-body-secondary">(Opcional)</span></label>
+            <div class="col-sm-6">
+              <label for="address2" class="form-label">Nro. departamento <span class="text-body-secondary">(Opcional)</span></label>
               <input type="text" class="form-control" id="address2">
             </div>
 
@@ -151,9 +151,6 @@
               <select class="form-select" id="ciudad" required>
                 <option>Ciudad Autónoma de Buenos Aires</option>
               </select>
-              <div class="invalid-feedback">
-                Por favor, ingresá una ciudad válida.
-              </div>
             </div>
 
             <div class="col-md-6">
@@ -274,7 +271,7 @@
 
   <!-- Cart icon for mobile -->
 
-  <div class="fixed-bottom d-md-none cart-icon-mobile-container">
+  <div class="fixed-bottom d-none d-md-none cart-icon-mobile-container">
     <div class="cart-icon-mobile-amount"></div>
     <div class="cart-icon-mobile">
       <a href="./carrito.html">
