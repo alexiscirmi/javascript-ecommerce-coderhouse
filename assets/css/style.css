@@ -166,7 +166,12 @@ input[type=radio] {
 }
 
 ::placeholder {
-  color: #ddb892 !important;
+  color: #e6ccb2 !important;
+}
+
+.form-check-input:checked {
+  background-color: #7f5539;
+  border-color: #7f5539;
 }
 
 .navbar-custom {

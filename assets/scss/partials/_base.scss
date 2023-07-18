@@ -38,6 +38,13 @@ input[type="radio"] {
   display: none;
 }
 
+// Forms
+
 ::placeholder {
-  color: $color2 !important;
+  color: $color1 !important;
+}
+
+.form-check-input:checked {
+  background-color: $color5;
+  border-color: $color5;
 }
