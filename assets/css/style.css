@@ -537,14 +537,17 @@ footer {
 
 #cart-page {
   width: 100%;
-  border: solid 2px #7f5539;
-  border-radius: 15px;
-  padding: 20px;
 }
 #cart-page li {
   height: 135px;
   gap: 0.5rem;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  border: solid 1px #b08968;
+  border-radius: 15px;
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+  padding-top: 7% !important;
+  padding-bottom: 7% !important;
 }
 #cart-page li .cart-span-description {
   width: 200px;

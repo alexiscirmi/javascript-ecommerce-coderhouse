@@ -246,7 +246,7 @@ export const fetchPrice = async (total, deliveryPrice) => {
       element.innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
     });
   } catch (error) {
-    console.error("Failed to fetch data from the API. Using manual exchange rate.", error);
+    console.error("Fallo al buscar tipo de cambio en la API. Usando tipo de cambio manual.", error);
     const price = 520;
     document.querySelector("#exchangeRate").innerText = `$${price}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
