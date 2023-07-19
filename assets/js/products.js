@@ -62,7 +62,7 @@ cardList.forEach(product => {
     <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
-        <p class="card-text">U$S ${product.price.toLocaleString("es-AR", { minimumFractionDigits: 2 })}</p>
+        <p class="card-text">U$S ${product.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
         <div class="d-flex justify-content-around">
           <div class="d-none btn btn-custom button-scale-100 id${product.id}-agregar-button">Agregar</div>
           <input type="button" value="-" class="btn btn-custom btn-minus-plus button-scale-100 id${product.id}-subtract-button">
@@ -77,7 +77,7 @@ cardList.forEach(product => {
     <img src="../img/tienda/${product.name}.webp" class="card-img-top" alt="${product.description}">
       <div class="card-body">
         <h5 class="card-title">${product.description}</h5>
-        <p class="card-text">U$S ${product.price.toLocaleString("es-AR", { minimumFractionDigits: 2 })}</p>
+        <p class="card-text">U$S ${product.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
         <div class="d-flex justify-content-around">
           <div class="btn btn-custom button-scale-100 id${product.id}-agregar-button">Agregar</div>
           <input type="button" value="-" class="d-none btn btn-custom btn-minus-plus button-scale-100 id${product.id}-subtract-button">
@@ -117,7 +117,7 @@ cardList.forEach(product => {
     subtract(product);
 
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
-      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     }
 
     if (product.amount == 0) {
@@ -137,7 +137,7 @@ cardList.forEach(product => {
     add(product);
 
     if (document.querySelector(`.id${product.id}-cart-span-money`)) {
-      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
+      document.querySelector(`.id${product.id}-cart-span-money`).innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
     };
 
     checkCart();
