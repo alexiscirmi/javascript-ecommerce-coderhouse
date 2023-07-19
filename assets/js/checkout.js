@@ -47,7 +47,7 @@ JSON.parse(localStorage.getItem("cartArray")).forEach(product => {
   document.querySelector("#emailDetail").textContent += `* ${product.description} x ${product.amount} u = U$S ${(product.price * product.amount).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}\n`
 });
 
-// Show total price details. Exchange rate will be fetched every 10 minutes.
+// Show total price details. Exchange rate and ARS price will be updated every 10 minutes.
 let total = parseFloat(localStorage.getItem("total")) || location.assign("../../index.html");
 let deliveryPrice = total + 2;
 document.querySelector("#checkout-page-subtotal").innerText = `U$S ${total.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} `;
