@@ -32,13 +32,13 @@ cardList.push(cafe, latte, capuccino, medialuna, tostado, alfajor, cheesecake, s
 const container = document.querySelector("#cards-container");
 
 // Tienda ToastifyJS messages
-if (document.querySelector('.tienda__body-bg')) {
+if (document.querySelector(".tienda__body-bg")) {
   Toastify({
     text: "¡Envíos gratis desde U$S 10!",
     gravity: "bottom",
     stopOnFocus: false,
     offset: {
-      y: 80 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+      y: 80 // vertical axis - can be a number or a string indicating unity. eg: "2em"
     },
     style: {
       color: "#7f5539",

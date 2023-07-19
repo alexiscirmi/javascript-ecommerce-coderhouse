@@ -68,16 +68,16 @@ export const checkCart = () => {
 
     // Instructions for manually emptied cart (carrito.html)
     if (document.querySelector("#cart-page")) {
-      document.querySelector('.carrito__body__main').style.height = "100vh";
-      document.querySelector('#cart-page').remove();
-      document.querySelector('#cart-page-bottom-buttons').remove();
+      document.querySelector(".carrito__body__main").style.height = "100vh";
+      document.querySelector("#cart-page").remove();
+      document.querySelector("#cart-page-bottom-buttons").remove();
       Swal.fire({
-        title: '¡El carrito fue vaciado!',
-        text: 'Redireccionando a Tienda...',
-        icon: 'success',
-        iconColor: '#7f5539',
-        color: '#9c6644',
-        background: '#ede0d4',
+        title: "¡El carrito fue vaciado!",
+        text: "Redireccionando a Tienda...",
+        icon: "success",
+        iconColor: "#7f5539",
+        color: "#9c6644",
+        background: "#ede0d4",
         showConfirmButton: false
       });
 
@@ -101,32 +101,32 @@ export const checkCart = () => {
     document.querySelector("#vaciar-carrito-button").addEventListener("click", () => {
 
       Swal.fire({
-        title: '¿Estás seguro/a?',
-        icon: 'warning',
-        iconColor: '#7f5539',
+        title: "¿Estás seguro/a?",
+        icon: "warning",
+        iconColor: "#7f5539",
         showCancelButton: true,
-        confirmButtonColor: '#b08968',
-        cancelButtonColor: '#7f5539',
-        color: '#9c6644',
-        background: '#ede0d4',
-        confirmButtonText: 'Sí, vaciar carrito',
-        cancelButtonText: 'Cancelar'
+        confirmButtonColor: "#b08968",
+        cancelButtonColor: "#7f5539",
+        color: "#9c6644",
+        background: "#ede0d4",
+        confirmButtonText: "Sí, vaciar carrito",
+        cancelButtonText: "Cancelar"
       }).then((result) => {
         if (result.isConfirmed) {
-          document.querySelector('.carrito__body__main').style.height = "100vh";
-          document.querySelector('#cart-page').remove();
-          document.querySelector('#cart-page-bottom-buttons').remove();
+          document.querySelector(".carrito__body__main").style.height = "100vh";
+          document.querySelector("#cart-page").remove();
+          document.querySelector("#cart-page-bottom-buttons").remove();
           localStorage.removeItem("cartArray");
           localStorage.removeItem("total");
           localStorage.removeItem("cartIcon");
 
           Swal.fire({
-            title: '¡El carrito fue vaciado!',
-            text: 'Redireccionando a Tienda...',
-            icon: 'success',
-            iconColor: '#7f5539',
-            color: '#9c6644',
-            background: '#ede0d4',
+            title: "¡El carrito fue vaciado!",
+            text: "Redireccionando a Tienda...",
+            icon: "success",
+            iconColor: "#7f5539",
+            color: "#9c6644",
+            background: "#ede0d4",
             showConfirmButton: false
           });
 

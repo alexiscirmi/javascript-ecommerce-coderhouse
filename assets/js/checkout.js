@@ -3,14 +3,14 @@ import { fetchPrice } from "./functions.js";
 
 // Bootstrap: disabling form submissions if there are invalid fields
 (() => {
-  'use strict'
+  "use strict"
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation');
+  const forms = document.querySelectorAll(".needs-validation");
 
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
+    form.addEventListener("submit", event => {
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
@@ -20,14 +20,14 @@ import { fetchPrice } from "./functions.js";
         localStorage.removeItem("total");
         localStorage.removeItem("cartIcon");
         Swal.fire({
-          title: '¡Pedido completado!',
-          text: 'Te enviamos un correo con el detalle de tu compra',
-          icon: 'success',
-          iconColor: '#7f5539',
-          color: '#9c6644',
-          background: '#ede0d4',
+          title: "¡Pedido completado!",
+          text: "Te enviamos un correo con el detalle de tu compra",
+          icon: "success",
+          iconColor: "#7f5539",
+          color: "#9c6644",
+          background: "#ede0d4",
           showConfirmButton: true,
-          confirmButtonColor: '#b08968'
+          confirmButtonColor: "#b08968"
         }).then((result) => {
           if (result.isConfirmed) {
             location.assign("../../index.html");
@@ -35,7 +35,7 @@ import { fetchPrice } from "./functions.js";
         })
       }
 
-      form.classList.add('was-validated');
+      form.classList.add("was-validated");
     }, false)
   })
 })()
