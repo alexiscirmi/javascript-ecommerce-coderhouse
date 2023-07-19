@@ -240,15 +240,15 @@ export const fetchPrice = async (total, deliveryPrice) => {
   try {
     const response = await fetch("https://api.binance.com/api/v3/depth?symbol=USDTARS");
     const data = await response.json();
-    const price = (parseInt(data.asks[0][0]) + parseInt(data.bids[0][0])) / 2
+    const price = (parseInt(data.asks[0][0]) + parseInt(data.bids[0][0])) / 2;
     document.querySelector("#exchangeRate").innerText = `$ ${price.toFixed()}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
-      element.innerText = `$ ${((total + deliveryPrice) * price).toLocaleString("es-AR", { maximumFractionDigits: 0 })}`;
+      element.innerText = `$ ${((total + deliveryPrice) * price.toFixed()).toLocaleString("es-AR", { maximumFractionDigits: 0 })}`;
     });
   } catch (error) {
     console.error("Fallo al buscar tipo de cambio en la API. Usando tipo de cambio manual.", error);
     const price = 520;
-    document.querySelector("#exchangeRate").innerText = `$${price}`;
+    document.querySelector("#exchangeRate").innerText = `$ ${price}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
       element.innerText = `$ ${((total + deliveryPrice) * price).toLocaleString("es-AR", { maximumFractionDigits: 0 })}`;
     });
