@@ -115,6 +115,14 @@
 #cart-page {
   width: 100%;
 
+  @media (max-width: 575px) {
+    & {
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 16px !important;
+    }
+  }
+
   li {
     height: 135px;
     gap: 0.5rem;

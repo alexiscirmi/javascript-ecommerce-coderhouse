@@ -538,6 +538,13 @@ footer {
 #cart-page {
   width: 100%;
 }
+@media (max-width: 575px) {
+  #cart-page {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 16px !important;
+  }
+}
 #cart-page li {
   height: 135px;
   gap: 0.5rem;
