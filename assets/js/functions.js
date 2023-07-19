@@ -25,7 +25,7 @@ export const checkCart = () => {
                       <span class="id${product.id}-amount-display">${product.amount}</span>
                       <span class="px-1">u</span>
                     </div>
-                    <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                    <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}</span>
                     <div class="cart-buttons px-1 align-self-center">
                       <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
                       <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
@@ -41,7 +41,7 @@ export const checkCart = () => {
                       <span class="id${product.id}-amount-display">${product.amount}</span>
                       <span class="px-1">u</span>
                     </div>
-                    <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}</span>
+                    <span class="id${product.id}-cart-span-money cart-span-money align-self-center text-center">U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}</span>
                     <div class="cart-buttons px-1 align-self-center">
                       <input type="button" value="-" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-subtract-button">
                       <input type="button" value="+" class="mx-1 btn btn-custom button-scale-100 cart-button id${product.id}-cart-add-button">
@@ -87,8 +87,8 @@ export const checkCart = () => {
     };
   } else {
     document.querySelector(".cart-icon-footer").style.display = "flex";
-    document.querySelector("#cart-icon-total") && (document.querySelector("#cart-icon-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`);
-    document.querySelector("#cart-page-total") && (document.querySelector("#cart-page-total").innerText = `U$S ${total.toFixed(2).toString().replace(".", ",")}`);
+    document.querySelector("#cart-icon-total") && (document.querySelector("#cart-icon-total").innerText = `U$S ${total.toLocaleString("es-AR", { minimumFractionDigits: 2 })}`);
+    document.querySelector("#cart-page-total") && (document.querySelector("#cart-page-total").innerText = `U$S ${total.toLocaleString("es-AR", { minimumFractionDigits: 2 })}`);
     if (document.querySelector(".cart-icon-mobile-container")) {
       document.querySelector(".cart-icon-mobile-container").classList.remove("d-none");
       document.querySelector(".cart-icon-mobile-container").classList.add("d-inline-block");
@@ -185,7 +185,7 @@ export const cartSubtractButtonHandler = (product) => {
           element.innerText = `${product.amount}`;
         });
         document.querySelectorAll(`.id${product.id}-cart-span-money`).forEach(element => {
-          element.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+          element.innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
         });
 
         if (product.amount == 0) {
@@ -225,7 +225,7 @@ export const cartAddButtonHandler = (product) => {
           element.innerText = `${product.amount}`;
         });
         document.querySelectorAll(`.id${product.id}-cart-span-money`).forEach(element => {
-          element.innerText = `U$S ${(product.amount * product.price).toFixed(2).toString().replace(".", ",")}`;
+          element.innerText = `U$S ${(product.amount * product.price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
         });
         checkCart();
       });
@@ -243,14 +243,14 @@ export const fetchPrice = async (total, deliveryPrice) => {
     const price = (parseInt(data.asks[0][0]) + parseInt(data.bids[0][0])) / 2
     document.querySelector("#exchangeRate").innerText = `$ ${price.toFixed()}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
-      element.innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+      element.innerText = `$ ${((total + deliveryPrice) * price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
     });
   } catch (error) {
     console.error("Fallo al buscar tipo de cambio en la API. Usando tipo de cambio manual.", error);
     const price = 520;
     document.querySelector("#exchangeRate").innerText = `$${price}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
-      element.innerText = `$ ${((total + deliveryPrice) * price).toFixed(2).toString().replace(".", ",")}`;
+      element.innerText = `$ ${((total + deliveryPrice) * price).toLocaleString("es-AR", { minimumFractionDigits: 2 })}`;
     });
   }
 }
