@@ -49,7 +49,7 @@ JSON.parse(localStorage.getItem("cartArray")).forEach(product => {
 
 // Show total price details. Exchange rate and ARS price will be updated every 10 minutes.
 let total = parseFloat(localStorage.getItem("total")) || location.assign("../../index.html");
-let deliveryPrice = total + 2;
+let deliveryPrice = 0;
 document.querySelector("#checkout-page-subtotal").innerText = `U$S ${total.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} `;
 
 if (total >= 10) {
