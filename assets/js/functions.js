@@ -247,7 +247,7 @@ export const fetchPrice = async (total, deliveryPrice) => {
     });
   } catch (error) {
     console.error("Fallo al buscar tipo de cambio en la API. Usando tipo de cambio manual.", error);
-    const price = 520;
+    const price = 600; // This value should be manually adjusted regularly
     document.querySelector("#exchangeRate").innerText = `$ ${price}`;
     document.querySelectorAll(".arsPrice").forEach(element => {
       element.innerText = `$ ${((total + deliveryPrice) * price).toLocaleString("es-AR", { maximumFractionDigits: 0 })}`;
