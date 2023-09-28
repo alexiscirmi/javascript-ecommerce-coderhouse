@@ -70,10 +70,10 @@
             .catch(function (error) {
               document.querySelector("#finalizar-button").classList.remove("d-none")
               document.querySelector(".spinner-border").classList.add("d-none")
-              console.error("Error al finalizar. Revise si su correo electrónico es correcto.", error);
+              console.error(error);
               Swal.fire({
                 title: "Error al finalizar",
-                text: "Revise si su correo electrónico es correcto",
+                text: "Revise si su correo electrónico es correcto y complete el CAPTCHA. Si el CAPTCHA caduca por intento erróneo, aguarde unos momentos y le permitirá reverificar.",
                 icon: "error",
                 iconColor: "#7f5539",
                 color: "#9c6644",
@@ -87,7 +87,7 @@
     };
   </script>
   <!-- Google reCAPTCHA -->
-  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -309,7 +309,7 @@
           <hr class="my-4">
 
           <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4">
-            <!-- <div class="g-recaptcha form-control" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div> -->
+            <div class="g-recaptcha mb-2" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div>
             <button class="btn btn-custom btn-lg mb-2" type="submit" id="finalizar-button">Finalizar compra</button>
             <div class="btn-custom spinner-border text-warning my-2 d-none" role="status"></div>
             <p class="color3 small">Deben completarse los campos requeridos.</p>
