@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
-  <!-- EmailJS -->
+  <!-- EmailJS library import -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
@@ -26,24 +26,66 @@
       emailjs.init('REEhkt901aBpw2cW4');
     })();
   </script>
+  <!-- Bootstrap & EmailJS: disable form submissions if there are invalid fields and send email -->
   <script type="text/javascript">
     window.onload = function () {
       document.getElementById('checkoutForm').addEventListener('submit', function (event) {
         event.preventDefault();
-        // generate a five digit number for the contact_number variable
-        this.contact_number.value = Math.random() * 100000 | 0;
-        // these IDs from the previous steps
-        emailjs.sendForm('service_7y665pr', 'template_cshn9g6', this)
-          .then(function () {
-            console.log('¡Envío de correo electrónico exitoso!');
-          }, function (error) {
-            console.log('Error al enviar correo electrónico. Ingrese los campos requeridos.', error);
-          });
+        // Fetch the form to apply custom Bootstrap validation styles to
+        const form = this;
+        // If form is NOT valid
+        if (!form.checkValidity()) {
+          event.stopPropagation();
+          form.classList.add("was-validated");
+          console.error('Error al enviar correo electrónico. Ingrese los campos requeridos.')
+        } else {
+          form.classList.add("was-validated");
+          // If form is valid, send the email
+          this.contact_number.value = Math.random() * 100000 | 0;
+          emailjs.sendForm('service_7y665pr', 'template_cshn9g6', this)
+            .then(function () {
+              localStorage.removeItem("cartArray");
+              localStorage.removeItem("total");
+              localStorage.removeItem("cartIcon");
+              console.log('¡Envío de correo electrónico exitoso!');
+              Swal.fire({
+                title: "¡Pedido completado!",
+                text: "Te enviamos un correo con el detalle de tu compra",
+                icon: "success",
+                iconColor: "#7f5539",
+                color: "#9c6644",
+                background: "#ede0d4",
+                showConfirmButton: true,
+                confirmButtonColor: "#b08968"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  location.assign("../../index.html");
+                };
+              });
+            })
+            .catch(function (error) {
+              console.error('Error al finalizar. Revise si su correo electrónico es correcto.', error);
+              Swal.fire({
+                title: "Error al finalizar",
+                text: "Revise si su correo electrónico es correcto",
+                icon: "error",
+                iconColor: "#7f5539",
+                color: "#9c6644",
+                background: "#ede0d4",
+                showConfirmButton: true,
+                confirmButtonColor: "#b08968"
+              });
+            });
+          // generate a five digit number for the contact_number variable
+
+          // these IDs from the previous steps
+
+        };
       });
-    }
+    };
   </script>
   <!-- Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
 </head>
 
@@ -264,9 +306,10 @@
 
           <hr class="my-4">
 
-          <div class="w-100 d-flex justify-content-center">
+          <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4">
             <!-- <div class="g-recaptcha form-control" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div> -->
-            <button class="btn btn-custom btn-lg mb-4" type="submit" id="finalizar-button">Finalizar compra</button>
+            <button class="btn btn-custom btn-lg mb-2" type="submit" id="finalizar-button">Finalizar compra</button>
+            <p class="color3 small">Deben completarse los campos requeridos.</p>
           </div>
 
         </form>
