@@ -1,6 +1,5 @@
 import { fetchPrice } from "./functions.js";
 
-
 // Bootstrap: disabling form submissions if there are invalid fields
 (() => {
   "use strict"
