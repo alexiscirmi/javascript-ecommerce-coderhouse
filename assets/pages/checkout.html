@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +24,13 @@
   <script type="text/javascript">
     (function () {
       // https://dashboard.emailjs.com/admin/account
-      emailjs.init('REEhkt901aBpw2cW4');
+      emailjs.init("REEhkt901aBpw2cW4");
     })();
   </script>
   <!-- Bootstrap & EmailJS: disable form submissions if there are invalid fields and send email -->
   <script type="text/javascript">
     window.onload = function () {
-      document.getElementById('checkoutForm').addEventListener('submit', function (event) {
+      document.getElementById("checkoutForm").addEventListener("submit", function (event) {
         event.preventDefault();
         // Fetch the form to apply custom Bootstrap validation styles to
         const form = this;
@@ -37,17 +38,17 @@
         if (!form.checkValidity()) {
           event.stopPropagation();
           form.classList.add("was-validated");
-          console.error('Error al enviar correo electrónico. Ingrese los campos requeridos.')
+          console.error("Error al enviar correo electrónico. Ingrese los campos requeridos.")
         } else {
+          // If form is valid...
           form.classList.add("was-validated");
-          // If form is valid, send the email
+          document.querySelector("#finalizar-button").classList.add("d-none")
+          document.querySelector(".spinner-border").classList.remove("d-none")
+          // ...send the email
           this.contact_number.value = Math.random() * 100000 | 0;
-          emailjs.sendForm('service_7y665pr', 'template_cshn9g6', this)
+          emailjs.sendForm("service_7y665pr", "template_cshn9g6", this)
             .then(function () {
-              localStorage.removeItem("cartArray");
-              localStorage.removeItem("total");
-              localStorage.removeItem("cartIcon");
-              console.log('¡Envío de correo electrónico exitoso!');
+              console.log("¡Envío de correo electrónico exitoso!");
               Swal.fire({
                 title: "¡Pedido completado!",
                 text: "Te enviamos un correo con el detalle de tu compra",
@@ -59,12 +60,17 @@
                 confirmButtonColor: "#b08968"
               }).then((result) => {
                 if (result.isConfirmed) {
+                  localStorage.removeItem("cartArray");
+                  localStorage.removeItem("total");
+                  localStorage.removeItem("cartIcon");
                   location.assign("../../index.html");
                 };
               });
             })
             .catch(function (error) {
-              console.error('Error al finalizar. Revise si su correo electrónico es correcto.', error);
+              document.querySelector("#finalizar-button").classList.remove("d-none")
+              document.querySelector(".spinner-border").classList.add("d-none")
+              console.error("Error al finalizar. Revise si su correo electrónico es correcto.", error);
               Swal.fire({
                 title: "Error al finalizar",
                 text: "Revise si su correo electrónico es correcto",
@@ -76,10 +82,6 @@
                 confirmButtonColor: "#b08968"
               });
             });
-          // generate a five digit number for the contact_number variable
-
-          // these IDs from the previous steps
-
         };
       });
     };
@@ -309,6 +311,7 @@
           <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4">
             <!-- <div class="g-recaptcha form-control" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div> -->
             <button class="btn btn-custom btn-lg mb-2" type="submit" id="finalizar-button">Finalizar compra</button>
+            <div class="btn-custom spinner-border text-warning my-2 d-none" role="status"></div>
             <p class="color3 small">Deben completarse los campos requeridos.</p>
           </div>
 
