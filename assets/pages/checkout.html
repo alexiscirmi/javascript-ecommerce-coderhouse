@@ -42,6 +42,8 @@
       });
     }
   </script>
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
 
@@ -262,7 +264,11 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-custom btn-lg mb-4" type="submit" id="finalizar-button">Finalizar compra</button>
+          <div class="w-100 d-flex justify-content-center">
+            <!-- <div class="g-recaptcha form-control" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div> -->
+            <button class="btn btn-custom btn-lg mb-4" type="submit" id="finalizar-button">Finalizar compra</button>
+          </div>
+
         </form>
       </div>
     </div>

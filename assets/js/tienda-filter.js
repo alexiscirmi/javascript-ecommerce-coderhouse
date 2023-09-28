@@ -1,4 +1,4 @@
-// Event listeners to make the appropiate elements to appear with their respetive animations, when clicking on a filter button
+// Event listeners to make the appropiate elements to appear with their respective animations, when clicking on a filter button
 
 document.querySelector("#todo").addEventListener("click", () => {
   const scrollPosition = window.scrollY; // Get the current scroll position
