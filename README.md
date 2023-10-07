@@ -7,7 +7,7 @@ https://cirmialexis.github.io/coderhouse-javascript-project/
 
 GNU Affero General Public License v3.0
 
-![Coderhouse_JavaScript_certificado](https://github.com/cirmialexis/coderhouse-javascript-project/assets/1320538/bdf5e125-d60b-4e7d-9b1b-8feaadcafacf)
+![Coderhouse JavaScript certificado](https://github.com/cirmialexis/coderhouse-javascript-project/assets/1320538/65a7b2fe-2c49-44d1-abdc-45a37d6344c3)
 
 # Royalty-free images acknowledgments:
 
