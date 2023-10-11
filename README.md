@@ -1,13 +1,13 @@
 # Café Palermo
 My project for Coderhouse's JavaScript course.
 
-"Café Palermo" is a coworking coffee shop that also has a delivery service. I will be using JavaScript to develop the e-commerce features. The website is in Spanish but the code comments are in English.
+"Café Palermo" is a fantasy coworking coffee shop that also has a delivery service. Pure JavaScript was used to develop the e-commerce features and animations. The website is in Spanish but the code comments are in English.
 
 https://cirmialexis.github.io/coderhouse-javascript-project/
 
 GNU Affero General Public License v3.0
 
-![Certificado JavaScript](https://github.com/cirmialexis/coderhouse-javascript-project/assets/1320538/65a7b2fe-2c49-44d1-abdc-45a37d6344c3)
+![Certificate](https://github.com/cirmialexis/coderhouse-javascript-project/assets/1320538/35b59801-f168-4fd8-9669-9daf07baa3d0)
 
 # Royalty-free images acknowledgments:
 
