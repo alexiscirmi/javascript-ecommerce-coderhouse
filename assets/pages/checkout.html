@@ -264,56 +264,56 @@
 
           <h4 class="mb-3">Método de pago</h4>
 
-          <div class="my-3">
+          <fieldset class="my-3">
             <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input d-block" checked required>
-              <label class="form-check-label" for="credit">Efectivo - pesos y/o dólares</label>
+              <input id="cash" name="paymentMethod" value="cash" type="radio" class="form-check-input d-block" checked required>
+              <label class="form-check-label" for="cash">Efectivo - pesos y/o dólares</label>
             </div>
             <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input d-block" required disabled>
-              <label class="form-check-label" for="debit">Mercado Pago - pesos (próximamente)</label>
+              <input id="mercadopago" name="paymentMethod" value="mercadopago" type="radio" class="form-check-input d-block" required disabled>
+              <label class="form-check-label" for="mercadopago">Mercado Pago - pesos (próximamente)</label>
             </div>
-          </div>
+            </fi>
 
-          <hr class="my-4">
+            <hr class="my-4">
 
-          <div class="d-flex justify-content-between fs-5 mb-3">
-            <span>Subtotal U$S:</span>
-            <span id="checkout-page-subtotal"></span>
-          </div>
+            <div class="d-flex justify-content-between fs-5 mb-3">
+              <span>Subtotal U$S:</span>
+              <span id="checkout-page-subtotal"></span>
+            </div>
 
-          <div class="d-flex justify-content-between fs-5 mb-3">
-            <span>Envío U$S:</span>
-            <span id="delivery-price"></span>
-          </div>
+            <div class="d-flex justify-content-between fs-5 mb-3">
+              <span>Envío U$S:</span>
+              <span id="delivery-price"></span>
+            </div>
 
-          <div class="d-flex justify-content-between fs-3 mb-3">
-            <span>Total U$S:</span>
-            <span class="checkout-page-total"></span>
-            <!-- Hidden textarea for EmailJS -->
-            <textarea name="total-dolares" class="checkout-page-total" hidden></textarea>
-          </div>
+            <div class="d-flex justify-content-between fs-3 mb-3">
+              <span>Total U$S:</span>
+              <span class="checkout-page-total"></span>
+              <!-- Hidden textarea for EmailJS -->
+              <textarea name="total-dolares" class="checkout-page-total" hidden></textarea>
+            </div>
 
-          <div class="d-flex justify-content-between fs-3">
-            <span>Total pesos:</span>
-            <span class="arsPrice"></span>
-            <!-- Hidden textarea for EmailJS -->
-            <textarea name="total-pesos" class="arsPrice" hidden></textarea>
-          </div>
+            <div class="d-flex justify-content-between fs-3">
+              <span>Total pesos:</span>
+              <span class="arsPrice"></span>
+              <!-- Hidden textarea for EmailJS -->
+              <textarea name="total-pesos" class="arsPrice" hidden></textarea>
+            </div>
 
-          <div class="d-flex fst-italic color3">
-            <span class="me-1">Tipo de cambio:</span>
-            <span id="exchangeRate"></span>
-          </div>
+            <div class="d-flex fst-italic color3">
+              <span class="me-1">Tipo de cambio:</span>
+              <span id="exchangeRate"></span>
+            </div>
 
-          <hr class="my-4">
+            <hr class="my-4">
 
-          <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4">
-            <div class="g-recaptcha mb-2" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div>
-            <button class="btn btn-custom btn-lg mb-2" type="submit" id="finalizar-button">Finalizar compra</button>
-            <div class="btn-custom spinner-border text-warning my-2 d-none" role="status"></div>
-            <p class="color3 small">Deben completarse los campos requeridos.</p>
-          </div>
+            <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4">
+              <div class="g-recaptcha mb-2" data-sitekey="6LcEnFsoAAAAACeHL9z__AfagFaRRDxfnzbC9be4" required></div>
+              <button class="btn btn-custom btn-lg mb-2" type="submit" id="finalizar-button">Finalizar compra</button>
+              <div class="btn-custom spinner-border text-warning my-2 d-none" role="status"></div>
+              <p class="color3 small">Deben completarse los campos requeridos.</p>
+            </div>
 
         </form>
       </div>
