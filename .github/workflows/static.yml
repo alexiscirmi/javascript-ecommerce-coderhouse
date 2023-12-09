@@ -21,6 +21,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# Allow repo secrets
+env:
+  EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
