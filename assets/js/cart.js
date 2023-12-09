@@ -1,6 +1,5 @@
 import { cartArray, checkCart, cartSubtractButtonHandler, cartAddButtonHandler } from "./functions.js";
 
-
 // Define variables & read localStorage
 export const cartIcon = document.querySelector("#cart-icon");
 checkCart();
